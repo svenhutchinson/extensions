@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Github Awesome Autocomplete browser extension for Chrome and Firefox &middot; Hyde
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="post">
+  <h1 class="post-title">Github Awesome Autocomplete browser extension for Chrome and Firefox</h1>
+  <span class="post-date">23 Dec 2014</span>
+  <p>By working every day on building the best search engine, we’ve become obsessed
+with our own search experience on the websites and mobile applications we use.</p>
+
+<p>We’re git addicts and love using GitHub to store every single idea or project
+we work on. We use it both for our private and public repositories (<a href="https://www.algolia.com/doc/apiclients">12 API
+clients</a>, <a href="https://github.com/algolia/hn-search">HN
+Search</a> or various
+<a href="https://github.com/algolia/instant-search-demo">d</a>
+<a href="https://github.com/algolia/facebook-search">e</a> <a href="https://github.com/algolia/linkedin-search">m</a> <a href="https://github.com/algolia/meetup-search">o</a>
+<a href="https://github.com/algolia/twitter-search)">s</a>. We use every day its search
+function and we decided to re-build it the way we thought it should be.  We’re
+proud to share it with the community via this <a href="https://chrome.google.com/webstore/detail/github-awesome-autocomple/djkfdjpoelphhdclfjhnffmnlnoknfnd">Chrome
+extension</a>. Our Github Awesome Autocomplete
+enables a seamless and fast access to GitHub resources via an as-you-type
+search functionality.</p>
+
+<h2 id="install-your-christmas-gift-now">Install your Christmas Gift now!</h2>
+
+<p><a href="https://chrome.google.com/webstore/detail/github-awesome-
+autocomple/djkfdjpoelphhdclfjhnffmnlnoknfnd"><img src="/algoliasearch-jekyll-hyde/assets/ChromeWebStore_BadgeWBorder_v2_206x58.png" alt="Github Awesome Autocomplete Algolia Search" /></a></p>
+
+<h2 id="features">Features</h2>
+
+<p>The Chrome extension replaces GitHub’s search bar and add autocomplete
+capabilities on:</p>
+
+<ul>
+  <li>
+    <p>top public repositories</p>
+  </li>
+  <li>
+    <p>last active users</p>
+  </li>
+  <li>
+    <p>your own private repositories (this one is done locally in JavaScript without Algolia: the list of private repositories remains locally in your browser)</p>
+  </li>
+</ul>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/hackpad.com_Y3thzadEtdY_p.233467_1419338581444_capture.gif" alt="" /></p>
+
+<h2 id="howdoes-itwork">How does it work?</h2>
+
+<p>We continuously retrieve the most watched repositories and the last active
+users using <a href="http://www.githubarchive.org/">GitHub Archive</a> dataset. Users and
+repositories are stored in 2 Algolia indices: users and repositories. The
+queries are performed using <a href="https://github.com/algolia/algoliasearch-client-js">our JavaScript API
+client</a> and the
+autocomplete menu is based on Twitter’s
+<a href="http://twitter.github.io/typeahead.js/">typeahead.js</a> library.</p>
+
+<p>The underlying Algolia account is replicated in 6 regions using our
+<a href="https://www.algolia.com/dsn">DSN</a> feature, answering every query in 50-100ms
+wherever you are (network latency included!). Regions include US West, US
+East, Europe, Singapore, Australia &amp; India.</p>
+
+<h2 id="exporting-the-records-from-github-archive">Exporting the records from GitHub Archive</h2>
+
+<p>We used GitHub’s Archive dataset to export top repositories and last active
+users using Google’s BigQuery:</p>
+
+<pre><code>;; export repositories
+SELECT
+  a.repository_name as name,
+  a.repository_owner as owner,
+  a.repository_description as description,
+  a.repository_organization as organization,
+  a.repository_watchers AS watchers,
+  a.repository_forks AS forks,
+  a.repository_language as language
+FROM [githubarchive:github.timeline] a
+JOIN EACH
+  (
+     SELECT MAX(created_at) as max_created, repository_url
+     FROM [githubarchive:github.timeline]
+     GROUP EACH BY repository_url
+  ) b
+  ON 
+  b.max_created = a.created_at and
+  b.repository_url = a.repository_url
+
+
+;; export users
+SELECT
+  a.actor_attributes_login as login,
+  a.actor_attributes_name as name,
+  a.actor_attributes_company as company,
+  a.actor_attributes_location as location,
+  a.actor_attributes_blog AS blog,
+  a.actor_attributes_email AS email
+FROM [githubarchive:github.timeline] a
+JOIN EACH
+  (
+     SELECT MAX(created_at) as max_created, actor_attributes_login
+     FROM [githubarchive:github.timeline]
+     GROUP EACH BY actor_attributes_login
+  ) b
+  ON 
+  b.max_created = a.created_at and
+  b.actor_attributes_login = a.actor_attributes_login
+</code></pre>
+
+<h2 id="configuring-algolia-indices">Configuring Algolia indices</h2>
+
+<p>Here are the 2 index configurations we used to build the search:</p>
+
+<h3 id="repositories">Repositories</h3>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/hackpad.com_Y3thzadEtdY_p.233467_1419338775543_Screen%20Shot%202014-12-23%20at%2013.46.04.png" alt="" /></p>
+
+<h3 id="users">Users</h3>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/hackpad.com_Y3thzadEtdY_p.233467_1419338826276_Screen%20Shot%202014-12-23%20at%2013.45.54.png" alt="" /></p>
+
+<h2 id="section">#</h2>
+
+<h2 id="want-to-contribute">Want to contribute?</h2>
+
+<p>It’s open-source and we’ll be happy to get your feedback! Just use <a href="https://github.com/algolia/github-awesome-autocomplete/issues">GitHub’s
+issues</a> to
+report any idea you have in mind. We also love pull-requests :)</p>
+
+<p>Source code: <a href="https://github.com/algolia/github-awesome-autocomplete">https://github.com/algolia/github-awesome-
+autocomplete</a></p>
+
+<p>Install it now: [Github Awesome Autocomplete on Google Chrome Store
+<a href="https://chrome.google.com/webstore/detail/github-awesome-autocomple/djkfdjpoelphhdclfjhnffmnlnoknfnd">FREE</a>]</p>
+
+<h2 id="or-just-want-to-add-an-instant-search-in-yourwebsite-application">Or just want to add an instant search in your website / application?</h2>
+
+<p>Feel free to create a 14-days FREE trial at
+<a href="http://www.algolia.com/">http://www.algolia.com</a> and follow one of our step
+by step tutorials at
+<a href="https://www.algolia.com/doc/tutorials">https://www.algolia.com/doc/tutorials</a></p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas/">
+            Welcome Texas!
+            <small>15 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid/">
+            When Solid State Drives are not that solid
+            <small>15 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next/">
+            We just raised our Series A. What's next?
+            <small>28 May 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

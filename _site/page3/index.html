@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Hyde &middot; A Jekyll theme, with instant search
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2014/12/01/fanfootage-solving-search-problem-algolia/">
+        FanFootage: Solving the Search problem with Algolia
+      </a>
+    </h1>
+
+    <span class="post-date">01 Dec 2014</span>
+
+    <p><strong>The following post is a guest post by Eoin O’Driscoll (web developer), and Vinny Glennon (co-founder) of FanFootage.com</strong></p>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/vinny.png" alt="vinny" /></p>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/eoin-o-driscoll.png" alt="eoin-o-driscoll" /></p>
+
+<p>When we founded FanFootage we knew there was something lacking in the concert
+and event experience. Fans were taking videos on their mobile phones during
+performances, loading them on YouTube, and the audio was horrible. So we
+created FanFootage where fans can upload their own video and we work with the
+bands to get the high def audio and put them together. Now fans can come to
+our site and see their favorite concerts or sports from any angle. They can
+also search for upcoming events and performances.</p>
+
+<p>For a recent Linkin Park concert the band and the fan group contacted us.
+Their fans uploaded more than 1,500 videos from almost every angle. On
+FanFootage that single concert has had over 350,000 page views.</p>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/fanfootage.gif" alt="fanfootage" /></p>
+
+<h2 id="our-user-experience-heavily-relies-on-search">Our user experience heavily relies on search</h2>
+
+<p>Earlier in our design <strong>we knew that search would be key to making FanFootage
+the ultimate fan experience</strong>. <strong>When a user comes to our site the first thing
+they do is search for the event or artist. And we need to make sure that they
+either find the artist they are looking for or something similar, and it has
+to be fast</strong>.</p>
+
+<p>As developers, our team isn’t new to search, particularly within the
+entertainment space. Our previous startup in the music space was bought by
+RealNetworks and a second startup was a competitor to Google. That is where we
+learned that search is hard. And when we thought to build our own search on
+FanFootage we quickly said it wasn’t going to happen.</p>
+
+<p>We also know what fans need. <strong>User demands have changed now that they can
+access anything from their phones. Today we expect our applications and
+services to predict what we are going to do next. And because of Google,
+people don’t search with a single phrase. Users expect search to understand
+how phrases fit together and are related and of course it needs to spell check
+and it must be instant</strong>.</p>
+
+<p>We also had different search requirements than other sites. Normally search on
+a site is for one unit or concept; a site for flowers for example. For us we
+needed to allow fans to search for artists, bands, friends or upcoming events
+in their area and never get a zero result.</p>
+
+<h2 id="why-we-chose-algolia">Why we chose Algolia</h2>
+
+<p>After looking at a few search applications we agreed on Algolia.<strong>Many search
+applications look nice but don’t have the flexibility we needed</strong> to configure
+them they way our business needed. And most weren’t fast.</p>
+
+<p>Why did we chose Algolia? First it has <strong>a developer-centric approach</strong>. It
+took us 2 hours to configure and a day to test and that was it. We basically
+had search up and running in a day. The dashboard lets me know that the API
+calls are returned within milliseconds and we have all the flexibility we need
+to configure as our content grows.</p>
+
+<p>Today, more than 250 artists have used FanFootage in 20 countries. We are
+growing quickly. As a company we are still learning what our fans are
+searching for and Algolia is helping us with that. <strong>As content grows we will
+continue to configure search to meet the needs of our fans</strong>. We will also be
+rolling out Algolia for mobile because of its multi-search capabilities.</p>
+
+<p>Algolia is a simple solution to a complex problem. And it blew our mind away.
+It just works. And now we can focus on our own fanbase.</p>
+
+<p><em>Images courtesy of FanFootage. Learn more on their
+<a href="https://fanfootage.com/">website</a></em></p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2014/11/28/black-thursday-dns-issue/">
+        Black Thursday DNS issue
+      </a>
+    </h1>
+
+    <span class="post-date">28 Nov 2014</span>
+
+    <p>Today we had a severe DNS issue that impacted some of our users during a total
+of 5 hours. Although most of our customers were not impacted, for some of them
+search simply went down. This event and its details deserved to be fully
+disclosed.</p>
+
+<h2 id="the-context">The context</h2>
+
+<p>Up until recently, we were using Amazon Route 53 for our DNS routing needs.
+When we started to design our Distributed Search Network
+(<a href="https://www.algolia.com/dsn)">algolia.com/dsn</a> a few months ago, we quickly
+realized that our needs were out of Route 53’s scope: we needed a custom
+routing per user and the two options of Route 53 simply didn’t work:</p>
+
+<ul>
+  <li>Latency-based routing is limited to the 9 regions of AWS and we have 12;</li>
+  <li>With geography-based routing you need to indicate country per country how you want to resolve the IP.</li>
+</ul>
+
+<p>This is a tedious process for a not even good solution as route 53 does not
+support EDNS right now.</p>
+
+<p>So we started to look for new DNS options. Choosing the best DNS provider is
+not something you do overnight. It took us months to benchmark several vendors
+and find the right one: NSOne. The <a href="https://nsone.net/2014/03/nsone-filter-chain-quick-primer/">filter chain feature of
+NSOne</a> was a
+perfect fit for our use case and the NSOne team was great in understanding our
+needs and even went the extra mile for us by building a specific module,
+allowing better performance.</p>
+
+<p>Something we also discovered during this benchmark was that the algolia.io
+domain was not good for performance compared to algolia.net, as there are far
+more DNS servers in the .net anycast network than in the .io one. The NSOne
+team offered us a smart solution based on linked domain, so we wouldn’t have
+to maintain two zones ourselves.</p>
+
+<h2 id="the-migration">The migration</h2>
+
+<p>The goal of the migration was to move from Route 53 to NSOne. For several
+weeks we have been working on importing the records in NSOne and making sure
+Route 53 and NSOne were synchronized. Our initial tests revealed some issues
+but after a few days of continuous updates without any difference between
+Route 53 and NSOne, we started to be confident about our synchronization and
+started the migration of the <a href="https://www.algolia.com/demos">demos of our
+website</a> to make them target the new
+algolia.net domain. We tested the performance and resolution from all NSOne
+POP (<a href="https://nsone.net/technology/netw
+ork/">https://nsone.net/technology/network/</a>) to be sure there were no glitches.</p>
+
+<p>These first production tests were successful, synchronization was ok,
+performance and routing were good, so we decided to move the .io domain from
+Route 53 to NSOne as well.</p>
+
+<h2 id="the-d-day">The D-day</h2>
+
+<p>The big issue when changing the DNS is that it is global and involves caching
+logics, making rollbacking complex. With users in 45 countries it is almost
+impossible to find a suitable time for everyone: DNS changes cannot be done
+gradually. We decided to push the update during the night for the US, at 4am
+EST.</p>
+
+<p>We witnessed a quickly rising number of queries targeting NSOne and it’s once
+we reached about 1,000 DNS queries per second that we started to receive our
+first complain about failed DNS resolution. This routing issue was not
+impacting all DNS resolutions but some of them were replying with a NXDOMAIN
+answer, the equivalent of a DNS “404 not found”.</p>
+
+<p><code>
+$ dig APPID-1.algolia.io`
+; &lt;&lt;&gt;&gt; DiG 9.9.5-4.3-Ubuntu &lt;&lt;&gt;&gt; APPID-1.algolia.io
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt; ;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;APPID-1.algolia.io. IN A
+;; AUTHORITY SECTION:
+algolia.io. 45 IN SOA dns1.p03.nsone.net. hostmaster.nsone.net.
+1414873854 43200 7200 1209600 3600
+;; Query time: 24 msec
+;; SERVER: 213.133.100.100#53(213.133.100.100)
+;; WHEN: Thu Nov 27 10:49:33 CET 2014
+;; MSG SIZE rcvd: 115
+</code></p>
+
+<p>After double-checking our DNS zone for those specific records, we understood
+it was a NSOne bug related to our custom routing code. We immediately
+rollbacked to Route 53.</p>
+
+<p>The NSOne support was really quick to react and they found the issue pretty
+quickly: the issue only concerned some DNS with EDNS support on the algolia.io
+domain. The algolia.net domain was not impacted, explaining why all the tests
+we’ve done weren’t able to detect the issue before.</p>
+
+<p>Unfortunately, it did not stop here and something very unexpected happened:
+some customers (even not priorly impacted) started to face issues right after
+the rollback to Route 53.</p>
+
+<p>In order to improve performance, the custom Algolia module developed by NSOne
+was doing some translation on our records: APPID-1.algolia.io is translated
+into 1.APPID.algolia.io and then resolved to CNAME for the actual server in
+the cluster serving that customer. The translation of APPID-1.algolia.io to
+1.APPID.algolia.io was done with a TTL of 86400 seconds (1 day). Since these
+zones did not exist in Route 53 before, it was not possible to resolve there
+records anymore. What made the situation even worse was the TTL far exceeding
+the TTL of NS records. Most of the DNS servers flushed their cache for the
+domain, once the nameservers changed. But the remaining ones kept the record
+cached.</p>
+
+<p><strong>TL;DR: Do not forget about IPv6.</strong> As if it was not enough, we eventually discovered something else: our custom DNS module was resolving APPID-X.algolia.io to X.APPID.algolia.io only in a case that there were no direct resolutions to an IP address. This translation worked pretty well as we had all the A records set. But some customers started to report weird resolutions. Normally we resolve APPID-1.algolia.io -&gt; 1.APPID.algolia.io -&gt; servername-1.algolia.io -&gt; IP. Which was completely fine until the moment an IPv6 AAAA request came. Since we did not have AAAA records, the custom filter started to resolve: APPID-1.algolia.io -&gt; 1. APPID.algolia.io -&gt; servername-1.algolia.io -&gt; 1.servername.algolia.io -&gt; nothing.</p>
+
+<p>We were in a bad situation feared by all engineers, this lonely moment when
+you really miss a “purge cache” feature.</p>
+
+<p>Eventually, as soon as we got confirmation of the fix by NSOne, we changed
+again the DNS of algolia.io to NSOne and helped our customers to workaround
+the issue before the cache expiration:</p>
+
+<p>for our customers impacted by the NXDOMAIN issue, a simple migration to the
+algolia.net domain instead of the algolia.io problem fixed the issue;</p>
+
+<p>for those impacted by the Route 53 rollback issue, we created new DNS records
+for them to avoid work-around DNS caches.</p>
+
+<h2 id="conclusion-what-we-learned">Conclusion: what we learned</h2>
+
+<p>This is by far the biggest problem we have encountered since the launch of
+Algolia. Although the first issue was almost impossible to anticipate, we have
+made mistakes and should have handled a few things differently:</p>
+
+<p>DNS is a highly critical component and being the first to use an external
+custom module was not a good idea, even if it improved performance;</p>
+
+<p>Putting more thought into the rollback part of our deployment would have
+helped us anticipate the second issue. For a component as critical as a DNS,
+having a robust rollback process is mandatory, no matter how much work it
+represents and even though such an event is extremely unlikely to happen.</p>
+
+<p>We’re very sorry for this disruption. We wanted to share these technical
+details to shed some light on what happened and what we’ve done in response.
+Thanks for your patience and support.</p>
+
+<p>If you think we missed anything or if you’d like to share your advice on your
+own best practices, your comments are really welcome.</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2014/11/14/jadopado-delivers-instasearch-mobile-web-powered-algolia/">
+        Jadopado delivers instasearch for mobile and web powered by Algolia
+      </a>
+    </h1>
+
+    <span class="post-date">14 Nov 2014</span>
+
+    <h2 id="algolia-increases-online-search-sessions-by-60-and-unique-mobile-searches">Algolia Increases Online Search Sessions By 60% and Unique Mobile Searches</h2>
+<p>by 270%</p>
+
+<p><strong>The following post is a guest post by Omar Kassim, co-founder of <a href="https://jadopado.com/">JadoPado</a>.</strong></p>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/Omar-Kassim-Founder-of-JadoPado-Image-2-1.jpg" alt="Omar-Kassim-Founder-of-JadoPado" /> Founded in 2010, JadoPado is one of the largest e-commerce
+sites servicing the GCC, Middle East, North Africa and South Asia.  Its CEO
+Omar Kassim wanted to bring an Amazon-like experience to the region.  In just
+3 years of operations the company now boasts thousands of customers, hundreds
+of vendors and over $7 million in annual revenues.</p>
+
+<p><strong>Realizing that search is a key component of their user experience and engagement</strong>, Omar and his small team of 15 set off to build new search capabilities that would help users find the products they wanted, lightning fast. In addition, the team was developing a revamped mobile experience and saw that search needed to be spot on for both smartphones and tablets. <em>“I saw search as a competitive tool and as a strategy to get a leg up on our competition.  After seeing Algolia on Hacker News I was absolutely blown away.  After looking at the demos, we threw out what we were doing internally in terms of a small search revamp and I had one of our team get cracking with Algolia right away. As a little startup, it really helped that Algolia’s price points were within reach in terms of not breaking the bank to get things rolling.”</em></p>
+
+<h3 id="the-power-of-instant-search">The Power of Instant Search</h3>
+
+<p>After configuring and testing Algolia for two weeks, JadoPado had the results
+they were looking for. Branded internally as InstaSearch, JadoPado knew that
+it would dramatically improve how search functioned on both mobile and the web
+at JadoPado. <em>“The idea from the outset was to build InstaSearch. I kept
+ending up at the Algolia demo and <strong>thought it would be incredible if we could
+forget all user interaction aside from typing and just display results right
+away</strong>. Remove what you’ve typed and the results disappear taking you back to
+where you were. We then spent a bit of time figuring out how to get each
+result “page” to have a URL that could be used with external search or shared
+elsewhere,”</em> explained Omar.</p>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/jadopado.gif" alt="japopado ecommerce" /></p>
+
+<h3 id="making-search-seamless">Making Search Seamless</h3>
+
+<p><em>“We looked at a number of solutions. <strong>One of our biggest intentions was to
+try to get search to be extremely fast and as slick as possible</strong>. Customers
+should feel like search “just works” and that it is a super easy way to get
+straight to to whatever they may be looking for. Algolia has allowed us to
+accomplish that,”</em> Omar explained.  <em>“<strong>Moving search from a not really
+working internal model to a search as a service platform</strong> has allowed us to
+focus on other areas while knowing that search works and that we’ve got an
+edge over our competition.”</em></p>
+
+<h3 id="support-for-arabic">Support For Arabic</h3>
+
+<p>With more than 20 countries to support, the JadoPado team knew that the key to
+success in the region was to ensure that search be delivered in Arabic as
+well. Omar explained, <em>“The final bits were figuring out a separate set of
+indexes for Arabic (as we were about to roll out a standalone Arabic version
+of JadoPado) and getting the faceting right. This was easy to do with the deep
+Algolia documentation.”</em> <strong>Algolia works with all languages, including
+Chinese, Japanese, Korean, and Arabic. No specific configuration required,
+speed and ranking perform exactly the same way</strong>.</p>
+
+<h3 id="better-business-through-search">Better Business Through Search</h3>
+
+<p>In May the team rolled out InstaSearch, Arabic support and a newly revamped
+mobile experience with search at the center. JadoPado immediately experienced
+a doubling in conversions and activity that was triple a typical day.
+<strong>Compared to the same 30 day period in 2013, JadoPado saw an increase in site
+visits through search from 8.2% to 11.3%.</strong></p>
+
+<p>Additionally:</p>
+
+<ul>
+  <li>Sessions with search has jumped 59.96%.</li>
+  <li>Unique searches has jumped 46.87%</li>
+  <li>Average search depth has increased by 58.87%.</li>
+</ul>
+
+<h3 id="mastering-mobile-through-search">Mastering Mobile Through Search</h3>
+
+<p><strong>The greater impact of Algolia’s hosted search was JadoPado’s revamped mobile experience</strong>. Search is often the first action customers take on a mobile device.  With instant search, autocorrect and full language support,  improving search and the quality of results can have a significant impact on revenues.  With Algolia implemented as part of JadoPado’s mobile site, the company saw strong results with <strong>visits from search increasing from 4.3% to 15% over the same time period and session exits decreasing by 16.57%.</strong> A big change. And <strong>search increased engagement on all levels</strong>:</p>
+
+<ul>
+  <li>Mobile sessions with search jumped by 233.92%</li>
+  <li>Total unique mobile searches jumped 268.37%</li>
+  <li>Average search depth on mobile devices jumped by 41.05%.</li>
+</ul>
+
+<p><em>Images courtesy of JadoPado. Learn more on their
+<a href="https://jadopado.com/">website</a>.</em></p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2014/10/10/aftership-leverages-algolias-search-service-track-10-million-packages-around-world/">
+        AfterShip Leverages Algolia's Search as a Service to Track 10 Million Packages Around The World
+      </a>
+    </h1>
+
+    <span class="post-date">10 Oct 2014</span>
+
+    <p>Algolia Speeds Up Search Result Delivery Times From 10 Seconds To 250
+Milliseconds.The following post is a guest post by <a href="http://hk.linkedin.com/in/teddychan/">Teddy
+Chan</a>, Founder and CEO at
+<a href="https://www.aftership.com/">AfterShip</a>.</p>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/teddy.png" alt="Teddy Chan AfterShip" /></p>
+
+<p>AfterShip is an online tracking platform which helps online merchants track
+their shipment across multiple carriers and notify their customers via email
+or mobile. Being an online merchant myself, I shipped more than 30,000
+packages a month around the world. When customers contacted me to get an
+update on shipments I realized that I couldn’t track shipments from different
+carriers and get updates on their status in a single place. So I built
+Aftership to allow both consumers and online merchants view all their packages
+on a single platform.</p>
+
+<p>After winning the 2011 Global Startup Battle and 2011 Startup Weekend Hong
+Kong Aftership opened into beta and quickly helped thousands of online
+merchants to send out over 1,000,000 notifications to customers.</p>
+
+<p>One of the key parts of our service is providing customers around the world
+with up-to-date information about their packages.</p>
+
+<p>Right now we have more than 10 million tracking numbers in our database. This
+causes a few different challenges when it comes to search and we needed
+technology that would help us continuously index constantly changing
+information.</p>
+
+<h3 id="our-first-challenge-is-that-we-are-a-small-team-with-only-1-engineer">Our first challenge is that we are a small team with only 1 engineer.</h3>
+
+<p>We are not in the search business, so we needed a solution that would be easy
+to implement and work well with our existing infrastructure. Algolia’s
+extensive documentation made it easy to see that our set up and implementation
+time would be extremely fast and would work with any language and database, so
+we could get back to our core business.</p>
+
+<p><strong>Algolia was super easy, we had it tested, up and running in a week.</strong></p>
+
+<h3 id="our-second-challenge-was-quickly-delivering-search-results">Our second challenge was quickly delivering search results.</h3>
+
+<p>On Redis, searching for packages was simply impossible. For each query, it
+would simply lock up until the result was found, so it could run only one
+search at a time. Each search with Redis was taking up to 10 seconds. <strong>With
+Algolia we reduced search result delivery times to 250 milliseconds for any
+customer anywhere in the world.</strong> When you think about thousands of merchants
+who send more than 1 million packages per month, you can see how speed is
+critical.</p>
+
+<p>Downtime also is not an option when tracking packages around the globe.</p>
+
+<p>We are very strict when adopting new technologies and SaaS technologies can’t
+slow down our system.</p>
+
+<p><strong>Algolia had the highest uptime of the other solutions we looked at. There was no physical downtime.</strong></p>
+
+<h3 id="our-final-challenge-was-search-complexity">Our final challenge was search complexity.</h3>
+
+<p>Sometimes you need to know how many shipments are coming from Hong Kong and
+exactly where they are in transit to and from the U.S.. Shipments going around
+the globe can change status several times within a single day. With Algolia’s
+indexing we are able to instantly deliver up-to-date notifications on all 10
+million packages, so that customers can not only track their package on its
+journey, but they can also go to their online merchant’s shop and see a real-
+time status of their package.</p>
+
+<p><strong>In the end, it was Algolia’s customer service that won us over.</strong><br />
+Similar services and platforms were not responsive. With Algolia we either had
+the documentation we needed, immediately were able to get advice from an
+engineer or had our problem solved in less than a day. With such a small team
+this means a lot. And with the Enterprise package we know that Algolia will
+grow with us as quickly as our business does.</p>
+
+<p><strong>Want to find out more about the Algolia experience ?<br />
+<a href="https://www.algolia.com/features"> Discover and try it here </a></strong></p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2014/09/01/4th-datacenter-california/">
+        Algolia opened its 4th datacenter is in California!
+      </a>
+    </h1>
+
+    <span class="post-date">01 Sep 2014</span>
+
+    <p>Do you know the 3 most important things in search? Speed, speed, and speed!</p>
+
+<p>At Algolia, we work at making access to content and information completely
+seamless. And that can only be done if search results are returned so fast
+that they seem instant.</p>
+
+<p>That means two things for us: getting server <strong>response time under 10ms</strong>
+(checked), and getting the servers close to end-users to lower latency.</p>
+
+<p>We are on a quest to make search faster than 100ms from anywhere in the world,
+and today is an important step. We are thrilled to announce the <strong>opening of
+our 4th datacenter, located in California</strong>!</p>
+
+<p>You can now choose to be hosted on this datacenter when <a href="https://www.algolia.com/users/sign_up">signing
+up</a> (multi-datacenter distribution is
+also available for enterprise users).</p>
+
+
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/algoliasearch-jekyll-hyde/page4">Older</a>
+  
+  
+    
+      <a class="pagination-item newer" href="/algoliasearch-jekyll-hyde/page2">Newer</a>
+    
+  
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

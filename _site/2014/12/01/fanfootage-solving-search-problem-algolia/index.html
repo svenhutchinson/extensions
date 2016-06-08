@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      FanFootage: Solving the Search problem with Algolia &middot; Hyde
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="post">
+  <h1 class="post-title">FanFootage: Solving the Search problem with Algolia</h1>
+  <span class="post-date">01 Dec 2014</span>
+  <p><strong>The following post is a guest post by Eoin O’Driscoll (web developer), and Vinny Glennon (co-founder) of FanFootage.com</strong></p>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/vinny.png" alt="vinny" /></p>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/eoin-o-driscoll.png" alt="eoin-o-driscoll" /></p>
+
+<p>When we founded FanFootage we knew there was something lacking in the concert
+and event experience. Fans were taking videos on their mobile phones during
+performances, loading them on YouTube, and the audio was horrible. So we
+created FanFootage where fans can upload their own video and we work with the
+bands to get the high def audio and put them together. Now fans can come to
+our site and see their favorite concerts or sports from any angle. They can
+also search for upcoming events and performances.</p>
+
+<p>For a recent Linkin Park concert the band and the fan group contacted us.
+Their fans uploaded more than 1,500 videos from almost every angle. On
+FanFootage that single concert has had over 350,000 page views.</p>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/fanfootage.gif" alt="fanfootage" /></p>
+
+<h2 id="our-user-experience-heavily-relies-on-search">Our user experience heavily relies on search</h2>
+
+<p>Earlier in our design <strong>we knew that search would be key to making FanFootage
+the ultimate fan experience</strong>. <strong>When a user comes to our site the first thing
+they do is search for the event or artist. And we need to make sure that they
+either find the artist they are looking for or something similar, and it has
+to be fast</strong>.</p>
+
+<p>As developers, our team isn’t new to search, particularly within the
+entertainment space. Our previous startup in the music space was bought by
+RealNetworks and a second startup was a competitor to Google. That is where we
+learned that search is hard. And when we thought to build our own search on
+FanFootage we quickly said it wasn’t going to happen.</p>
+
+<p>We also know what fans need. <strong>User demands have changed now that they can
+access anything from their phones. Today we expect our applications and
+services to predict what we are going to do next. And because of Google,
+people don’t search with a single phrase. Users expect search to understand
+how phrases fit together and are related and of course it needs to spell check
+and it must be instant</strong>.</p>
+
+<p>We also had different search requirements than other sites. Normally search on
+a site is for one unit or concept; a site for flowers for example. For us we
+needed to allow fans to search for artists, bands, friends or upcoming events
+in their area and never get a zero result.</p>
+
+<h2 id="why-we-chose-algolia">Why we chose Algolia</h2>
+
+<p>After looking at a few search applications we agreed on Algolia.<strong>Many search
+applications look nice but don’t have the flexibility we needed</strong> to configure
+them they way our business needed. And most weren’t fast.</p>
+
+<p>Why did we chose Algolia? First it has <strong>a developer-centric approach</strong>. It
+took us 2 hours to configure and a day to test and that was it. We basically
+had search up and running in a day. The dashboard lets me know that the API
+calls are returned within milliseconds and we have all the flexibility we need
+to configure as our content grows.</p>
+
+<p>Today, more than 250 artists have used FanFootage in 20 countries. We are
+growing quickly. As a company we are still learning what our fans are
+searching for and Algolia is helping us with that. <strong>As content grows we will
+continue to configure search to meet the needs of our fans</strong>. We will also be
+rolling out Algolia for mobile because of its multi-search capabilities.</p>
+
+<p>Algolia is a simple solution to a complex problem. And it blew our mind away.
+It just works. And now we can focus on our own fanbase.</p>
+
+<p><em>Images courtesy of FanFootage. Learn more on their
+<a href="https://fanfootage.com/">website</a></em></p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas/">
+            Welcome Texas!
+            <small>15 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid/">
+            When Solid State Drives are not that solid
+            <small>15 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next/">
+            We just raised our Series A. What's next?
+            <small>28 May 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

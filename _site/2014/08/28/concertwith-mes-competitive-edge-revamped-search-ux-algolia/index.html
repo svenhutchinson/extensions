@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Concertwith.me's Competitive Edge: A Revamped Search UX with Algolia &middot; Hyde
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="post">
+  <h1 class="post-title">Concertwith.me's Competitive Edge: A Revamped Search UX with Algolia</h1>
+  <span class="post-date">28 Aug 2014</span>
+  <p>There are a lot of music discovery apps on the market, yet sifting through
+concert listings is anything but seamless. That’s why Cyprus-based startup
+<a href="http://concertwith.me/">Concertwith.me</a> aims to make finding local concerts
+and festivals as intuitive as possible. Automatically showing upcoming events
+in your area, the site offers personalized recommendations based on your
+preferences and your Facebook friends’ favorited music. Covering over 220,000
+events globally, the site uses Algolia to offer meaningful results for
+visitors who are also looking for something different.</p>
+
+<p>Founder Vit Myshlaev admits that concert sites often share the same pool of
+information. The differentiator is how that information is presented. “The
+biggest advantage one can have is user experience,” he explains. “There’s
+information out there, but do users find it? The reason that people don’t go
+to cool concerts is that they still don’t know about them!”</p>
+
+<p>As an example, he showed me one of the largest live music discovery sites on
+the web. Searching for an artist required navigating a convoluted maze of
+links before pulling up irrelevant results. “Users have to type in queries
+without autocomplete, typo-tolerance, or internationalization. They have to
+scroll through a long list of answers and click on paginated links. That’s not
+what people want in 2014,” said Myshlaev.</p>
+
+<p>To simplify search and make the results more relevant, Concertwith.me used our
+API. “We got a lot of user feedback for natural search,” Myshlaev wrote. Now
+visitors can search for artists and concerts instantly. With large user bases
+in the United States, Germany, France, Spain, Italy, Russia and Poland,
+Concertwith.me also benefits from Algolia’s <a href="https://www.algolia.com/doc#Multilingual">multi-lingual search
+feature</a>. “We’ve localized our app
+to many countries. For example, you can search in Russian or for artists that
+are Russian, and results will still come up,” says Myshlaev.</p>
+
+<p><a href="https://blog.algolia.com/wp-
+content/uploads/2014/08/search.gif"><img src="/algoliasearch-jekyll-hyde/assets/search.gif" alt="search" /></a></p>
+
+<p>For users with a less targeted idea of what they’re looking for,
+Concertwith.me implemented structured search via
+<a href="http://faq.algolia.com/basics/what-is-faceting/">faceting</a>. “We also realized
+that some visitors don’t know what they want. Algolia search helps them find
+answers to questions like, Where will my favorite artist perform? How much do
+tickets cost? Are there any upcoming shows?”</p>
+
+<p><a href="https://blog.algolia.com/wp-
+content/uploads/2014/08/recommendations.gif"><img src="/algoliasearch-jekyll-hyde/assets/recommendations.gif" alt="recommendations" /></a></p>
+
+<p>Concertwith.me’s goal is to reduce informational noise so that users can find
+and discover music as soon as possible. The start up experimented with a
+number of other search technologies before reading an <a href="http://insideintercom.io/7-things-wish-every-search-did/">article about us on
+Intercom.io</a>, which
+inspired Myshlaev. “When I saw what Algolia could do, I knew that this was the
+competitive edge I was looking for.”</p>
+
+<p><strong><em>Want to build a search bar with multi-category auto-completion like Concertwith.me? <a href="https://www.algolia.com/doc/tutorials">Learn how through our tutorial</a>.</em></strong></p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas/">
+            Welcome Texas!
+            <small>15 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid/">
+            When Solid State Drives are not that solid
+            <small>15 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next/">
+            We just raised our Series A. What's next?
+            <small>28 May 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

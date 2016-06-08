@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Postmortem of today's 8min indexing downtime &middot; Hyde
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="post">
+  <h1 class="post-title">Postmortem of today's 8min indexing downtime</h1>
+  <span class="post-date">29 Jan 2014</span>
+  <p>Today (Jan 29) at 9:30pm UTC, our service experienced an 8 minute partial
+outage during which we have rejected many write operations sent to the
+indexing API (exactly 2841 calls). We call it “partial” as all search queries
+have been honored without any problem. For end-users, there was no visible
+problem.</p>
+
+<p>Transparency is in our DNA: this outage is visible on our status page
+(<a href="http://status.algolia.com">status.algolia.com</a>) but we also wanted to share
+with you all the details of the outage and more importantly the details of our
+response.</p>
+
+<h2 id="the-alert">The alert</h2>
+
+<p>This morning I fixed a rare bug in indexing complex hierarchical objects. This
+fix successfully passed all the tests after development. We have 6000+ unit
+tests and asserts, and 200+ non regression tests. So I felt confident when I
+entered the deploy password in our automatic deployment script.</p>
+
+<p>A few seconds after, I started to receive a lot of text messages on my
+cellphone.</p>
+
+<p>We developed several embedded probes to detect all kinds of problems and alert
+us using Twilio and Hipchat APIs. They detect for example:</p>
+
+<ul>
+  <li>a process that restart</li>
+  <li>an unusually long query</li>
+  <li>a write failure</li>
+  <li>a low memory warning</li>
+  <li>a low disk-free warning</li>
+  <li>etc.</li>
+</ul>
+
+<p>In case embedded probes can’t run, other external probes run once a minute
+from an independent datacenter (Google App Engine). These also automatically
+update our status page when a problem impacts the quality of service.</p>
+
+<p>Our indexing processes were crash looping. I immediately decided to rollback
+to the previous version.</p>
+
+<h2 id="the-rollback">The rollback</h2>
+
+<p>Until today, our standard rollback process was to revert the commit, launch
+the recompile and finally deploy. This is long, very long when your know that
+you have an outage in production. The rollback took about 5 minutes in total
+out of the 8 minutes.</p>
+
+<h2 id="how-we-will-avoid-this-situation-in-the-future">How we will avoid this situation in the future</h2>
+
+<p>Even if the outage was on a relatively small period of time, we still believe
+it was too long. To make sure this will not happen again:</p>
+
+<ul>
+  <li>We have added a very fast rollback process in the way of a simple press button like the one we use to deploy. An automatic deploy is nice, but an automatic rollback is actually more critical when needed!</li>
+  <li>Starting now, we will deploy new versions of the service on clusters hosting community projects such as Hacker News Search or Twitter handle search, before pushing the update on clusters hosting paying customers. Having real traffic is key to detect some types of errors. Unit-tests &amp; non-regression tests cannot catch everything.</li>
+  <li>And of course we added non-regression tests for this specific error.</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Having all these probes in our infrastructure was key to detect today’s
+problem and react quickly. In real conditions, it proved not to be enough. In
+a few hours we have implemented a much better way to handle this kind of
+situation. The quality of our service is our top priority. Thank you for your
+support!</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas/">
+            Welcome Texas!
+            <small>15 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid/">
+            When Solid State Drives are not that solid
+            <small>15 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next/">
+            We just raised our Series A. What's next?
+            <small>28 May 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

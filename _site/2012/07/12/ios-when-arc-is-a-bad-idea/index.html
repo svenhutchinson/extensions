@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      iOS: When Automatic Reference Counting is a Bad Idea &middot; Hyde
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="post">
+  <h1 class="post-title">iOS: When Automatic Reference Counting is a Bad Idea</h1>
+  <span class="post-date">12 Jul 2012</span>
+  <p>I started developing for iOS in 2009 by learning about the Objective-C
+language. At that time ARC (Automatic Reference Counting) was not yet
+available and developers were responsible for alloc/release/autorelease. I
+found it pretty straightforward as it was very similar to C++ and the
+resulting code was very self-explanatory.</p>
+
+<p>When ARC was released at the end of 2011 it made a great impression on me and
+looked like the perfect feature for any programmer coming from the Java world
+who was not familiar with memory management. I started using ARC and
+discovered a major flaw that completely changed my mind. Here is an example :</p>
+
+<p>[Edit 28-Jan-2013] This post describes a bug in ARC that was fixed in Xcode
+4.4.[/Edit]</p>
+
+<p>Let’s start with an example in C++, the sample contains a constructor that
+allocates two vectors, a destructor that destroys them and a compute method
+that just performs a swap between the two vectors. This code is perfectly
+valid and a swap is the perfect operation when you have two sets of data to
+maintain because this is very efficient (just two pointers copy, no data
+copy).</p>
+
+<pre><code>class Example {
+public:
+  Example() {
+    nextPositions = new std::vector&lt;int&gt;();
+    currentPositions = new std::vector&lt;int&gt;();
+  }
+  ~Example() {
+    delete nextPositions;
+    delete currentPositions;
+  }
+
+  void compute() {
+    // some code here
+    std::swap(nextPositions, currentPositions);
+    // some other code here
+  }
+
+private:
+  std::vector&lt;int&gt;* nextPositions;
+  std::vector&lt;int&gt;* currentPositions;
+};
+</code></pre>
+
+<p>Before ARC the objective-C code was very similar and perfectly valid:</p>
+
+<pre><code>// headers
+@interface Example : NSObject {
+  NSMutableArray* nextPositions;
+  NSMutableArray* currentPositions;
+}
+-(void) compute;
+@end
+
+// implementation
+@implementation Example
+-(id) init {
+  self = [super init];
+  if (!self)
+    return nil;
+  nextPositions = [[NSMutableArray alloc] init];
+  currentPositions = [[NSMutableArray alloc] init];
+  return self;
+}
+
+-(void) dealloc {
+  [super dealloc];
+  [nextPositions release];
+  [currentPositions release];
+}
+
+-(void) compute
+{
+  // some processing stuff here
+  NSMutableArray* tmp = nextPositions;
+  nextPositions = currentPositions;
+  currentPositions = tmp;
+  // some processing stuff here
+}
+@end
+</code></pre>
+
+<p>The semantics are very clear, it is exactly the same as in C++.</p>
+
+<p>So when you start using ARC you tend to do exactly the same thing with less
+code, and you just delete the dealloc method:</p>
+
+<pre><code>// headers
+@interface Example : NSObject {
+  NSMutableArray* nextPositions;
+  NSMutableArray* currentPositions;
+}
+-(void) compute;
+@end
+
+// implementation
+@implementation Example
+-(id) init {
+  self = [super init];
+  if (!self)
+    return nil;
+  nextPositions = [[NSMutableArray alloc] init];
+  currentPositions = [[NSMutableArray alloc] init];
+  return self;
+}
+
+-(void) compute {
+  // some processing stuff here
+  NSMutableArray* tmp = nextPositions;
+  nextPositions = currentPositions;
+  // Wrong, at that step this is too late! nextPositions was deallocated
+  currentPositions = tmp;
+  // some processing stuff here
+}
+@end
+</code></pre>
+
+<p>The error does not come from a missing strong attribute, because instance
+variables are strong by default. The problem is that ARC does not generate
+code in the variable assignation. You should explicitely add properties and
+use “self.variableName” notation like in the next example. I would encourage
+ARC designers to read this excellent article by Joel Spolsky <a href="http://www.joelonsoftware.com/articles/Wrong.html">“Making Wrong
+Code Look Wrong”</a>. This ARC
+usage is a perfect example of wrong code that looks perfect but leads me to
+the conclusion that ARC is not trustworthy.</p>
+
+<p>Here is the correct version:</p>
+
+<pre><code>// headers
+@interface Example : NSObject {
+  NSMutableArray* nextPositions;
+  NSMutableArray* currentPositions;
+}
+-(void) compute;
+@property (strong, nonatomic) NSMutableArray* nextPositions;
+@property (strong, nonatomic) NSMutableArray* currentPositions;
+@end
+
+// implementation
+@implementation Example
+-(id) init {
+  self = [super init];
+  if (!self)
+    return nil;
+  nextPositions = [[NSMutableArray alloc] init];
+  currentPositions = [[NSMutableArray alloc] init];
+  return self;
+}
+
+-(void) compute {
+  // some processing stuff here
+  NSMutableArray* tmp = self.nextPositions;
+  self.nextPositions = self.currentPositions;
+  self.currentPositions = tmp;
+  // some processing stuff here
+}
+@synthesize nextPositions;
+@synthesize currentPositions;
+@end
+</code></pre>
+
+<p>I am surprised Apple hasn’t corrected that flaw yet. This is a major issue as
+ARC does not generate code for variable affectation like it does for
+properties (if one of you reads this post and has a complete explanation,
+please tell me!):</p>
+
+<ul>
+  <li>Is it because of a performance issue? I would prefer to have no ARC at all than to see such a behavior.</li>
+  <li>Is this case too complex to be handled? The problem is it undermines ARC’s utility and might get stuck at the prototype stage.</li>
+</ul>
+
+<p>To me, this is a perfect example of a technology driven product. The engineers
+know their product so well that they forget to step back and look at it with a
+fresh eye to analyse the full complexity of their system.</p>
+
+<p>And that leaves me with two important lessons we’ll try to apply to our
+products:</p>
+
+<ul>
+  <li>Always organize user tests, even when your users are developers themselves!</li>
+  <li>Always keep a fresh eye when trying to simplify a product (this one may prove particularly difficult!)</li>
+</ul>
+
+<p>I hope you’ll tell us when we will (inevitably) break these rules!</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas/">
+            Welcome Texas!
+            <small>15 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid/">
+            When Solid State Drives are not that solid
+            <small>15 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next/">
+            We just raised our Series A. What's next?
+            <small>28 May 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

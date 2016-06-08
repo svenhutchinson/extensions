@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Hyde &middot; A Jekyll theme, with instant search
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2012/07/05/why-develop-our-own-unicode-library/">
+        Why develop our own Unicode Library? - The Algolia Blog
+      </a>
+    </h1>
+
+    <span class="post-date">05 Jul 2012</span>
+
+    <p>At one time or another, most developers come across bugs or problems with
+Unicode (about 3,720,000 results on google for the request <a href="http://www.google.com/search?q=unicode+bug+developer">unicode bug
+developer</a> at the time
+of this writing). Let me tell you about my experience in the last decade and
+why we have now implemented our own unicode Library to produce exactly the
+same result across devices/languages.</p>
+
+<p>I first started to use Unicode in 2004 when I was developing a Text Mining
+software specialized on information extraction. This software was fully
+implemented in C++ and I used <a href="http://www.google.com/url?q=ht
+tp%3A%2F%2Fwww-01.ibm.com%2Fsoftware%2Fglobalization%2Ficu%2F&amp;sa=D&amp;sntz=1&amp;usg=
+AFQjCNHZa7RaPrYgI3i22oL77_ZBjvF4vw">IBM ICU library</a> to be Unicode compliant (all strings were
+stored in UTF16). I also used some normalization functions of ICU based on
+decomposition, but I did not notice any major problem at that time. I started
+to understand the dark side of Unicode later when I used it in other languages
+like Java, Python, and later in Objective-C. My first surprise was when I
+understood that a simple isAlpha(unicodechar c) method can return different
+results!</p>
+
+<p>I started to look in details at the standard and downloaded UnicodeData.txt
+(the file that contains most of the information about the standard, you can
+grab the latest version
+<a href="ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt)">here</a>.</p>
+
+<p>This file contains descriptions of all Unicode characters. Third column
+represents “General Category” and is documented as:</p>
+
+<h2 id="general-categories"><strong>General Categories</strong></h2>
+
+<p>The values in this field are abbreviations for the following. Some of the
+values are normative, and some are informative. For more information, see the
+Unicode Standard.</p>
+
+<h4 id="normative-categories">Normative Categories</h4>
+
+<ul>
+  <li><strong>Lu</strong>: Letter, Uppercase</li>
+  <li><strong>Ll</strong>: Letter, Lowercase</li>
+  <li><strong>Lt</strong>: Letter, Titlecase</li>
+  <li><strong>Mn</strong>: Mark, Non-Spacing</li>
+  <li><strong>Mc</strong>: Mark, Spacing Combining</li>
+  <li><strong>Me</strong>: Mark, Enclosing</li>
+  <li><strong>Nd</strong>: Number, Decimal Digit</li>
+  <li><strong>Nl</strong>: Number, Letter</li>
+  <li><strong>No</strong>: Number, Other</li>
+  <li><strong>Zs</strong>: Separator, Space</li>
+  <li><strong>Zl</strong>: Separator, Line</li>
+  <li><strong>Zp</strong>: Separator, Paragraph</li>
+  <li><strong>Cc</strong>: Other, Control</li>
+  <li><strong>Cf</strong>: Other, Format</li>
+  <li><strong>Cs</strong>: Other, Surrogate</li>
+  <li><strong>Co</strong>: Other, Private Use</li>
+  <li><strong>Cn</strong>: Other, Not Assigned (no characters in the file have this property)</li>
+</ul>
+
+<h4 id="informative-categories">Informative Categories</h4>
+
+<ul>
+  <li><strong>Lm</strong>: Letter, Modifier</li>
+  <li><strong>Lo</strong>: Letter, Other</li>
+  <li><strong>Pc</strong>: Punctuation, Connector</li>
+  <li><strong>Pd</strong>: Punctuation, Dash</li>
+  <li><strong>Ps</strong>: Punctuation, Open</li>
+  <li><strong>Pe</strong>: Punctuation, Close</li>
+  <li><strong>Pi</strong>: Punctuation, Initial quote (may behave like Ps or Pe depending on usage)</li>
+  <li><strong>Pf</strong>: Punctuation, Final quote (may behave like Ps or Pe depending on usage)</li>
+  <li><strong>Po</strong>: Punctuation, Other</li>
+  <li><strong>Sm</strong>: Symbol, Math</li>
+  <li><strong>Sc</strong>: Symbol, Currency</li>
+  <li><strong>Sk</strong>: Symbol, Modifier</li>
+  <li><strong>So</strong>: Symbol, Other</li>
+</ul>
+
+<p>As you can see there is quite a lot of categories, some of them are very easy
+to understand like “Lu” (Letter, uppercase) and “Ll” (Letter, lowercase) but
+some of them are more complex like “Lo” (Letter, other)  and “No” (Number,
+other), and this is exactly where the first problem begins.</p>
+
+<p>Let’s take the unicode character U+00BD(½) as an example. It is quite common
+to describe spare parts and is defined as “No”… except that some unicode
+libraries consider that this is not a number and return false to
+isNumber(unicodeChar) method (e.g., Objective-C).</p>
+
+<p>In fact the two most used methods, isAlpha(unicodeChar) and
+isNumber(unicodeChar), are not directly defined by the Unicode standard and
+are subject to interpretation.</p>
+
+<p>The consequence is that results are not the same across devices/languages! In
+our case this is a problem because our compiled index is portable, and we want
+to have exactly the same results on different devices/languages.</p>
+
+<p>However, this is not the only problem! Unicode normalization is also a tricky
+topic. The Unicode standard defines a way to decompose characters (Characters
+decomposition mapping), for example U+00E0(à) which is decomposed as U+0061(a)
++ U+0300( ̀). But most of the time you do not want a decomposition but a
+normalization: get the most basic form of a string (lowercase without accents,
+marks, …). This is key to be able to search and compare words. For example,
+the normalization of the French word “Hétérogénéité” will be normalized as
+“heterogeneite”.</p>
+
+<p>To compute this normalized form, most people compute the lowercase form of a
+word (well defined by the Unicode standard), then compute the decomposed form
+and finally remove all the diacritics. However, this is not enough.
+Normalization can not always be reduced to just a matter of removing marks.
+For example the standard German letter ß is widely used and
+replaced/understood as “ss” (you can enter ß in your favorite web search
+engine and you will discover that it also search for “ss”). The problem is
+that there is no decomposition for “ß” in the Unicode standard because this
+letter is not a letter with marks.</p>
+
+<p>To solve that problem, we need to look in the <a href="http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/character_fallback_substitutions.html">Character Fallback Substitution
+table</a> that is not
+part of most of Unicode library implementations. This substitution table
+defines that “ß” can be replaced by “ss,”. There are plenty of other examples;
+For instance, 0153(œ) and 00E6(æ), letters of the French language, can be
+replaced by “oe” and “ae”.</p>
+
+<p>At the end, this led us to implement our own Unicode library to ensure that
+our isAlpha(unicodechar) and isNumber(unicodechar) methods have a unique
+behavior on all devices/languages and to implement a normalize(unicodestring)
+method that contains character fallback substitution table. By the way our
+implementation of normalization is far more efficient because we implemented
+it in one step instead of three (lowercase + decomposition + diacritics
+removal).</p>
+
+<p>I hope you found this post useful and gained a better understanding of the
+Unicode standard and the limits of standard Unicode libraries. Feel free to
+contribute comments or ask for precisions.</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2012/07/03/great-discussions-at-leweb12-london/">
+        Great discussions at LeWeb'12 London
+      </a>
+    </h1>
+
+    <span class="post-date">03 Jul 2012</span>
+
+    <p>On June 19 &amp; 20th, I had the chance to participate to <a href="http://london.leweb.co/">LeWeb 2012
+London</a> edition. This year theme was “Faster than
+Real Time” and we had an impressive list of speakers! But the true value of
+LeWeb is elsewhere: It’s in the 1283 people from 52 countries who were present
+and with whom you could network!</p>
+
+<p>They chose <a href="http://match.presdo.com/">Presdo Match</a> to help people meet and
+honestly… this tool would benefit from some improvements, especially a
+mobile version! Still, I was able to find no fewer than 100 participants
+having the “mobile” keyword in their profile and, from there, organize a
+handful of meetings. Thanks to all of you who accepted to meet me or whom I
+met unplanned, with a special thanks to <a href="http://hello24.com/">Paul Ardeleanu</a>,
+<a href="http://www.linkedin.com/in/goras">Gora Sudindranath</a>, <a href="http://twitter.com/lindseycholmes">Lindsey C.
+Holmes</a>, <a href="https://twitter.com/#!/portart">Marius
+Rostad</a>, <a href="https://twitter.com/#!/kevinmcdonagh">Kevin
+McDonagh</a> and <a href="http://www.alexdelivet.com/">Alexandre
+Delivet</a> for their precious feedbacks about
+Algolia.</p>
+
+<p>[caption id=”attachment_82” align=”alignright” width=”180”]<a href="https://blog.algolia.com/wp-
+content/uploads/2012/07/citiessuggest-leweb.png"><img src="/algoliasearch-jekyll-hyde/assets/citiessuggest-leweb-180x300.png" alt="Cities Suggest
+Demo" /></a> Cities Suggest demo @
+LeWeb[/caption]</p>
+
+<p>I had the opportunity to do the very first demonstrations of our instant
+suggest lib, and that was both exhilarating and frustrating! We chose to
+develop a small proof of concept suggesting city names from anywhere in the
+world. Here’s what I learned:</p>
+
+<ul>
+  <li>A demo is better than many words! Even if most people knew what I meant by “google instant suggest”, the demo was key in clarifying our offering.</li>
+  <li>Even if we chose cities because it was easy to demonstrate (thanks to the geonames database), it can be interesting in itself!</li>
+  <li>100ms seemed a pretty fast response time in our initial testing, but it’s actually way too slow to have a smooth user experience.</li>
+</ul>
+
+<p>Over all that was a very good experience, and I came back with a few
+improvements to implement (most coming from my own frustration showing the
+demo while the feedback was actually very positive!)</p>
+
+<p>The most important piece of feedback was about the perceived sluggishness of
+the app. We decided to implement an asynchronous version of the lib. Beware,
+it actually comes with a drawback for our users; It’s significantly more
+difficult to integrate. But it did not take long for us to decide it was the
+way to go, since the perception of speed is so natural that the benefit far
+outweighs the longer integration code. We’ll now work on simplifying it!</p>
+
+<p>We’ll soon do a post about this demo. In the meantime, stay tuned!</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2012/07/02/lets-start-the-adventure/">
+        Let's start the adventure
+      </a>
+    </h1>
+
+    <span class="post-date">02 Jul 2012</span>
+
+    <p>Welcome to The Algolia Blog! It’s always difficult to write the first post of
+a blog! What should I talk about? The company, the founders, the business, the
+culture? And all that knowing that virtually nobody will read except diggers
+in a few years (hopefully)!</p>
+
+<p>Let’s concentrate instead on what we’ll be blogging about. Company news
+obviously, but not only. I expect we’ll write quite a few posts about
+technology, algorithms, entrepreneurship, marketing, and whatever else we’ll
+want to share with you :)</p>
+
+<p>And most important, feel free to participate in comments or by contacting us
+directly. We appreciate your feedback!</p>
+
+<p>Welcome to the Algolia blog!</p>
+
+
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <span class="pagination-item older">Older</span>
+  
+  
+    
+      <a class="pagination-item newer" href="/algoliasearch-jekyll-hyde/page15">Newer</a>
+    
+  
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      C/C++ is still the only way to have high performance on Mobile &middot; Hyde
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="post">
+  <h1 class="post-title">C/C++ is still the only way to have high performance on Mobile</h1>
+  <span class="post-date">24 Jul 2012</span>
+  <p>When it comes to programming languages and performance, you can read all and
+its opposite on the web. It’s definitely a very controversial topic!</p>
+
+<p><strong>[Edit 15-Nov-2012]</strong> I had questions on <a href="http://redd.it/136hny">reddit</a> about the data-structures and algorithms we used. We develop an <a href="http://www.algolia.com">embedded search engine</a> for mobile, and tests were done on our own data-structure that is far more efficient than SQLite or other platform options for this use-case. <strong>[/Edit]</strong></p>
+
+<p>For Algolia the story started when researching an instant suggest algorithm. I
+used Java for two reasons:</p>
+
+<ul>
+  <li><strong>Main reason</strong>: our first client was using Java on Google App Engine</li>
+  <li><strong>Secondary</strong>: at that stage, I was doing a lots of refactoring and Eclipse is very efficient for these tasks</li>
+</ul>
+
+<p>Once our algorithm was designed, I started to optimize performance on a
+desktop computer (core I7 950). For this, I indexed all titles of the English
+version of Wikipedia (4 millions titles). I optimized the Java code mainly by
+reducing the number of allocations. All instant suggest queries were then
+faster than 10ms.</p>
+
+<p>As we planned from the begining to support iOS and Android, I needed to
+optimize for high performance on mobile. I then ported the Java code to
+Android and ended up with a few modifications (we needed to support old
+Android versions which have not a full support of Java SDK).</p>
+
+<p>In order to test performance, I created a small “demo” app: CitiesSuggest, a
+mobile application based on Geonames database to look for a city name. I
+filled the index with all places with a known population. In the end, the
+database contained 270 000 city names.</p>
+
+<p>As could be expected, the resulting application was quite sluggish on my
+Galaxy S2. The worst queries could take more than one second of CPU.</p>
+
+<p>I then applied all possible methods described in the <a href="http://developer.android.com/guide/practices/performance.html">Anroid
+documentation</a>
+and was able to reduce the response time to 700ms for the longest queries.
+This is better but still gives end-users an impression of sluggishness!
+Fortunately, common queries worked well enough to present our very first demos
+at <a href="http://blog.algolia.com/great-discussions-at-leweb12-london/">LeWeb’12 London</a>. I was subsequently able to improve the user experience a lot
+by adding asynchronous support. At that point, we decided to start
+implementing the objective-C version for iOS.</p>
+
+<p>I started a new implementation fully done in objective-C from scratch without
+any premature optimization. I then developed the same CitiesSuggest
+application for iOS. I first got stuck with some basic UI stuff. For example I
+needed to reimplement an UILabel that supports highlighting! The standard
+UILabel does no support this, and other implementations like Three20 just have
+too many dependencies (you can download AlgoliaUILabel on
+<a href="http://github.com/algolia/UILabel">github</a>, I released  the code under Apache
+licence). Once the UI was ready, I could see the actual performance was
+catastrophic! Instant suggest queries were between 200ms and 10 seconds on an
+iPhone 4S!</p>
+
+<p>After profilling, I discovered that 95% of the time was spent in Objective-C
+messaging and ARC. Actually, I have millions of calls to very small methods
+with 1 or 2 lines of code, and I found a very good explanation in the internal
+of objc_msgSend (mainly on <a href="http://www.mikeash.com/pyblog/friday-qa-2009-03-20-objective-c-messaging.html)">mikeask.com</a>. There is in fact a hash table
+lookup behind objc_msgSend! This explains most of my performance problems.</p>
+
+<p>To fix these problems, I started to replace all this low level objective-C
+implementation by a C++ implementation with inlined methods. Eventually, I
+finished with Objective-C code for high level classes while all the core was
+C++.</p>
+
+<p>This change has dramatically improved performance with instant-search queries
+between 2ms and 90ms on a iPhone 4S. I struggled to find complex enough
+queries to reach 90ms! This resulted in a very nice user experience with a
+remarkably slick demo :)</p>
+
+<p>After this succes, I decided to use the same C++ code on Android with Android
+NDK. With this approach I reduced our maximum query time from 700ms to 80ms on
+a Galaxy S2. But I was really disappointed by the Android display, as I did
+not reach the same level of interactive experience that I had with iOS. The
+display of results stays slower on Android, probably because I did not spend
+enough time to optimize this part.</p>
+
+<p>In the end, I lost a lot of time with Java and Objective-C trying to optimize
+code when the real solution was to use C/C++. I am fully convinced that it is
+just not possible to reach the same speed with Objective-C only or Java only.</p>
+
+<p>And there is also another good property with C++ code: Blackberry supports
+C++, and there is large chance that Windows Phone 8 SDK will support C++ when
+released in a few weeks. Actually, I do not see any other alternative than
+C/C++ when you are looking for performance on mobile devices, which is our
+case :)</p>
+
+<p>I hope this article will prevent you from spending as much time on
+Java/Objective-C optimizations as I did.</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas/">
+            Welcome Texas!
+            <small>15 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid/">
+            When Solid State Drives are not that solid
+            <small>15 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next/">
+            We just raised our Series A. What's next?
+            <small>28 May 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

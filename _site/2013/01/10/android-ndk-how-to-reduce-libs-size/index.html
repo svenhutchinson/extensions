@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Android NDK: How to Reduce Binaries Size - The Algolia Blog &middot; Hyde
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="post">
+  <h1 class="post-title">Android NDK: How to Reduce Binaries Size - The Algolia Blog</h1>
+  <span class="post-date">10 Jan 2013</span>
+  <p>When we started Algolia Development for Android, binary size optimization was
+not one of our main concerns. In fact we even started to develop in JAVA
+before switching to C/C++ for <a href="http://blog.algolia.com/need-performance-on-mobile-use-c-cpp/">reasons of performance</a>.</p>
+
+<p>We were reminded of the importance of binary size by <a href="http://android.cyrilmottier.com">Cyril
+Mottier</a> who informed us that it would be
+difficult to integrate our lib in <a href="https://play.google.com/store/apps/details?id=com.cyrilmottier.android.avelov">AVelov</a> Android Application because its
+size. AVelov is 638KB and Algolia was 850KB, which would mean that AVelov
+would more than double in size with Algolia Search embedded.</p>
+
+<p>To address this problem we managed to reduce Algolia binary size from 850KB to
+307KB. In this post we share how we did it.</p>
+
+<h3 id="do-not-use-exceptions-and-rtti">Do not use Exceptions and RTTI</h3>
+
+<p>We actually do not use exceptions in our native lib, but for the sake of
+completeness, I’ll cover this point too.</p>
+
+<p>C++ exceptions and RTTI are disabled by default but you can enable them via
+<em>APP_CPPFLAGS</em> in your <em>Application.mk</em> file and use a compatible STL, for
+example:</p>
+
+<pre><code>APP_CPPFLAGS += -fexceptions -frtti
+APP_STL := stlport_shared
+</code></pre>
+
+<p>Whilst using exceptions and RTTI can help you to use existing code, it will
+obviously increase your binary size. If you have a way to remove them, go for
+it! Actually, there’s another reason to avoid using C++ exceptions: their
+support is still far from perfect. For example if was impossible for us to
+catch a C++ exception and launch a Java exception in JNI. The following code
+results in a crash (will probably be fixed in a future release of the Android
+NDK toolchain):</p>
+
+<pre><code>try {
+    ...
+} catch (std::exception&amp; e) {
+    env-&gt;ThrowNew(env-&gt;FindClass("java/lang/Exception"), "Error occured");
+}
+</code></pre>
+
+<h3 id="do-not-use-iostream">Do not use iostream</h3>
+
+<p>When starting to investigate our library size following Cyril’s feedback, we
+discovered that Algolia binaries had vastly increased in size since our last
+release (from 850KB to 1.35MB)! We first suspected the Android NDK toolchain
+since we upgraded it and tested different toolchains, but we only observed
+minor changes.</p>
+
+<p>By dichotomy search in our commits, we discovered that a single line of code
+was responsible for the inflation:</p>
+
+<pre><code>std::cerr &lt;&lt; .... &lt;&lt; std::endl;
+</code></pre>
+
+<p>As incredible as it may sound, using iostream increases a lot the binary size.
+Our tests shown that it adds a least 300KB per architecture! You must be very
+careful with iostream and prefer to use __android_log_print method:</p>
+
+<pre><code>#include &lt;android/log.h&gt;
+#define APPNAME "MyApp"
+
+__android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "The value of 1 + 1 is %d", 1+1);
+</code></pre>
+
+<p>Make sure you also link against the logging library, in your Android.mk file:</p>
+
+<pre><code>LOCAL_LDLIBS := -llog
+</code></pre>
+
+<h3 id="use--fvisibilityhidden">Use -fvisibility=hidden</h3>
+
+<p>An efficient way to reduce binary size is to use the <a href="http://gcc.gnu.org/wiki/Visibility">visibility
+feature</a> of gcc. This feature lets you
+control which functions will be exported in the symbols table. Hopefully, JNI
+comes with a <em>JNIEXPORT</em> macro that flags JNI functions as public. You just
+have to check that all functions used by JNI are prefixed by JNIEXPORT, like
+this one:</p>
+
+<pre><code>JNIEXPORT void JNICALL Java_ClassName_MethodName
+(JNIEnv *env, jobject obj, jstring javaString)
+</code></pre>
+
+<p>Then you have just to add <em>-fvisibility=hidden</em> for C and C++ files in
+<em>Android.mk</em> file:</p>
+
+<pre><code>LOCAL_CPPFLAGS += -fvisibility=hidden
+LOCAL_CFLAGS += -fvisibility=hidden
+</code></pre>
+
+<p>In our case the binaries were down to 809KB (-5%) but remember the gains may
+be very different for your project. Make your own measures!</p>
+
+<h3 id="discard-unused-functions-with-gc-sections">Discard Unused Functions with gc-sections</h3>
+
+<p>Another interesting approach is to remove unused code in the binary. It can
+drastically reduce its size if for example part of your code is only used for
+tests.</p>
+
+<p>To enable this feature, you just have to change the C and C++ compilation
+flags and the linker flags in <em>Android.mk</em>:</p>
+
+<pre><code>LOCAL_CPPFLAGS += -ffunction-sections -fdata-sections
+LOCAL_CFLAGS += -ffunction-sections -fdata-sections 
+LOCAL_LDFLAGS += -Wl,--gc-sections
+</code></pre>
+
+<p>Of course you can combine this feature with the visibility one:</p>
+
+<pre><code>LOCAL_CPPFLAGS += -ffunction-sections -fdata-sections -fvisibility=hidden
+LOCAL_CPPFLAGS += -ffunction-sections -fdata-sections -fvisibility=hidden
+LOCAL_CFLAGS += -ffunction-sections -fdata-sections  LOCAL_LDFLAGS += -Wl,--gc-sections
+</code></pre>
+
+<p>This optim only got us a 1% gain, but once combined with the previous
+visibility one, we were down to 691KB (-18.7%).</p>
+
+<h3 id="remove-duplicated-code">Remove Duplicated Code</h3>
+
+<p>You can remove duplicated code with the –icf=safe option of the linker. Be
+careful, this option will probably remove your code inlining, you must check
+that this flag does not impact performance.</p>
+
+<p>This option is not yet available on the mips architecture so you need to add
+an architecture check in <em>Android.mk</em>:</p>
+
+<pre><code>ifneq ($(TARGET_ARCH),mips)
+  LOCAL_LDFLAGS += -Wl,--icf=safe
+endif
+</code></pre>
+
+<p>And if you want to combine this option with gc-sections:</p>
+
+<pre><code>ifeq ($(TARGET_ARCH),mips)
+  LOCAL_LDFLAGS += -Wl,--gc-sections
+else
+  LOCAL_LDFLAGS += -Wl,--gc-sections,--icf=safe
+endif
+</code></pre>
+
+<p>We actually only obtained a 0.8% gain in size with this one. All previous
+optimizations combined, we were now at 687KB (-19.2%).</p>
+
+<h3 id="change-the-default-flags-of-the-toolchain">Change the Default Flags of the Toolchain</h3>
+
+<p>If you want to go even further, you can change the default compilation flags
+of the toolchain. Flags are not identical accross architectures, for example:</p>
+
+<ul>
+  <li>inline-limit is set to 64 for arm and set to 300 for x86 and mips</li>
+  <li>Optimization flag is set to -Os (optimize for size) for arm and set to -O2 (optimize for performance) for x86 and mips</li>
+</ul>
+
+<p>As arm is used by the large majority of devices, we have applied arm settings
+for other architectures. Here is the patch we applied on the toolchain
+(version r8d):</p>
+
+<pre><code>--- android-ndk-r8d/toolchains/mipsel-linux-android-4.6/setup.mk
++++ android-ndk-r8d.new/toolchains/mipsel-linux-android-4.6/setup.mk
+@@ -41,12 +41,12 @@
+ TARGET_C_INCLUDES := 
+     $(SYSROOT)/usr/include
+
+-TARGET_mips_release_CFLAGS := -O2 
++TARGET_mips_release_CFLAGS := -Os 
+                               -g 
+                               -DNDEBUG 
+                               -fomit-frame-pointer 
+                               -funswitch-loops     
+-                              -finline-limit=300
++                              -finline-limit=64
+
+ TARGET_mips_debug_CFLAGS := -O0 
+                             -g 
+--- android-ndk-r8d/toolchains/x86-4.6/setup.mk
++++ android-ndk-r8d.new/toolchains/x86-4.6/setup.mk
+@@ -39,13 +39,13 @@
+
+ TARGET_CFLAGS += -fstack-protector
+
+-TARGET_x86_release_CFLAGS := -O2 
++TARGET_x86_release_CFLAGS := -Os 
+                              -g 
+                              -DNDEBUG 
+                              -fomit-frame-pointer 
+                              -fstrict-aliasing    
+                              -funswitch-loops     
+-                             -finline-limit=300
++                             -finline-limit=64
+
+ # When building for debug, compile everything as x86.
+ TARGET_x86_debug_CFLAGS := $(TARGET_x86_release_CFLAGS)
+</code></pre>
+
+<p>We were good for a 8.5% gain with these new flags. Once combined with previous
+optimizations, we were now at 613KB (-27.9%).</p>
+
+<h3 id="limit-the-number-of-architectures">Limit the Number of Architectures</h3>
+
+<p>Our final suggestion is to limit the number of architectures. Supporting
+armeabi-v7a is mandory for performance if you have a lot of floating point
+computation, but armeabi will provide a similar result if you do not need a
+FPU. As for mips processors… well they just are not in use on the market
+today.</p>
+
+<p>And if binary size is really important to you, you can just limit your support
+to armeabi and x86 architectures in <em>Application.mk</em>:</p>
+
+<pre><code>APP_ABI := armeabi x86
+</code></pre>
+
+<p>Obviously, this optim was the killer one. Dropping two out of four
+architectures halved the binaries size. Overall we obtained a size of 307KB, a
+64% gain from the initial 850KB (not counting the bump at 1.35MB due to
+iostream).</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>I hope this post will help you to reduce the size of your native libraries on
+Android since default flags are far from optimal. Don’t expect to obtain the
+same size reductions, they will highly depend on your specific usage. And if
+you know other methods to reduce binary size, please share in the comments!</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas/">
+            Welcome Texas!
+            <small>15 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid/">
+            When Solid State Drives are not that solid
+            <small>15 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next/">
+            We just raised our Series A. What's next?
+            <small>28 May 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

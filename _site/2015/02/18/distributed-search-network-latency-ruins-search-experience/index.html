@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Don't let network latency ruin the search experience of your international users &middot; Hyde
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="post">
+  <h1 class="post-title">Don't let network latency ruin the search experience of your international users</h1>
+  <span class="post-date">18 Feb 2015</span>
+  <p>At Algolia, we allow developers to provide a unique interactive search
+experience with as-you-type search, instant faceting, mobile geo-search and on
+the fly spell check.</p>
+
+<p>Our Distributed Search Network aims at removing the impact of network latency
+on the speed of search, allowing our customers to offer this instant
+experience to all their end-users, wherever they may be.</p>
+
+<h2 id="every-millisecond-matters">Every millisecond matters</h2>
+
+<p>We are obsessed with speed and we’re not the only ones: Amazon found out that
+100ms in added latency cost them 1% in sales. <a href="http://glinden.blogspot.fr/2006/11/marissa-mayer-at-web-20.html">The lack of responsiveness for
+a search engine can really be damaging for one’s
+business</a>. As
+individuals, we are all spoiled when it comes to our search expectations:
+Google has conditioned the whole planet to expect instant results from
+anywhere around the world.</p>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/user-experience.jpg" alt="user-experience" /></p>
+
+<p>We have the exact same expectations with any online service we use. The thing
+is that for anyone who is not Google, <strong>it is just impossible to meet these
+expectations</strong> because of the network latency due to the physical distance
+between the service backend that hosts the search engine and the location of
+the end-user.</p>
+
+<p>Even with the fastest search engine in the world, it can still take hundreds
+of milliseconds for a search result to reach Sydney from San Francisco. And
+this is without counting the bandwidth limitations of a saturated oversea
+fiber!</p>
+
+<h2 id="how-we-beat-the-speed-of-light">How we beat the speed of light</h2>
+
+<p>Algolia’s Distributed Search Network (DSN) removes the latency from the speed
+equation by <strong>replicating your indices to different regions around the world,
+where your users are</strong>.</p>
+
+<p>Your local search engines are clones synchronized across the world. DSN allows
+you to <strong>distribute your search among 12 locations</strong> including the US,
+Australia, Brazil, Canada, France, Germany, Hong Kong, India, Japan, Russia,
+and Singapore. Thanks to our 12 data centers, your search engine can now
+<strong>deliver search results under 50ms in the world’s top markets</strong>, ensuring an
+optimal experience for all your users.</p>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/DSN-b3ce122c790c492c2f2c8ddbabaae464.jpg" alt="DSN-b3ce122c790c492c2f2c8ddbabaae464" /></p>
+
+<h2 id="how-you-activate-dsn">How you activate DSN</h2>
+
+<p>Today, DSN is only accessible to our Starter, Growth, Pro and Enterprise plan
+customers. To activate it, you simply need to go in the <strong>“Region” tab at the
+top of your Algolia dashboard and select “Setup DSN”</strong>.</p>
+
+<p><a href="https://www.algolia.com/dsn/setup"><img src="/algoliasearch-jekyll-hyde/assets/shot.jpg" alt="shot" /></a></p>
+
+<p>You will then be displayed with a map and a selection of your top countries in
+terms of search traffic. Just <strong>select our DSN data centers on the map and see
+how performance in those countries is optimized</strong>.</p>
+
+<p>Algolia will then automatically take care of the distribution and the
+synchronization of your indices around the world. End-users’ queries will be
+automatically routed to the closest data center among those you’ve selected,
+ensuring the best possible experience. Algolia DSN delivers an ultra low
+response time and automatic fail-over on another region if a region is down.</p>
+
+<p><a href="https://www.algolia.com/dsn/setup"><img src="/algoliasearch-jekyll-hyde/assets/dsn-shot.jpg" alt="" /></a></p>
+
+<p>It is that simple!</p>
+
+<p>Today, several services including HackerNews, TeeSpring, Product Hunt and
+Zendesk are leveraging <strong>Algolia DSN to provide faster search to their global
+users</strong>.</p>
+
+<p>Want to find out more about the Algolia experience ?</p>
+
+<p><a href="https://www.algolia.com/features">Discover and try it here</a>!</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas/">
+            Welcome Texas!
+            <small>15 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid/">
+            When Solid State Drives are not that solid
+            <small>15 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next/">
+            We just raised our Series A. What's next?
+            <small>28 May 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

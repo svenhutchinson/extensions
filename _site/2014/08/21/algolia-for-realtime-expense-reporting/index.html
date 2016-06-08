@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How Abacus Leverages Algolia for Realtime Expense Reporting &middot; Hyde
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="post">
+  <h1 class="post-title">How Abacus Leverages Algolia for Realtime Expense Reporting</h1>
+  <span class="post-date">21 Aug 2014</span>
+  <p>When one thinks of expense reporting, speed is far from the first descriptor
+that comes to mind. Companies spend a substantial amount of time tracking
+expenses, while employees linger in paperwork purgatory, wondering when they
+will be reimbursed for their work-related charges. That’s why Abacus has made
+it their mission to simplify expense management so that it occurs in real
+time. Their creative implementation of Algolia helps make it happen.</p>
+
+<p>Abacus is a mobile and desktop application that allows small businesses to
+track and verify expenses on the go. Employees can upload a photo of their
+receipt on the mobile app, and Abacus takes care of the rest. “For each
+expense, we have a lot of data. We have the person who expensed it, the amount
+of the expense, the time, and where it took place. We also have a lot of
+metadata. For example, if you went out to breakfast, we pull in the name of
+the restaurant, the address, the URL of the merchant. There’s tags and
+categories and so on,” explains Ted Power, Co-Founder of Abacus. “And we
+wanted to make all of that searchable.”</p>
+
+<p><a href="https://blog.algolia.com/wp-
+content/uploads/2014/08/Screen-Shot-2014-08-14-at-16.37.25.png"><img src="/algoliasearch-jekyll-hyde/assets/Screen-Shot-2014-08-14-at-16.37.25.png" alt="Abacus Algolia" /></a></p>
+
+<p>To make all of that data accessible and interpretable for a financial manager,
+Abacus turned to our API. “Algolia made it super easy for us to get faceted,
+advanced search options. If you are the finance person at your company, you
+can basically say ‘Show me all of the expenses over $50,’ or ‘Show me all the
+expenses that don’t have a receipt.’ You can look at expenses for one person
+or one category, like travel. You can even pivot off of 8 of these different
+things. Algolia makes it super easy to do,” says Power. This accelerates the
+process of expense verification and approval. “It’s good search. We have tags
+like ‘car rental’ on auto-complete, for example. That’s all Algolia.”</p>
+
+<p>Power adds that a “great implementation experience” was especially beneficial
+for the start up. “It’s the kind of thing that would have taken ages to build
+from scratch.” Co-Founder Joshua Halickman chimed in: “Being able to get up
+and off the ground really quickly was great. In general, I love the speed.
+Crazy fast. Really nice.”</p>
+
+<p><a href="https://blog.algolia.com/wp-
+content/uploads/2014/08/Screen-Shot-2014-08-14-at-16.38.34.png"><img src="/algoliasearch-jekyll-hyde/assets/Screen-Shot-2014-08-14-at-16.38.34.png" alt="Abacus Algolia" /></a></p>
+
+<p>_Images courtesy of Abacus. Learn more _<a href="https://www.abacus.com"><em>on their
+website.</em></a></p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas/">
+            Welcome Texas!
+            <small>15 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid/">
+            When Solid State Drives are not that solid
+            <small>15 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next/">
+            We just raised our Series A. What's next?
+            <small>28 May 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

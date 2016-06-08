@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Hyde &middot; A Jekyll theme, with instant search
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2012/11/30/we-are-seedcamp-finalists/">
+        We are SeedCamp Finalists!
+      </a>
+    </h1>
+
+    <span class="post-date">30 Nov 2012</span>
+
+    <p>Hey, we are thrilled to announce our nomination among the <a href="http://www.rudebaguette.com/2012/11/30/here-are-the-20-startups-selected-for-seedcamp-paris/">Seedcamp Paris
+finalists</a>! The event will take place next week on Monday,
+just before <a href="http://paris.leweb.co/">LeWeb 2012</a> (by the way we’ll be there,
+feel free to ping us if you’d like to meet).</p>
+
+<p><img src="/algoliasearch-jekyll-hyde/assets/seedcamp.png" alt="Seedcamp Finalists" /></p>
+
+<p>From what we learned from all over the place, the day’s mentorship alone is
+worth it. We’re now fully committed to the event preparation! I’ll try to
+write a followup post with our impressions.</p>
+
+<p>[Edit 15-Jan-2013] Here it is with some <a href="http://blog.algolia.com/seedcamp-tips-and-advice-from-a-finalist/">tips and
+advice</a>
+[/Edit]</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2012/11/29/why-autocomplete-in-twitter-on-mobile-sucks/">
+        Why Autocomplete in Twitter Mobile App Sucks
+      </a>
+    </h1>
+
+    <span class="post-date">29 Nov 2012</span>
+
+    <p><a href="https://blog.algolia.com/wp-
+content/uploads/2012/11/ScreenshotTwitter.png"><img src="/algoliasearch-jekyll-hyde/assets/ScreenshotTwitter.png" alt="A better Twitter mobile app experience with Algolia
+Search." /></a>Autocomplete is so
+intuitive,that it seems like it would be easy to implement. However, most
+mobile apps that offer it provide a pretty poor user experience. Let’s look at
+the Twitter mobile app as an example.</p>
+
+<p>Twitter proposes autocompletion when you create a new tweet. The idea is to
+make suggestions after the ‘#’ and ‘@’ characters. It’s actually very nice to
+gain time, especially when you’re tweeting with a small virtual keyboard…
+but it sucks!</p>
+
+<h2 id="avoid-roundtrips-to-server-for-autocompletion">Avoid Roundtrips to Server for Autocompletion</h2>
+
+<p>The first reason is that when you’re on the go, latency is often too high on
+mobile, leading to unusable autocomplete -  except if you’re very slow to
+type. Twitter developers chose to develop this functionality server-side,
+probably with lucene, and to expose it via APIs to their mobile app. That’s
+good for reusability but not so much for usability…</p>
+
+<h2 id="beware-of-the-suggestions-ranking">Beware of the Suggestions Ranking</h2>
+
+<p>The second reason is the ranking is just obscure. Yesterday I sent a tweet to
+@cocoanetics and the screenshot on the left shows the suggestions I got when
+typing “@c”. I would greatly prefer to see Twitter handles before names and it
+would never come to my mind to look for “Marie Cecile” with “@c”!</p>
+
+<h2 id="explain-the-matches">Explain the Matches</h2>
+
+<p>Last but not least there is no visual feedback to show me why the app proposes
+a given user. So ok let me think… the ‘c’ was reffering to “Cécile” in
+“Marie-Cécile”! A bit far fetched!</p>
+
+<p>Now let’s imagine the Twitter mobile app with instant autocompletion even
+offline, intuitive ranking, and visual feedback… Appealing, isn’t it?
+Twitter if you listen, check it up, I’m sure you’ll love <a href="http://www.algolia.com/product/">Algolia
+Search</a>!</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2012/11/21/algolia-search-is-out/">
+        Algolia Search is Out!
+      </a>
+    </h1>
+
+    <span class="post-date">21 Nov 2012</span>
+
+    <p><a href="https://blog.algolia.com/wp-
+content/uploads/2012/11/hand.jpg"><img src="/algoliasearch-jekyll-hyde/assets/hand-203x300.jpg" alt="Now introducing Algolia Search" /></a>After 4 betas and much priceless feedback, we
+are really excited to announce the release of Algolia Search! We launched it
+Monday during the 60th edition of <a href="http://algolia.us5
+.list-manage1.com/track/click?u=4cb821b85eca457f3c8a4df2f&amp;id=c46402f441&amp;e=df9a
+44f8b5">Mobile Monday Paris</a>! If you don’t know what Algolia Search can do for your app, take a
+look at its <a href="http://www.algolia.com/product/">amazing features</a> or just watch
+the <a href="http://www.algolia.com/?video=1">video</a>!</p>
+
+<p>This release also means that you can now integrate it directly into your apps
+and publish them! We wanted to have a simple and clear pricing plan: You can
+have all the benefits of Algolia Search in one Android or iOS App for only
+$590! Think about it, that’s less than the day-rate of a mobile developer in
+many countries. Compare it to the many days you would need to integrate SQL
+Lite FTS for poor features.</p>
+
+<p><a href="http://www.algolia.com/try/">Try Algolia Search for free</a> for 30-days!</p>
+
+<p>We are also very excited to introduce our new
+<a href="http://www.algolia.com">website</a> alongside this launch. You’ll be able to
+access up-to-date documentation easily, to <a href="http://www.algolia.com/try/">try and
+download</a> Algolia Search in a few clicks and, of
+course, to order the product! Check it out and let us know what you think!</p>
+
+<p>Thanks again to our beloved beta testers. Stay tuned for more news!</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2012/11/12/the-ordeal-of-obtaining-an-apple-developer-professional-account/">
+        The Ordeal of Obtaining an Apple Developer Professional Account
+      </a>
+    </h1>
+
+    <span class="post-date">12 Nov 2012</span>
+
+    <p>I recently had a pretty bad user experience when I upgraded my personal Apple
+developer account into a professional one.</p>
+
+<p>To sum things up, we officially created Algolia in early October and I decided
+to convert my personal Apple Developer Account in order to have our
+applications published under the “Algolia” name. This process is not available
+online, but after a quick call, people at Apple sent me the link for the
+process. It is actually pretty simple: They just need you to fill some
+information about your company and to accept their EULA.</p>
+
+<p>Well, actually some of this information was pretty obscure. They needed our
+D-U-N-S® number… Some time ago, Apple was doing the job of checking that
+your company is a real one, but they decided to delegate this job to an
+external company (D&amp;B). It looks like a good idea, doesn’t it? After all this
+is not their core competency and D&amp;B may be doing a really good job for this
+task…</p>
+
+<p>The short answer is no, it wasn’t a good idea at all! I started to check how
+to get this famous D-U-N-S® and after some time to understand the antiquated
+website of D&amp;B, I finally found the contact address. One week later I finally
+received our D-U-N-S®. But that’s not all, Apple then asked us to wait for the
+synchronization between D&amp;B and Apple… which can take up to 14days!</p>
+
+<p>Hey guys, I don’t know if you realize how this is ridiculous to wait 14 days
+for a simple database synchronization! You have just no idea what 14 days
+means for a young startup :)</p>
+
+<p>As you can imagine, I was already quite frustrated… but this was just the
+beginning. After the 14 days, Apple recognized the DUNS number… but a field
+was missing. They didn’t have the legal type of our company. They then asked
+me to contact D&amp;B and a new nightmare started at this level: D&amp;B was saying
+that the entry was correct while Apple was asking me to contact D&amp;B to correct
+the entry! There’s nothing worst than to stand be between two big companies
+who pass the buck to each other.</p>
+
+<p>Hopefully Apple was far smarter than D&amp;B and they finally accepted to bypass
+the missing field if I sent them directly our legal documents.</p>
+
+<p>It is crucial to pay attention to all your users’ problems and solve them as
+soon as possible. They may sometimes look like details to you, but that’s what
+your customers will remember about your company. Of course, we try to apply
+this lesson to ourselves. Feel free to tell us if something’s going wrong!</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2012/10/19/painless-integration-crystal-clear-documentation-please-welcome-algolia-search-beta-4/">
+        Painless integration, crystal clear documentation, please welcome Algolia Search beta 4!
+      </a>
+    </h1>
+
+    <span class="post-date">19 Oct 2012</span>
+
+    <p><a href="https://blog.algolia.com
+/wp-content/uploads/2012/10/CitiesSuggestIPhone5Slide3.png"><img src="/algoliasearch-jekyll-hyde/assets/CitiesSuggestIPhone5Slide3-300x194.png" alt="" /></a></p>
+
+<p>Last month has been truly electrifying! We joined our friends at
+<a href="http://www.yakaz.com/">Yakaz</a> in their office space, we participated in many
+events… and most exciting of all, we spent days and nights reworking the
+product! Today we are really proud to present you the result of this time well
+spent!</p>
+
+<p>I know I told some of you beta3 would be the last, but we could not ignore
+your excellent feedback. So here comes Algolia Search beta4, a true revolution
+(I hope this is not trademarked!) in mobile search!</p>
+
+<p>Here come the major improvements:</p>
+
+<ul>
+  <li>A completely <strong>reworked API</strong> that we just love to use everywhere. The time to fully understand the library has been reduced to nearly nothing thanks to all your feedback. We are proud to have the easiest to use search library ever made!</li>
+  <li>A completely <strong>rewritten documentation</strong> with detailed API and step-by-step tutorials. You should be able to make your first queries in a matter of minutes!</li>
+  <li><strong>Easy highlight</strong> for <strong>multiple fields queries</strong>. A bit cryptic? Stay with me… just imagine a Contact application where you can search for your contact by any field, i.e., name, company, address or even notes. Algolia Search now provides easy-to-use highlighting of any matching words. It is even able to generate a snippet when the text is too long. Check out the tutorials to learn more! Highlighting relevant results just became child’s play!</li>
+  <li>A greatly <strong>improved out-of-the-box relevance</strong>. Our mission is to simplify search: we want the best possible relevance by default so you can forget these long hours of tuning :)</li>
+</ul>
+
+<p>But that’s not all, many smaller improvements were also included in this
+release:</p>
+
+<ul>
+  <li>Support of <strong>advanced queries</strong>. Take again our tutorial contact application, wouldn’t it be great to be able to search by initials? You can now implement this cool feature in a couple of minutes without any headache on relevance tuning.</li>
+  <li>Support for <strong>ARC and no ARC</strong>. In the previous beta we added an iOS version for people that do not use <a href="http://developer.apple.com/library/mac/#releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html">Automatic Reference Counting (ARC)</a>. We now have only one version that supports projects with and without ARC. If you do not use ARC, all objects received from Algolia Search are autoreleased.</li>
+  <li>Support for <strong>user objects backward compatibility</strong>. As the index is also an objects store, you can modify your object members and still read older indexes! It is very easy to implement, just check the tutorials.</li>
+  <li>The release also fixes a few bugs that we discovered during your and our intensive testing.</li>
+</ul>
+
+<p>It would not have been possible without the help of our many beta testers,
+thank you all! Special thanks to <a href="https://twitter.com/krmarkel">Kris</a>,
+<a href="https://twitter.com/dinh_viet_hoa">Hoa</a> and
+<a href="https://twitter.com/sarfata">Thomas</a> whose guidance has been priceless.</p>
+
+<p>So… what’s next? Many things! This time I really believe this is the last
+beta. The final release is just around the corner. Of course, we appreciate
+your feedback nonetheless and always will! You can also expect a new website
+and a few apps in the app store! Who said a contact app?</p>
+
+<p>Stay tuned!</p>
+
+
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/algoliasearch-jekyll-hyde/page14">Older</a>
+  
+  
+    
+      <a class="pagination-item newer" href="/algoliasearch-jekyll-hyde/page12">Newer</a>
+    
+  
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

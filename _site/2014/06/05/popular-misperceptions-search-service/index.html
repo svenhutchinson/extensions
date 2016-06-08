@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Common Misperceptions about Search as a Service &middot; Hyde
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="post">
+  <h1 class="post-title">Common Misperceptions about Search as a Service</h1>
+  <span class="post-date">05 Jun 2014</span>
+  <p>Since the first SaaS IPO by <a href="http://www.salesforce.com/">salesforce.com</a>, the
+SaaS (Software as a Service) model has boomed in the last decade to become a
+global market that is worth billions today. It has taken a long way and a lot
+of evangelisation to get there.</p>
+
+<p>Before <a href="http://www.salesforce.com/">salesforce.com</a> and the other SaaS
+pioneers succeeded at making SaaS a standard model, the IT departments were
+clear: the infrastructure as well as the whole stack had to be behind their
+walls. Since then, mindsets have shifted with the cloud revolution, and you
+can now find several softwares such as Box, Jive or Workday used by a lot of
+Fortune 500 companies and millions of SMBs and startups.</p>
+
+<p>Everything is now going SaaS, even core product components such as internal
+search. This new generation of SaaS products is facing the same misperceptions
+their peers faced years ago. So today, we wanted to dig into the
+misperceptions about search as a service in general.</p>
+
+<h2 id="hosting-your-search-is-way-more-complex-and-expensive-than-you-may-think">Hosting your search is way more complex and expensive than you may think</h2>
+
+<p>Some people prefer to go on-premises as they only pay for the raw resource,
+especially if they choose to run open source software on it. By doing this,
+they believe they can skip the margin layer in the price of the SaaS
+solutions. The problem is that this view highly under-estimates the Total Cost
+of Ownership (TCO) of the final solution.</p>
+
+<p>Here are some reasons why hosting your own search engine can get extremely
+complex &amp; expensive:</p>
+
+<h3 id="hardware-selection">Hardware selection</h3>
+
+<p>A search engine has the particularity of being very IO (indexing), RAM
+(search) and CPU (indexing + search) intensive. If you want to host it
+yourself, you need to make sure your hardware is well sized for the kind of
+search you will be handling. We often see companies that run on under-sized
+EC2 instances to host their search engine are simply unable to add more
+resource-consuming features (faceting, spellchecking, auto-completion).
+Selecting the right instance is more difficult than it seems, and you’ll need
+to review your copy if your dataset, feature list or queries per second (QPS)
+change. Elasticity is not only about adding more servers, but is also about
+being able to add end-users features. Each Algolia cluster is backed by 3
+high-end bare metal servers with at least the following hardware
+configuration:</p>
+
+<ul>
+  <li><strong>CPU</strong>: Intel Xeon (E5-1650v2) 6c/12t 3,5 GHz+/3,9 GHz+</li>
+  <li><strong>RAM</strong>: 128GB DDR3 ECC 1600MHz</li>
+  <li><strong>Disk</strong>:  1.2TB  SSD (via 3 or 4 high-durability SSD disks in RAID-0)</li>
+</ul>
+
+<p>This configuration is key to provide instant and realtime search, answering
+queries in &lt;10ms.</p>
+
+<h3 id="server-configuration">Server configuration</h3>
+
+<p>It is a general perception of many technical people that server configuration
+is easy: after all it should just be a matter of selecting the right EC2
+Amazon Machine Image (AMI) + a puppet/chef configuration, right?
+Unfortunately, this isn’t the case for a search engine. Nearly all AMIs
+contain standard kernel settings that are okay if you have low traffic, but a
+<strong>nightmare</strong> as soon as your traffic gets heavier. We’ve been working with
+search engines for the last 10 years, and we still discover kernel/hardware
+corner cases every month! To give you a taste of some heavyweight issues
+you’ll encounter, check out the following bullet points:</p>
+
+<ul>
+  <li><strong>IO</strong>: Default kernel settings are <strong>NOT</strong> optimized for SSDs!!! For example, Linux’s I/O scheduler is configured to merge some I/Os to reduce the hard-drive latency while seeking the disk sectors: non-sense on SSD and slowing the overall server performance.</li>
+  <li><strong>Memory</strong>: The kernel caches a lot, and that’s cool… most of the time. When you write data on the disk, it will actually be written in the RAM and flushed to disk later by the pdflush process. There are some advanced kernel parameters that allow configuration. vm.dirty_background_ratio is one of them: it configures the maximum percentage of memory that can be “dirty” (in cache) before it is written on the disk.  In other words, if you have 128GB of RAM, and you are using the default value of 10% for dirty_background_ratio, the system will only flush the cache when it reaches 12GB!!!! Flushing such bursts of writes will <strong>slow down your entire system</strong> (even on SSD), killing the speed of all searches &amp; reads. <a href="http://lonesysadmin.net/2013/12/22/better-linux-disk-caching-performance-vm-dirty_ratio/">Read more</a>.</li>
+  <li><strong>Network</strong>:  When calling the listen function in BSD and POSIX sockets, an argument called the backlog is accepted. The backlog argument defines the maximum length of the queue of pending connections for sockfd. If the backlog argument is higher than the value in net.core.somaxconn, it is silently truncated to that value. The default value is 128 which is <strong>way too low</strong>! If a connection request arrives when the queue is full, the client may receive an error with an indication of ECONNREFUSED. <a href="http://engineering.chartbeat.com/2014/01/02/part-1-lessons-learned-tuning-tcp-and-nginx-in-ec2/">Read more</a> &amp; <a href="https://www.youtube.com/watch?v=yL4Q7D4ynxU">even more</a>.</li>
+</ul>
+
+<p>We’ve been working hard to fine-tune such settings and it has allowed us to
+handle today several thousands of search operations per second on one server.</p>
+
+<h3 id="deployment--upgrades-are-complex">Deployment &amp; upgrades are complex</h3>
+
+<p>Upgrading software is one of the main reasons of service outages. It should be
+fully automated and capable of rolling back in case of a deployment failure.
+If you want to have a safe deployment, you would also need a pre-production
+setup that duplicates your production’s setup to validate a new deployment, as
+well as an A/B test with a part of your traffic. Obviously, such setup
+requires additional servers. At Algolia, we have test and pre-production
+servers allowing us to validate every deployment before upgrading your
+production cluster. Each time a feature is added or a bug is fixed on the
+engine, all of our clusters are updated so that everyone benefits from the
+upgrade.</p>
+
+<h3 id="toolbox-vs-features">Toolbox vs features</h3>
+
+<p>On-premises solutions were not built to be exposed as a public service: you
+always need to build extra layers on top of it. And even if these solutions
+have plenty of APIs and low-level features, turning them into end-user
+features requires time, resources and a lot of engineering (more than just a
+full-stack developer!). You may need to re-develop:</p>
+
+<ul>
+  <li><strong>**Auto-completion</strong>:** to suggest best products/queries directly from the search bar while handling security &amp; business filters (not only suggesting popular entries);</li>
+  <li><strong>Instant-Faceting:</strong> to provide realtime faceting refreshed at each keystroke;</li>
+  <li><strong>**Multi-datacenter replication</strong>:** synchronize your data across multiple instances and route the queries to the right datacenter to ensure the best search performance all around the world;</li>
+  <li><strong>Queries analytics</strong>: to get valuable information on what and how people search;</li>
+  <li><strong>Monitoring</strong>: To track in realtime the state of your servers, the storage you use, the available memory, the performance of your service, etc.</li>
+</ul>
+
+<h2 id="on-premises-is-not-as-secure-as-one-might-think">On-premises is not as secure as one might think</h2>
+
+<p>Securing a search engine is very complex and if you chose to do it yourself,
+you will face three main challenges:</p>
+
+<ol>
+  <li> <strong>Controlling who can access your data</strong>: You probably have a model that requires permissions associated with your content. Search as a service providers offer packaged features to handle user based restrictions. For example you can generate an API Key that can only target specific indexes. Most on-premise search engines do not provide any access control feature.</li>
+  <li><strong>Protecting yourself against attacks</strong>: There are various attacks that your service can suffer from (denial of service, buffer overflow, access control weakness, code injection, etc.). API SaaS providers put a lot of effort into having the best possible security. For example API providers reacted the most quickly to the “HeartBleed” SSL vulnerability; It only took a few hours after disclosure for <a href="https://www.twilio.com/blog/2014/04/customer-security-notice-on-cve-2014-0160-heartbleed-disclosure.html">Twilio</a>, <a href="https://www.firebase.com/blog/2014-04-08-open-ssl-security-update.html">Firebase</a> and <a href="http://blog.algolia.com/dealing-openssl-security-issue/">Algolia</a> to fix the issue.</li>
+  <li><strong>Protecting yourself from unwarranted downloads:</strong> The search feature of your website can easily expose a way to grab all your data. Search as a service providers offer packaged features to help prevent this problem (rate limit, time-limited API Key, user-restricted API Key, etc.).</li>
+</ol>
+
+<p>Mastering these three areas is difficult, and API providers are challenged
+every day by their customers to provide a state-of-the-art level of security
+in all of them. Reaching the same level of security with an on-premise
+solution would simply require too much investment.</p>
+
+<h2 id="search-as-a-service-is-not-reserved-to-simple-use-cases">Search as a service is not reserved to simple use cases</h2>
+
+<p>People tend to believe that search as a service is only good for basic use
+cases, which prevents developers from implementing fully featured search
+experiences. The fact of the matter is that search as a service simply handles
+all of the heavy lifting while keeping the flexibility to easily configure the
+engine. Therefore it enables any developers, even front-end only developers,
+to build complex instant search implementation with filters, faceting or geo-
+search. For instance, feel free to take a look at
+<a href="http://jadopado.com">JadoPado</a>, a customer who developed a fully featured
+instant search for their e-commerce store. Because your solution runs inside
+your walls once in production,  you will need a dedicated team to constantly
+track and fix the multiple issues you will encounter. Who would think of
+having a team dedicated to ensuring their CRM software works fine? It makes no
+sense if you use a SaaS software like most people do today. Why should it make
+more sense for components such as search? All the heavy lifting and the
+operational costs are now concentrated in the SaaS providers’ hands, making it
+eventually way more cost-efficient for you..</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas/">
+            Welcome Texas!
+            <small>15 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid/">
+            When Solid State Drives are not that solid
+            <small>15 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next/">
+            We just raised our Series A. What's next?
+            <small>28 May 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Hyde &middot; A Jekyll theme, with instant search
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas/">
+        Welcome Texas!
+      </a>
+    </h1>
+
+    <span class="post-date">15 Jul 2015</span>
+
+    <p>You probably already know it: any millisecond that end-users have to wait to
+get their results drives us nuts. But what on Earth does this have to do with
+Texas? Actually a lot!</p>
+
+<h2 id="you-want-your-search-to-be-instant-lets-talk-network">You want your search to be instant? Let’s talk network…</h2>
+
+<p>When looking at the speed of search on a website or a mobile application, the
+performance of the search engine is just one part of the equation. When you’re
+using an extremely fast engine, network latency and saturated links quickly
+become your biggest enemies: it simply takes time for the user query to reach
+the engine and for the results to get back to the user’s browser.</p>
+
+<p>In some cases, the round trip can easily take more than a second. In the US, it
+can take up to 300ms to simply establish an SSL connection between the two
+coasts.  All this also applies to the communications between your backend and
+the servers that host your search engine. The network can simply ruin the real
+time experience you hoped to offer with your search engine.</p>
+
+<h2 id="a-new-us-central-point-of-presence-to-reach-a-25ms-total-delivery-time-across-the-us">A new US Central point of presence to reach a 25ms total delivery time across the US</h2>
+
+<p>A great search experience is to drive end-users towards what they’re looking
+as quickly and seamlessly as possible. For us at Algolia it means to be able
+to dynamically update the content displayed as the end-user is typing a query.
+Being able to offer this find as-you-type experience obviously requires a very
+performant search engine but it also requires to host the search engine itself
+as close as possible to the end-user in order to tackle the network latency.</p>
+
+<p>This is why we are adding this new US Central region to our existing twelve
+regions. With the addition of the Dallas PoP, Algolia’s API is now accessible
+from thirteen different regions including US (East, West and Central),
+Australia, Brazil, Canada, France, Germany, Hong Kong, India, Japan, Russia,
+and Singapore.</p>
+
+<p>If your audience is spread out across multiple regions, you can use Algolia
+from a combination of these regions to ensure minimal results delivery time
+and optimal speed for all your users (Algolia’s Distributed Search Network
+automatically routes user queries to your closest region).</p>
+
+<p>This new US Central PoP, combined with Algolia’s US East and US West PoPs, now
+allows to deliver search results across the US with less than 25 milliseconds of
+latency. This guarantees a seamless find-as-you-type experience on websites and
+mobile applications all across the US.</p>
+
+<p><a href="https://blog.algolia.com/wp-content/uploads/2015/07/dallas2.jpg"><img src="/algoliasearch-jekyll-hyde/assets/dallas2.jpg" alt="dallas2" /></a></p>
+
+<h2 id="getting-closer-to-additional-infrastructure-providers">Getting closer to additional infrastructure providers</h2>
+
+<p>When you choose SaaS providers, especially when their service becomes a core
+component of your product, you probably prefer the ones hosted close to where
+you operate your backend, for latency and availability reasons. This is
+actually why we initially started in the US by opening PoPs in Ashburn (VA)
+and San Jose (CA), close to the AWS PoPs, which most of our customers rely on
+today.</p>
+
+<p>Our new presence in Texas allows services which rely for their backend on
+local infrastructure providers such as Rackspace and Softlayer to also benefit
+from the full power of Algolia. This new PoP offers them an extremely low
+network latency between their backend and our API.</p>
+
+<p>If you’re not already an Algolia user and you want to give it a try, simply
+<a href="https://www.algolia.com/users/sign_up">sign up</a> for a 14 day trial and select
+the US Central region in the process.</p>
+
+<p>If you are already using Algolia and want to migrate to the US Central region,
+simply drop us a line at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#097;&#108;&#103;&#111;&#108;&#105;&#097;&#046;&#099;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#097;&#108;&#103;&#111;&#108;&#105;&#097;&#046;&#099;&#111;&#109;</a> or
+on the live chat.</p>
+
+<p>If you’re none of the two above, we still think you’re awesome!</p>
+
+<p>Cheers!</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid/">
+        When Solid State Drives are not that solid
+      </a>
+    </h1>
+
+    <span class="post-date">15 Jun 2015</span>
+
+    <p>It looked just like another page in the middle of the night. One of the
+servers of our search API stopped processing the indexing jobs for an unknown
+reason. Since we build systems in Algolia for high availability and
+resiliency, nothing bad was happening. The new API calls were correctly
+redirected to the rest of the <a href="http://highscalability.com/blog/2015/3/9/the-architecture-of-
+algolias-distributed-search-network.html">healthy machines in the
+cluster</a> and the only impact on the service
+was one woken-up engineer. It was time to find out what was going on.</p>
+
+<p>UPDATE June 16:<br />
+<a href="https://hn.algolia.com/story/9723066/when-solid-state-drives-are-not-that-solid">A lot of
+discussions</a>
+started pointing out that the issue is related to the newly introduced queued
+TRIM. This is not correct. The TRIM on our drives is un-queued and the issue we
+have found is not related to the latest changes in the Linux Kernel to disable
+this feature.</p>
+
+<p>UPDATE June 17:<br />
+We got contacted by Samsung and we provided them all the system specifications and all the information about the issue we had. We will continue to provide Samsung all the necessary information in order to resolve the issue.</p>
+
+<p>UPDATE June 18:
+We just had a conference call with the European branch and the Korean HQ of
+Samsung. Their engineers are going to visit one of the datacenters we have
+servers in and in cooperation with our server provider they will inspect the
+mentioned SSDs in our SW and HW setup.</p>
+
+<p>UPDATE June 19:<br />
+On Monday June 22, the engineering team from Samsung is going analyze one of our servers in Singapore and if nothing is found on-site, the server will travel to Samsung HQ in Korea for further analysis.</p>
+
+<p>UPDATE July 13:<br />
+Since the last update of this blog-post, we have been in a cooperation with Samsung trying to help them find the issue, during this investigation we agreed with Samsung not to communicate until their approval.</p>
+
+<p>As the issue was not reproduced on our server in Singapore, the reproduction
+is now running under Samsung supervision in Korea, out of our environment.
+Although Samsung requested multiple times an access to our software and
+corrupted data, we could not provide it to them in order to protect the
+privacy and data of our customers.</p>
+
+<p>Samsung asked us to inform you about this:</p>
+
+<ul>
+  <li>Samsung tried to duplicate the failure with the latest script provided to them, but no single failure has been reproduced so far.</li>
+  <li>Samsung will do further tests, most likely from week 29 onwards, with a much more intensive script provided by Algolia.</li>
+</ul>
+
+<p>After unsuccessful tries to reproduce the issue with Bash scripts we have
+decided to help them by creating a small C++ program that simulates the
+writing style and pattern of our application (no files are open with
+O_DIRECT). We believe that if the issue is coming from a specific way we are
+using the standard kernel calls, it might take a couple of days and terabytes
+of data to be written to the drive.</p>
+
+<p>We have been informed by Samsung that no issue of this kind have been reported
+to them. Our server provider has modified their Ubuntu 14.04 images to disable
+the fstrim cron in order to avoid this issue. For the last couple of months
+after not using trim anymore we have not seen the issue again.</p>
+
+<p>UPDATE July 17:<br />
+We have just finished a conference call with Samsung
+considering the failure analysis of this issue. Samsung engineering team has
+been able to successfully reproduce the issue with our latest provided binary.</p>
+
+<ul>
+  <li>Samsung had a concrete conclusion that the issue is not related to Samsung SSD or Algolia software but is related to the Linux kernel.</li>
+  <li>Samsung has developed a kernel patch to resolve this issue and the official statement with details will be released tomorrow, July 18 on Linux community with the Linux patch guide. Our testing code <a href="https://github.com/algolia/trimtester">is available on GitHub</a>.</li>
+</ul>
+
+<p>This has been an amazing ride, thank you everyone for joining, we have arrived
+at the destination.</p>
+
+<hr />
+
+<p>The <a href="http://nginx.org/">NGINX</a> daemon serving all the HTTP(S) communication of
+our API was up and ready to serve the search queries but the indexing process
+crashed. Since the indexing process is guarded by
+<a href="http://cr.yp.to/daemontools/supervise.html">supervise</a>, crashing in a loop
+would have been understandable but a complete crash was not. As it turned out
+the filesystem was in a read-only mode. All right, let’s assume it was a
+cosmic ray :) the filesystem got fixed, files were restored from another
+healthy server and everything looked fine again.</p>
+
+<p>The next day another server ended with filesystem in read-only, two hours
+after another one and then next hour another one. Something was going on.
+After restoring the filesystem and the files, it was time for serious analysis
+since this was not a one time thing. At this point, we did a breakdown of the
+software involved in our storage stack and went through the recent changes.</p>
+
+<h2 id="investigation--debugging-time">Investigation &amp; debugging time!</h2>
+
+<p>We first asked ourselves if it could be related to our software. Are we using
+non-safe system calls or processing the data in an unsafe way? Did we
+incorrectly read and write the files in the memory before flushing it to disk?</p>
+
+<ul>
+  <li>Filesystem - Is there a bug in <a href="https://en.wikipedia.org/wiki/Ext4">ext4</a>? Can we access the memory space of allocation tables by accident?</li>
+  <li><a href="https://raid.wiki.kernel.org/index.php/Linux_Raid">Mdraid</a> - Is there a bug in mdadm? Did we use an improper configuration?</li>
+  <li>Driver - Does the driver have a bug?</li>
+  <li><a href="https://en.wikipedia.org/wiki/Solid-state_drive">SSD</a> - Is the SSD dying? Or even worse, is there a problem with the firmware of the drive?</li>
+</ul>
+
+<p>We even started to bet where the problem was and exactly proposed, in this
+order, the possible solutions going from easy to super-hard.</p>
+
+<p>Going through storage procedures of our software stack allowed us to set up
+traps and in case the problem happens again, we would be able to better
+isolate the corrupted parts. Looking at every single storage call of our
+engine gave us enough confidence that the problem was not coming from the way
+in which we manipulate the data. Unfortunately.</p>
+
+<p>One hour later, another server was corrupted. This time we took it out of the
+cluster and started to inspect it bit by bit. Before we fixed the filesystem,
+we noticed that some pieces of our files were missing (zeroed) - file
+modification date was unchanged, size was unchanged, just some parts were
+filled with zeros. Small files were completely erased.</p>
+
+<p>This was weird, so we started to think if it was possible that our application
+could access certain portions of the memory where the OS/filesystem had
+something mapped because otherwise our application cannot modify a file without
+the filesystem noticing. Having our software written in C++ brought a lot of
+crazy ideas of what happened. This turned out to be a dead-end as all of these
+memory blocks were out of our reach.</p>
+
+<p>So is there an issue in the ext4? Going through the kernel changelog looking
+for ext4 related issues was a terrifying experience. In almost every version
+we found a fixed bug that could theoretically impact us. I have to admit, I
+slept better before reading the changelog.</p>
+
+<p>We had kernels 3.2, 3.10, 3.13 and 3.16 distributed between the most often
+corrupted machines and waited to see which of the mines blows up. All of them
+did. Another dead-end. Maybe there was an issue in ext4 that no one else has
+seen before? The chance that we were this “lucky” was quite low and we did not
+want to end up in a situation like that. The possibility of a bug in ext4 was
+still open but highly improbable.</p>
+
+<p>What if there was an issue in mdadm? Looking at the changelog gave us
+confidence that we should not go down this path.</p>
+
+<p>The level of despair was reaching a critical level and the pages in the middle
+of the night were unstoppable. We spent a big portion of two weeks just
+isolating machines as quickly as possible and restoring them as quickly as
+possible. The one thing we did was to implement a check in our software that
+looked for empty blocks in the index files, even when they were not used, and
+alerted us in advance.</p>
+
+<h2 id="not-a-single-day-without-corruptions">Not a single day without corruptions</h2>
+
+<p>While more and more machines were dying, we had managed to automate the
+restore procedure to a level we were comfortable with. At every failure, we
+tried to look at different patterns of the corruption in hopes that we would
+find the smallest common denominator. They all had the same characteristics.
+But one thing started to be more and more clear - we saw the issue only on a
+portion of our servers.</p>
+
+<p>The software stack was identical but the hardware was slightly different. Mainly
+the SSDs were different but they were all from the same manufacturer. This was
+very alarming and led us to contact our server provider to ask if they have ever
+seen something like this before. It’s hard to convince a technical support
+person about a problem that you see only once in a while, with the latest
+firmware and that you cannot reproduce on demand.  We were not very successful
+but at least we had one small victory on our side.</p>
+
+<p>Knowing that the issue existed somewhere in the combination of the software
+and drive itself, we reproduced the identical software stack from our servers
+with different drives. And? Nothing, the corruption appeared again. So it was
+quite safe to assume the problem was not in the software stack and was more
+drive related. But what causes a block to change the content without the rest
+of the system noticing? That would be a lot of rotten bits in a sequence…</p>
+
+<p>The days started to become a routine - long shower, breakfast, restoring
+corrupted servers, lunch, restoring corrupted servers, dinner, restoring
+corrupted servers. Until one long morning shower full of thinking, “how big
+was the sequence?” As it turned out, the lost data was always 512 bytes, which
+is one block on the drive.</p>
+
+<p>One step further, a block ends up to be full of zeroes. A hardware bug? Or is
+the block zeroed? What can zero the block?
+<a href="https://en.wikipedia.org/wiki/Trim_(computing)">TRIM</a>! Trim instructs the SSD
+drive to zero the empty blocks. But these block were not empty and other types
+of SSDs were not impacted. We gave it a try and disabled TRIM across all of our
+servers. It would explain everything!</p>
+
+<p>The next day not a single server was corrupted, two days silence, then a week.
+The nightmare was over! At least we thought so… a month after we isolated the
+problem, a server restarted and came up with corrupted data but only from the
+small files - including certificates. Even improper shutdown cannot cause
+this.</p>
+
+<p>Poking around in the source code of the kernel looking for the trim related
+code, we came to the <a href="https://github.com/torvalds/linux/blob/e
+64f638483a21105c7ce330d543fa1f1c35b5bc7/drivers/ata/libata-
+core.c#L4109-L4286">trim blacklist</a>. This blacklist configures a specific behavior for certain
+SSD drives and identifies the drives based on the regexp of the model name.
+Our working SSDs were explicitly allowed full operation of the TRIM but some
+of the SSDs of our affected manufacturer were limited. Our affected drives did
+not match any pattern so they were implicitly allowed full operation.</p>
+
+<h2 id="the-complete-picture">The complete picture</h2>
+
+<p>At this moment we finally got a complete picture of what was going on. The
+system was issuing a TRIM to erase empty blocks, the command got
+misinterpreted by the drive and the controller erased blocks it was not
+supposed to. Therefore our files ended-up with 512 bytes of zeroes, files
+smaller than 512 bytes were completely zeroed. When we were lucky enough, the
+misbehaving TRIM hit the super-block of the filesystem and caused a
+corruption.</p>
+
+<p>After disabling the TRIM, the live big files were no longer
+corrupted but the small files that were once mapped to the memory and never
+changed since then had two states - correct content in the memory and
+corrupted one on the drive. Running a check on the files found nothing because
+they were never fetched again from the drive and just silently read from the
+memory. Massive reboot of servers came into play to restore the data
+consistency but after many weeks of hunting a ghost we came to the end.</p>
+
+<p>As a result, we informed our server provider about the affected SSDs and they
+informed the manufacturer. Our new deployments were switched to different SSD
+drives and we don’t recommend anyone to use any SSD that is anyhow mentioned
+in a bad way by the Linux kernel. Also be careful, even when you don’t enable
+the TRIM explicitly, at least since Ubuntu 14.04 the explicit
+<a href="http://man7.org/linux/man-pages/man8/fstrim.8.html">FSTRIM</a> runs in a cron
+once per week on all partitions - the freeze of your storage for a couple of
+seconds will be your smallest problem.</p>
+
+<h2 id="tldr">TL;DR</h2>
+
+<h3 id="delbroken-ssdsdel-drives-on-which-we-have-detected-the-issue"><del>Broken SSDs</del>: (Drives on which we have detected the issue)</h3>
+
+<ul>
+  <li>SAMSUNG MZ7WD480HCGM-00003</li>
+  <li>SAMSUNG MZ7GE480HMHP-00003</li>
+  <li>SAMSUNG MZ7GE240HMGR-00003</li>
+  <li>
+    <p>Samsung SSD 840 PRO Series<br />
+recently blacklisted for 8-series blacklist</p>
+  </li>
+  <li>Samsung SSD 850 PRO 512GB<br />
+recently blacklisted as 850 Pro and later in 8-series blacklist</li>
+</ul>
+
+<h3 id="delworking-ssdsdel-drives-on-which-we-have-not-detected-the-issue"><del>Working SSDs</del>: (Drives on which we have NOT detected the issue)</h3>
+
+<ul>
+  <li>Intel S3500</li>
+  <li>Intel S3700</li>
+  <li>Intel S3710</li>
+</ul>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next/">
+        We just raised our Series A. What's next?
+      </a>
+    </h1>
+
+    <span class="post-date">28 May 2015</span>
+
+    <p>You may have heard last week in the <a href="https://www.algolia.com/press">press</a>,
+Algolia has just raised an $18.3M Series A round of financing led by Accel
+Partners! Philippe Botteri from Accel is joining our board and we can’t wait
+to benefit from his experience! We are also excited to welcome Lead Edge
+Capital and to have received the trust of industry pioneers such as Ilya
+Sukhar of Parse, Solomon Hykes of Docker, Erik Swan of Splunk, and Kevin Rose
+of Digg.</p>
+
+<p>This funding represents a major milestone for Algolia. Thanks to the
+commitment of our customers our growth last year enabled us to demonstrate a
+strong product market fit. We are proud to count many of you as our customers
+who have seen in our offer a way to deliver a better search experience,
+improving their end-users’ engagement.</p>
+
+<p>We want to change the way people interact with information. We don’t want
+people to “search” in the traditional type-keyword/hit-enter/wait-for-results
+/repeat-until-found-or-abandon way; we want them to intuitively access data.
+We strongly believe that search should become a frontend and UX priority.
+That’s why we focus so much on the two must-haves for building a seamless and
+interactive experience: speed which enables updating results as-you-type, and
+relevance which ensures that results are good even after only a couple of
+keystrokes.</p>
+
+<p>It’s time for us to accelerate on that vision. With the help of this new
+funding, we are going to continue investing in our core product, and in making
+it available to an ever-expanding community with many new integrations. Search
+is everywhere and you can count on us to come up with new creative ways to
+delight your users with an outstanding experience. Stay tuned!</p>
+
+<p>We will also double down on customer success, which has been so important to
+our growth. Please make us accountable and let us know if there is anything we
+can improve.</p>
+
+<p>We have embarked on a journey to change the face of user-facing search,
+everywhere. Join us, it’s going to be fun!</p>
+
+<p>PS: We’re <a href="https://www.algolia.com/jobs">hiring</a>!</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2015/05/11/dns-fallback-for-better-resilience/">
+        DNS fallback for better resilience
+      </a>
+    </h1>
+
+    <span class="post-date">11 May 2015</span>
+
+    <p>At Algolia, we are obsessed with finding a way to have a 99.9999% available
+architecture. On our way to achieve that, we have to make sure every piece of
+the architecture can safely fail without affecting the service.</p>
+
+<p>The first point of the architecture where a customer’s request starts to
+interact with our service is not the router in the datacenter, but a DNS
+resolving a domain name to the IP address “long time” before that. This piece
+of architecture is very often overlooked and that is no surprise as you mostly
+get best-effort DNS service automatically with your server.</p>
+
+<h2 id="latency">Latency</h2>
+
+<p>For couple months we are a happy user of <a href="https://nsone.net">NSONE</a> that
+provides us with the first level of logic. We use NSONE for its superb
+performance and data-driven DNS that gives us control in steering the traffic
+of our <a href="https://www.algolia.com/dsn">Distributed Search Network</a> to the proper
+server - whether it means closest or simply available one. But as any other
+network dependent service, there are factors outside of NSONE’s control that
+can influence availability of its DNS resolves and consequently Algolia. BGP
+routing is still a huge magic and “optimizations” of some ISPs are beyond
+understanding. Well, they do not always make the optimizations in the
+direction we would like to. For some services the change of DNS resolution
+time from 10 to 500ms does not mean a lot but for us it is a deal breaker.</p>
+
+<p><a href="https://blog.algolia.com/wp-content/uploads/2015/05/nsone-dig-latency.png"><img src="/algoliasearch-jekyll-hyde/assets/nsone-dig-latency.png" alt="nsone-dig-latency" /></a> Resolution of latency-1 via NSONE</p>
+
+<h2 id="ddos">DDoS</h2>
+
+<p>When we started to think about our DNS dependency, we remembered the <a href="https://threatpost.com/ultradns-dealing-with-ddos-attack/105806">2014
+DDoS attack on UltraDNS</a> and the situation when there was not enough
+<a href="https://twitter.com/hashtag/hugops">#hugops</a> for all the services impacted.
+During the previous <a href="http://www.zdnet.com/article/ddos-attack-on-ultradns-affects-amazon-com-salesforce-com-petco-com/">attack on UltraDNS in 2009</a> even
+big names like Amazon and SalesForce got impacted.</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>In most of the cases it would mean adding another DNS name server from a
+different provider and replicate the records. But not in ours. NSONE has some
+unique features that we would have to give up and find a common feature subset
+with a different provider. In the end we would have to serve a portion of DNS
+resolutions via slower provider for no good reason.</p>
+
+<p>Since we provide custom made API clients we have one more place where to put
+additional logic. Now came a time to choose a resilient provider for our
+secondary DNS and since we like AWS, Route53 was a clear choice. Route53 has
+ok performance, many POPs around the world and API we already had integration
+for.</p>
+
+<p>In the last moment, one more paranoid idea came to us - let’s not rely on a
+single <a href="http://en.wikipedia.org/wiki/Top-level_domain">TLD</a>. No good reason
+for that, it was just “what if…?” moment.</p>
+
+<p><a href="https://blog.algolia.com/wp-content/uploads/2015/05/route53-dig-latency.png"><img src="/algoliasearch-jekyll-hyde/assets/route53-dig-latency.png" alt="route53-dig-latency" /></a> Resolution of latency-1 via
+Route53</p>
+
+<p>Right now, all the latest versions of our API clients (detailed list below)
+use multiple domain names. “algolia.net” is served by NSONE and provides all
+the speed and intelligence, “algolianet.com” is served by Route53 in case that
+for any reason contacting server via “algolia.net” fails. It brings more work
+to our side, brings more cost on our side but it also brings better sleep for
+our customers, their customers and us.</p>
+
+<p>And now we can think what else can fail…</p>
+
+<p>Minimal versions of API clients with support of multiple DNS:</p>
+
+<ul>
+  <li><a href="https://github.com/algolia/algoliasearch-client-js/releases/tag/2.9.6">Javascript v2: 2.9.6</a></li>
+  <li><a href="https://github.com/algolia/algoliasearch-client-js">Javascript v3: 3.1.0</a></li>
+  <li><a href="https://github.com/algolia/algoliasearch-client-node">Node.js: 1.8.0</a></li>
+  <li><a href="https://github.com/algolia/algoliasearch-client-ruby">Ruby: 1.4.1</a></li>
+  <li><a href="https://github.com/algolia/algoliasearch-rails">Ruby on rails: Ruby dependency 1.4.1</a></li>
+  <li><a href="https://github.com/algolia/algoliasearch-client-python">Python: 1.5.2</a></li>
+  <li><a href="https://github.com/algolia/algoliasearch-client-php">PHP: 1.5.5</a></li>
+  <li><a href="https://github.com/algolia/algoliasearch-client-java">Java: 1.3.5</a></li>
+  <li><a href="https://github.com/algolia/algoliasearch-client-android">Android: 1.6.3</a></li>
+  <li><a href="https://github.com/algolia/algoliasearch-client-objc">Objective-C: 3.4.1</a></li>
+  <li><a href="https://github.com/algolia/algoliasearch-client-csharp">C-Sharp: 3.1.0</a></li>
+  <li><a href="https://github.com/algolia/algoliasearch-client-go">Go: 1.2.0</a></li>
+</ul>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/algoliasearch-jekyll-hyde/2015/05/06/modern-javascript-libraries-the-isomorphic-way/">
+        Modern JavaScript libraries: the isomorphic way
+      </a>
+    </h1>
+
+    <span class="post-date">06 May 2015</span>
+
+    <p>Algolia’s DNA is really about performance. We want our search engine to answer
+relevant results as fast as possible.</p>
+
+<p>To achieve the best end-to-end performance we’ve decided to go with JavaScript
+since the total beginning of Algolia. Our end-users search using our REST API
+directly from their browser - with JavaScript - without going through the
+websites’ backends.</p>
+
+<p>Our JavaScript &amp; Node.js API clients were implemented 2 years ago and were now
+lacking of all modern best practices:</p>
+
+<ul>
+  <li>not following the <a href="http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/">error-first</a> or <a href="http://blog.izs.me/post/59142742143/designing-apis-for-asynchrony">callback-last</a> conventions;</li>
+  <li>inconsistent API between the Node.js and the browser implementations;</li>
+  <li>no <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a> support;</li>
+  <li>Node.js module named <a href="https://www.npmjs.com/package/algolia-search">algolia-search</a>, browser module named <a href="https://www.npmjs.com/package/algoliasearch">algoliasearch</a>;</li>
+  <li>cannot use the same module in Node.js or the browser (obviously);</li>
+  <li>browser module could not be used with <a href="http://browserify.org/">browserify</a> or <a href="http://webpack.github.io/">webpack</a>. It was exporting multiple properties directly in the window object.</li>
+</ul>
+
+<p>This blog post is a summary of the three main challenges we faced while
+modernizing our JavaScript client.</p>
+
+<h2 id="tldr">tl;dr;</h2>
+
+<p>Now the good news: we have a new isomorphic <a href="http://github.com/algolia/algoliasearch-client-js">JavaScript API
+client</a>.</p>
+
+<blockquote>
+  <p>Isomorphic JavaScript apps are JavaScript applications that can run both
+client-side and server-side.</p>
+</blockquote>
+
+<p>The backend and frontend share the same code.</p>
+
+<blockquote>
+
+</blockquote>
+
+<blockquote>
+  <p><a href="http://isomorphic.net/">isomorphic.net</a></p>
+</blockquote>
+
+<p>Here are the main features of this new API client:</p>
+
+<ul>
+  <li>works in <a href="https://nodejs.org/">Node.js</a> 0.10, 0.12, <a href="https://iojs.org/en/index.html">iojs</a> and from Internet Explorer 8 up to modern browsers;</li>
+  <li>has a <a href="https://github.com/algolia/algoliasearch-client-js#callback-convention">Promise + callback</a> API;</li>
+  <li>is available at <a href="https://www.npmjs.com/package/algoliasearch">npmjs.com/algoliasearch</a> and on <a href="http://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js">cdn.jsdelivr.net</a>;</li>
+  <li>has <a href="https://github.com/algolia/algoliasearch-client-js/tree/master/dist">builds</a> for jQuery, AngularJS and Parse.com;</li>
+  <li>is compatible with all module loaders like <a href="http://browserify.org/">browserify</a> or <a href="http://webpack.github.io/">webpack</a>;</li>
+  <li>is fully <a href="https://github.com/algolia/algoliasearch-client-js/tree/master/test">tested</a> in all supported environments.</li>
+</ul>
+
+<p>If you were using our previous libraries, we have migration guides for both
+<a href="https://github.com/algolia/algoliasearch-client-
+js/wiki/Node.js-v1.x.x-migration-guide">Node.js</a> and <a href="https://github.com/algolia/algoliasearch-client-js/wiki/Migration-
+guide-from-2.x.x-to-3.x.x">the
+browser</a>.</p>
+
+<p>#</p>
+
+<h1 id="challenge-1-testing">Challenge #1: testing</h1>
+
+<p>Before being able to merge the Node.js and browser module, we had to remember
+how the current code is working. An easy way to understand what a code is
+doing is to read the tests. Unfortunately, in the previous version of the
+library, we had <a href="https://github.com/algolia/algoliasearch-
+client-js/tree/ba71a68005945c73f7157a8222a9c758e332eceb/test">only one test</a>. One test was
+not enough to rewrite our library. Let’s go testing!</p>
+
+<h2 id="unit-integration">Unit? Integration?</h2>
+
+<p>When no tests are written on a library of <a href="https://github.com/algolia/algoliasearch-client-
+js/blob/ba71a68005945c73f7157a8222a9c758e332eceb/src/algoliasearch.js#L1484">~1500+
+LOC</a>,
+what are the tests you should write first?</p>
+
+<p>Unit testing would be too close to the implementation. As we are going to
+rewrite a lot of code later on, we better not go too far on this road right
+now.</p>
+
+<p>Here’s the flow of our JavaScript library when doing a search:</p>
+
+<ul>
+  <li>initialize the library with <code>algoliasearch()</code></li>
+  <li>call <code>index.search('something', callback)</code></li>
+  <li>browser issue an HTTP request</li>
+  <li><code>callback(err, content)</code></li>
+</ul>
+
+<p>From a testing point of view, this can be summarized as:</p>
+
+<ul>
+  <li>input: method call</li>
+  <li>output: HTTP request</li>
+</ul>
+
+<p>Integration testing for a JavaScript library doing HTTP calls is interesting
+but does not scale well.</p>
+
+<p>Indeed, having to reach Algolia servers in each test would introduce a shared
+testing state amongst developers and continuous integration. It would also
+have a slow TDD feedback because of heavy network usage.</p>
+
+<p>Our strategy for testing our JavaScript API client was to mock (do not run
+away right now) the <a href="https://xhr.spec.whatwg.org/">XMLHttpRequest</a> object.
+This allowed us to test our module as a black box, providing a good base for a
+complete rewrite later on.</p>
+
+<p>This is not unit testing nor integration testing, but in between. We also
+planned in the coming weeks on doing a separate full integration testing suite
+that will go from the browser to our servers.</p>
+
+<h2 id="faux-jax-to-the-rescue">faux-jax to the rescue</h2>
+
+<p>Two serious candidates showed up to help in testing HTTP request based
+libraries</p>
+
+<ul>
+  <li><a href="https://github.com/pgte/nock">pgte/nock </a></li>
+  <li>and <a href="http://sinonjs.org/docs/#server">Sinon.js fake XMLHttpRequest</a>.</li>
+</ul>
+
+<p>Unfortunately, none of them met all our requirements. Not to mention, the
+AlgoliaSearch JavaScript client had a really smart failover request strategy:</p>
+
+<ul>
+  <li>use <a href="https://xhr.spec.whatwg.org/">XMLHttpRequest</a> for browsers supporting CORS,</li>
+  <li>or use <a href="https://msdn.microsoft.com/en-us/library/ie/cc288060%28v=vs.85%29.aspx">XDomainRequest</a> for <a href="http://caniuse.com/#feat=cors">IE &lt; 10</a>,</li>
+  <li>or use <a href="https://blog.algolia.com/jsonp-still-mandatory/">JSONP</a> in situations where none of the preceding is available.</li>
+</ul>
+
+<p>This seems complex but we really want to be available and compatible with
+every browser environment.</p>
+
+<ul>
+  <li><strong>Nock</strong> works by mocking calls to the Node.js <a href="https://nodejs.org/api/http.html">http module</a>, but we directly use the XMLHttpRequest object.</li>
+  <li><strong>Sinon.js</strong> was doing a good job but <a href="https://github.com/cjohansen/Sinon.JS/pull/600#issuecomment-74000915">was lacking</a> some <a href="https://msdn.microsoft.com/en-us/library/ie/cc288060%28v=vs.85%29.aspx">XDomainRequest</a> feature detections. Also it was really tied to Sinon.js.</li>
+</ul>
+
+<p>As a result, we created <a href="https://github.com/algolia/faux-
+jax">algolia/faux-jax</a>. It is now pretty stable and can mock XMLHttpRequest, XDomainRequest and
+even http module from Node.js. It means <strong>faux-jax</strong> is an isomorphic HTTP
+mock testing tool. It was not designed to be isomorphic. It was easy to add
+the Node.js support thanks to <a href="https://github.com/moll/node-
+mitm">moll/node-mitm</a>.</p>
+
+<h2 id="testing-stack">Testing stack</h2>
+
+<p>The testing stack is composed of:</p>
+
+<ul>
+  <li><a href="https://github.com/substack/tape/">substack/tape</a>, isomorphic testing and assertion framework</li>
+  <li><a href="https://github.com/defunctzombie/zuul/">defunctzombie/zuul</a>, local and continuous integration test runner</li>
+  <li><a href="https://github.com/algolia/faux-jax">algolia/faux-jax</a>, isomorphic HTTP mocking library</li>
+</ul>
+
+<p>The fun part is done, now onto the tedious one: <strong>writing tests</strong>.</p>
+
+<h2 id="spliting-tests-cases">Spliting tests cases</h2>
+
+<p>We divided our tests in two categories:</p>
+
+<ul>
+  <li><strong>simple test cases</strong>: check that an API command will generate the corresponding HTTP call</li>
+  <li><strong>advanced tests</strong>: timeouts, keep-alive, JSONP, request strategy, DNS fallback, ..</li>
+</ul>
+
+<h3 id="simple-test-cases">Simple test cases</h3>
+
+<p>Simple test cases were written as <a href="https://github.com/golang/go/wiki/TableDrivenTests">table driven
+tests</a>:</p>
+
+<p><a href="https://blog.algolia.com
+/wp-content/uploads/2015/04/2015-04-27-161853_1266x829_scrot.png"><img src="assets/2015-04-27-161853_1266x829_scrot.png" alt="It's a simple
+JavaScript file, exporting test cases as an
+array" /></a> It’s a
+simple JavaScript file, <a href="https://github.com/algolia/algoliasearch-client-
+js/blob/1c8df9d09d683915a414e7df87a14236e50dd53c/test/spec/common/index/test-
+cases/addUserKey.js#L1">exporting test cases as an
+array</a></p>
+
+<p>Creating a testing stack that understands theses test-cases was some work. But
+the reward was worth it: the TDD feedback loop is great. Adding a new feature
+is easy: fire editor, add test, implement annnnnd done.</p>
+
+<h3 id="advanced-tests">Advanced tests</h3>
+
+<p>Complex test cases like JSONP fallback, timeouts and errors, were handled in
+separate, <a href="https://github.com/algolia/algoliasearch-
+client-js/blob/1c8df9d09d683915a414e7df87a14236e50dd53c/test/spec/browser
+/request-strategy/use-JSONP-when-XHR-error.js">more advanced tests</a>:</p>
+
+<p><a href="https://blog.algolia.com/wp-content/uploads/2015/04/2015-04-27-162229_1258x982_scrot.png"><img src="assets/2015-04-27-162229_1258x982_scrot.png" alt="Our testing
+stack rely on substack/tape" /></a> Here we test
+that we are using JSONP when XHR fails</p>
+
+<h2 id="testing-workflow">Testing workflow</h2>
+
+<p>To be able to run our tests we chose
+<a href="https://github.com/defunctzombie/zuul/">defunctzombie/zuul</a>.</p>
+
+<h3 id="local-development">Local development</h3>
+
+<p>For local development, we have an <strong>npm test</strong> task that will:</p>
+
+<ul>
+  <li>launch the browser tests using <a href="http://phantomjs.org/">phantomjs</a>,</li>
+  <li>run the Node.js tests,</li>
+  <li>lint using <a href="http://eslint.org/">eslint</a>.</li>
+</ul>
+
+<p>You can <a href="https://github.com/algolia/algoliasearch-client-
+js/blob/1c8df9d09d683915a414e7df87a14236e50dd53c/package.json#L12">see the task</a> in the
+package.json. Once run it looks like this:</p>
+
+<p><a href="https://blog.algolia.com/wp-content/uploads/2015/04/2015-04-27-170339_976x845_scrot.png"><img src="assets/2015-04-27-170339_976x845_scrot.png" alt="640 passing
+assertions and counting!" /></a> 640 passing
+assertions and counting!</p>
+
+<p>But phantomjs is no real browser so it should not be the only answer to “Is my
+module working in browsers?”. To solve this, we have an <a href="https://github.com/algolia/algoliasearch-client-
+js/blob/1c8df9d09d683915a414e7df87a14236e50dd53c/package.json#L16">npm run
+dev</a> task that
+will expose our tests in a simple web server accessible by any browser:</p>
+
+<p><a href="https://blog.algolia.com/wp-content/uploads/2015/04/2015-04-27-170757_1288x486_scrot.png"><img src="assets/2015-04-27-170757_1288x486_scrot.png" alt="All of theses
+features are provided by defunctzombie/zuul" /></a> All of theses
+features are provided by defunctzombie/zuul</p>
+
+<p>Finally, if you have <a href="https://www.virtualbox.org/">virtual machines</a>, you can
+test in any browser you want, all locally:</p>
+
+<p><a href="https://blog.algolia.com/wp-content/uploads/2015/04/2015-04-27-171034_1296x385_scrot.png"><img src="assets/2015-04-27-171034_1296x385_scrot.png" alt="Here's a
+VirtualBox setup created with xdissent/ievms" /></a> Here’s a
+VirtualBox setup created with
+<a href="https://github.com/xdissent/ievms">xdissent/ievms</a></p>
+
+<p>What comes next after setting up a good local development workflow? Continuous
+integration setup!</p>
+
+<h3 id="continuous-integration">Continuous integration</h3>
+
+<p><a href="https://github.com/defunctzombie/zuul/">defunctzombie/zuul</a> supports running
+tests using <a href="https://saucelabs.com/">Saucelabs</a> browsers. Saucelabs provides
+browsers as a service (manual testing or Selenium automation). It also has a
+nice OSS plan called <a href="https://saucelabs.com/opensauce/">Opensauce</a>. We patched
+our <a href="https://github.com/algolia/algoliasearch-client-
+js/blob/1c8df9d09d683915a414e7df87a14236e50dd53c/.zuul.yml">.zuul.yml</a> configuration file
+to specify what browsers we want to test. You can find all the details in
+<a href="https://github.com/defunctzombie/zuul/wiki/Cloud-testing">zuul’s wiki</a>.</p>
+
+<p>Now there’s only one missing piece: <a href="https://travis-ci.org/">Travis CI</a>.
+Travis runs our tests in all browsers defined in our .zuul.yml file. Our
+<a href="https://github.com/algolia/algoliasearch-client-
+js/blob/1c8df9d09d683915a414e7df87a14236e50dd53c/.travis.yml">travis.yml</a> looks like this:</p>
+
+<p><a href="https://blog.algolia.com/wp-content/uploads/2015/04/2015-04-27-172249_1248x868_scrot.png"><img src="assets/2015-04-27-172249_1248x868_scrot.png" alt="All platforms are tested using travis
+matrixes" />
+</a>
+All platforms are tested using a <a href="http://docs.travis-ci.com/user/build-configuration/#The-Build-Matrix">travis build
+matrix</a></p>
+
+<p>Right now tests are taking a bit too long so we will soon split them between
+desktop and mobile.</p>
+
+<p>We also want to to tests on pull requests using only latest stable versions of
+all browsers. So that it does not takes too long. As a reward, we get a <a href="https://docs.saucelabs.com/reference/status-images/">nice
+badge</a> to display in our
+Github <a href="https://github.com/algolia/algoliasearch-client-js#algolia-
+search-api-client-for-javascript">readme</a>:</p>
+
+<p><a href="https://blog.algolia.com
+/wp-content/uploads/2015/04/2015-04-27-174139_920x306_scrot.png"><img src="assets/2015-04-27-174139_920x306_scrot.png" alt="Gray color
+means the test is currently
+running" /></a> Gray color
+means the test is currently running</p>
+
+<h1 id="challenge-2-redesign-and-rewrite">Challenge #2: redesign and rewrite</h1>
+
+<p>Once we had a usable testing stack, we started our rewrite, the <a href="https://github.com/algolia/algoliasearch-client-
+js/issues?q=milestone%3AV3">V3
+milestone</a> on Github.</p>
+
+<h2 id="initialization">Initialization</h2>
+
+<p>We dropped the <strong>new AlgoliaSearch()</strong> usage in favor of just
+<strong>algoliasearch()</strong>. It allows us to hide implementation details to our API
+users.</p>
+
+<p>Before:</p>
+
+<blockquote>
+  <p>new AlgoliaSearch(applicationID, apiKey, opts);</p>
+</blockquote>
+
+<p>After:</p>
+
+<blockquote>
+  <p>algoliasearch(applicationID, apiKey, opts);</p>
+</blockquote>
+
+<h2 id="callback-convention">Callback convention</h2>
+
+<p>Our JavaScript client now follows the <a href="http://fredkschott.com/post/2014/03/understanding-error-first-
+callbacks-in-node-js/">error-
+first</a> and <a href="http://blog.izs.me/post/59142742143
+/designing-apis-for-asynchrony">callback-last</a> conventions. We had to break some methods to
+do so.</p>
+
+<p>Before:</p>
+
+<blockquote>
+  <p>client.method(param, callback, param, param);</p>
+</blockquote>
+
+<p>After:</p>
+
+<blockquote>
+  <p>client.method(params, param, param, params, callback);</p>
+</blockquote>
+
+<p>This allows our callback lovers to use libraries like
+<a href="https://github.com/caolan/async">caolan/async</a> very easily.</p>
+
+<h2 id="promises-and-callbacks-support">Promises and callbacks support</h2>
+
+<p>Promises are a great way to handle the asynchronous flow of your application.</p>
+
+<blockquote>
+  <p>Promise partisan? Callback connoisseur? My API now lets you switch between
+the two! <a href="http://t.co/uPhej2yAwF">http://t.co/uPhej2yAwF</a> (thanks
+<a href="https://twitter.com/NickColley">@NickColley</a>!)</p>
+</blockquote>
+
+<blockquote>
+
+</blockquote>
+
+<blockquote>
+  <p>— pouchdb (@pouchdb) <a href="https://twitter.com/pouchdb/status/575310959947956224">March 10,
+2015</a></p>
+</blockquote>
+
+<p>We implemented both promises and callbacks, it was nearly a no-brainer. In
+every command, if you do not provide a callback, you get a <a href="https://d
+eveloper.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>.
+We use native promises in <a href="http://caniuse.com/#feat=promises">compatible
+environments</a> and
+<a href="https://github.com/jakearchibald/es6-promise/">jakearchibald/es6-promise</a> as
+a polyfill.</p>
+
+<h2 id="algoliasearchhelper-removal">AlgoliaSearchHelper removal</h2>
+
+<p>The main library was also previously exporting window.AlgoliaSearchHelper to
+ease the development of awesome search UIs. We externalized this project and
+it now has now has a new home at <a href="https://github.com/algolia/algoliasearch-helper-js">algolia/algoliasearch-helper-
+js</a>.</p>
+
+<h2 id="umd">UMD</h2>
+
+<blockquote>
+  <p>UMD: JavaScript modules that run anywhere</p>
+</blockquote>
+
+<p>The previous version was directly exporting multiple properties in the
+<strong>window</strong> object. As we wanted our new library to be easily compatible with a
+broad range of module loaders, we made it <a href="https://github.com/umdjs/umd">UMD</a>
+compatible. It means our library can be used:</p>
+
+<ul>
+  <li>with a simple <code>&lt;script&gt;</code>, it will export <strong>algoliasearch</strong> in the <strong>window</strong> object</li>
+  <li>using <a href="http://browserify.org/">browserify</a>, <a href="http://webpack.github.io/">webpack</a>, <a href="http://requirejs.org/">requirejs</a>: any module loader</li>
+  <li>in <a href="https://nodejs.org/">Node.js</a></li>
+</ul>
+
+<p>This was achieved by writing our code in a
+<a href="http://en.wikipedia.org/wiki/CommonJS">CommonJS</a> style and then use the
+standalone build feature of browserify.</p>
+
+<p><a href="https://blog.algolia.com/wp-content/uploads/2015/04/2015-04-28-224616_1126x129_scrot.png"><img src="assets/2015-04-28-224616_1126x129_scrot.png" alt="see browserify
+usage" /></a> see
+<a href="https://github.com/substack/node-
+browserify#usage">browserify usage</a></p>
+
+<h2 id="multiple-builds">Multiple builds</h2>
+
+<p>Our JavaScript client isn’t only one build, we have multiple builds:</p>
+
+<ul>
+  <li>vanilla JavaScript using native xhrs and Promises</li>
+  <li>jQuery build using <a href="http://api.jquery.com/jquery.ajax/">jQuery.ajax</a> and returns <a href="https://api.jquery.com/category/deferred-object/">jQuery promises</a></li>
+  <li>AngularJS build is using <a href="https://docs.angularjs.org/api/ng/service/$http">$http</a> service and returns <a href="https://docs.angularjs.org/api/ng/service/$q">AngularJS promises</a></li>
+  <li><a href="https://parse.com/">Parse.com</a> build is using parse cloud <a href="https://parse.com/docs/cloud_code_guide#networking">http</a> and <a href="https://parse.com/docs/js_guide#promises">promises</a></li>
+  <li>Node.js, iojs are using the <a href="https://nodejs.org/api/http.html">http module</a> and native Promises</li>
+</ul>
+
+<p>Previously this was all handled in the main JavaScript file, leading to unsafe
+<a href="https://github.com/algolia/algoliasearch-client-js/blob/ba71a
+68005945c73f7157a8222a9c758e332eceb/src/algoliasearch.js#L541-L553">code like this</a>:</p>
+
+<p><a href="https://blog.algolia.com/wp-content/uploads/2015/04/2015-04-28-225743_1629x497_scrot.png"><img src="assets/2015-04-28-225743_1629x497_scrot.png" alt="2015-04-28-225743_1629x497_scrot" /></a></p>
+
+<p>How do we solve this? Using inheritance! JavaScript prototypal inheritance is
+the new code smell in 2015. For us it was a good way to share most of the code
+between our builds. As a result every entry point of our builds are inheriting
+from the <a href="https://github.com/algolia/algoliasearch-
+client-js/blob/1c8df9d09d683915a414e7df87a14236e50dd53c/src/AlgoliaSearch.js">src/AlgoliaSearch.js</a>.</p>
+
+<p>Every build then need to define how to:</p>
+
+<ul>
+  <li>do http request through <a href="https://github.com/algolia/algoliasearch-client-js/blob/1c8df9d09d683915a414e7df87a14236e50dd53c/src/browser/builds/algoliasearch.js#L46-L150">AlgoliaSearch.prototype._request</a></li>
+  <li>return promises with <a href="https://github.com/algolia/algoliasearch-client-js/blob/1c8df9d09d683915a414e7df87a14236e50dd53c/src/browser/builds/algoliasearch.js#L167-L179">AlgoliaSearch.prototype._promise</a></li>
+  <li>use a request fallback where needed with <a href="https://github.com/algolia/algoliasearch-client-js/blob/1c8df9d09d683915a414e7df87a14236e50dd53c/src/browser/builds/algoliasearch.js#L152-L165">AlgoliaSearch.prototype._request.fallback</a></li>
+</ul>
+
+<p>Using a simple inheritance pattern we were able to solve a great challenge.</p>
+
+<p><a href="https://blog.algolia.com
+/wp-content/uploads/2015/04/2015-04-28-232019_1153x526_scrot.png"><img src="assets/2015-04-28-232019_1153x526_scrot.png" alt="Example of the
+vanilla JavaScript
+build" /></a> Example of
+the vanilla JavaScript build</p>
+
+<p>Finally, we have <a href="https://github.com/algolia/algoliasearch-
+client-js/blob/1c8df9d09d683915a414e7df87a14236e50dd53c/scripts/build">a build script</a> that
+will generate all the needed files for each environment.</p>
+
+<h2 id="challenge-3-backward-compatibility">Challenge #3: backward compatibility</h2>
+
+<p>We could not completely modernize our JavaScript clients while keeping a full
+backward compatibility between versions. We had to break some of the previous
+usages to level up our JavaScript stack.</p>
+
+<p>But we also wanted to provide a good experience for our previous users when
+they wanted to upgrade:</p>
+
+<ul>
+  <li>we re-exported previous constructors like window.AlgoliaSearch*. But we now <strong>throw</strong> if it’s used</li>
+  <li>we wrote a clear <a href="https://github.com/algolia/algoliasearch-client-js/wiki/Migration-guide-from-2.x.x-to-3.x.x">migration guide</a> for our existing Node.js and JavaScript users</li>
+  <li>we used <a href="https://docs.npmjs.com/cli/deprecate">npm deprecate</a> on our previous Node.js module to inform our current user base that we moved to a new client</li>
+  <li>we created legacy branches so that we can continue to push critical updates to previous versions when needed</li>
+</ul>
+
+<h2 id="make-it-isomorphic">Make it isomorphic!</h2>
+
+<p>Our final step was to make our JavaScript client work in both Node.js and the
+browser.</p>
+
+<p>Having separated the builds implementation helped us a lot, because the
+Node.js build is a regular build only using the http module from Node.js.</p>
+
+<p>Then we only had to tell module loaders to load <strong>index.js</strong> on the server and
+<strong>src/browser/..</strong> in browsers.</p>
+
+<p>This last step was done by configuring browserify in <a href="https://github.com/algolia/algoliasearch-client-
+js/blob/1c8df9d09d683915a414e7df87a14236e50dd53c/package.json#L5-L8">our
+package.json</a>:</p>
+
+<p><a href="https://blog.algolia.com/wp-content/uploads/2015/04/2015-04-28-232444_1275x569_scrot.png"><img src="assets/2015-04-28-232444_1275x569_scrot.png" alt="the browser field from browserify also works in webpack" /></a> the <a href="https://github.com/substack/node-browserify#browser-field">browser
+field</a> from
+browserify also works in webpack</p>
+
+<p>If you are using the <strong>algoliasearch</strong> module with browserify or webpack, you
+will get our browser implementation automatically.</p>
+
+<p>The <strong>faux-jax</strong> library is released under MIT like all our open source
+projects. Any feedback or improvement idea are welcome, we are dedicated to
+make our JS client your best friend :)</p>
+
+
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/algoliasearch-jekyll-hyde/page2">Older</a>
+  
+  
+    <span class="pagination-item newer">Newer</span>
+  
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

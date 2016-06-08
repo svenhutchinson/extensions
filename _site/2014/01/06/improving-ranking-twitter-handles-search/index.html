@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Improving Search for Twitter Handles &middot; Hyde
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="post">
+  <h1 class="post-title">Improving Search for Twitter Handles</h1>
+  <span class="post-date">06 Jan 2014</span>
+  <p>Hello Twitter,</p>
+
+<p>I have been using your service for awhile, and I love it!</p>
+
+<p>At first, I was skeptical about what you could offer: Broadcasting to all my
+friends that I was eating a pizza, or taking a walk, is not really my cup of
+tea. But 3 years ago I figured out what Twitter was really meant for and how
+it could help me in a totally different way from what I first thought:</p>
+
+<ul>
+  <li>sharing interesting articles,</li>
+  <li>checking if /replace by the service provider you want/ is down,</li>
+  <li>or catching up on HackerNews.</li>
+</ul>
+
+<p>More recently, I discovered you had a feature that could help me even more: I
+can now ask for support by tweeting. Tweeting is often faster and more
+productive than sending an email. You taught me to include the recipient’s
+Handle in my tweets, and your current Handle auto-completion implementation
+works pretty well: but what if you could provide a <strong>better typo-tolerance and
+ranking</strong>? (I’m NOT speaking about your official OSX/iOS native clients and
+its <a href="http://blog.algolia.com/why-autocomplete-in-twitter-on-mobile-sucks/">totally unusable auto-completion feature</a>… btw, could you explain me why it
+is different from the one on your website?).</p>
+
+<p>I have been leading a search-engine development team over the last 5 years and
+I’m now VP of engineering at Algolia. I am aware that considering my job, I
+have kind of an “expert” point of view about search. But search has become so
+essential that I am convinced it <strong>must</strong> be irreproachable. Did you know
+that 1.7M+ people are currently following</p>
+
+<p>expecting great things from your search-engine, Twitter :) Here is how I would
+improve search for Twitter handles:</p>
+
+<p>For example, it would be nice if I could find President
+<a href="https://twitter.com/barackobama">@barackobama</a> with his last name:</p>
+
+<p><a href="https://blog.algolia.com/wp-
+content/uploads/2013/12/Screen-Shot-2013-12-23-at-11.40.09.png"><img src="/algoliasearch-jekyll-hyde/assets/Screen-Shot-2013-12-23-at-11.40.09-263x300.png" alt="Search for Twitter handles including @obama yields less-than-stellar
+results." /></a></p>
+
+<p>Same for Justin:</p>
+
+<p><a href="https://blog.algolia.com/wp-
+content/uploads/2013/12/Screen-Shot-2013-12-23-at-11.42.01.png"><img src="/algoliasearch-jekyll-hyde/assets/Screen-Shot-2013-12-23-at-11.42.01-262x300.png" alt="Search for Twitter handles that could be Justin Bieber's yields less-than-
+stellar results." /></a></p>
+
+<p>Typo-tolerance is now a must-have, especially because we’re all using
+smartphones and tablets:</p>
+
+<p><a href="https://blog.algolia.com/wp-
+content/uploads/2013/12/Screen-Shot-2013-12-23-at-11.38.19.png"><img src="/algoliasearch-jekyll-hyde/assets/Screen-Shot-2013-12-23-at-11.38.19-263x300.png" alt="Search for Twitter handles should have typo tolerance." /></a></p>
+
+<p>More and more handles are now prefixed/suffixed by “official”, which makes
+finding <a href="https://twitter.com/officialadele">@OfficialAdele</a> just impossible:</p>
+
+<p><a href="https://blog.algolia.com/wp-content/uploads/2013/12/Screen-Shot-2013-12-23-at-11.47.52.png"><img src="/algoliasearch-jekyll-hyde/assets/Screen-Shot-2013-12-23-at-11.47.52.png" alt="Search for Twitter handles that start with @official is broken." /></a></p>
+
+<p><strong>For sure we can improve it, let’s code!</strong></p>
+
+<p>First of all Twitter, I need your Handles database :)</p>
+
+<ul>
+  <li>I used your <a href="https://dev.twitter.com/docs/streaming-apis">Streaming API</a> to crawl about 20M+ accounts in ~2 weeks: it’s not blazing fast but I must admit it does the job (and it’s free). That’s about 5 lines of Ruby with <a href="https://github.com/tweetstream/tweetstream">TweetStream</a>, good job guys!</li>
+  <li>and <a href="https://github.com/bmc/daemonize">Daemonize</a> to create a bin/crawler executable.</li>
+</ul>
+
+<p>```ruby
+#! /usr/bin/env ruby</p>
+
+<p>require File.expand_path(File.join(File.dirname(<strong>FILE</strong>), ‘..’, ‘config’, ‘environment’))</p>
+
+<p>daemon = TweetStream::Daemon.new(‘crawler’, :log_output =&gt; true)
+daemon.on_inited do
+  ActiveRecord::Base.connection.reconnect!
+  ActiveRecord::Base.logger = Logger.new(File.join(Rails.root, ‘log/stream.log’), ‘w+’)
+end
+daemon.on_error do |message|
+  puts “Error: #{message}”
+end
+daemon.sample do |status|
+  Handle.create_from_status(status)
+end
+```</p>
+
+<p>For each new tweet you send to me, I store the author (name + screen_name +
+description + followers_count) and all his/her user mentions.</p>
+
+<p>```ruby
+class Handle &lt; ActiveRecord::Base</p>
+
+<p>def self.create_from_user(user)
+    h = Handle.find_or_initialize_by(screen_name: user.screen_name)
+    puts h.screen_name if h.new_record?
+    h.name = user.name
+    h.description = (user.description || “”)[0..255]
+    h.followers_count = user.followers_count
+    h.updated_at ||= DateTime.now
+    h.save
+    h
+  end</p>
+
+<p>def self.create_from_status(status)
+    Handle.create_from_user(status.user)
+    status.user_mentions.each do |mention|
+      m = Handle.find_or_initialize_by(screen_name: mention.screen_name)
+      m.updated_at ||= DateTime.now
+      m.name = mention.name
+      m.mentions_count ||= 0
+      m.mentions_count += 1
+      m.save
+    end
+  end</p>
+
+<p>end
+```</p>
+
+<p>And every minute, I re-index the last-updated accounts with a batch request
+using <a href="https://github.com/algolia/algoliasearch-rails">algoliasearch-rails</a>,</p>
+
+<p><code>ruby
+every 1.minute, roles: [:cron] do
+  runner "Handle.where('updated_at &gt;= ?', 1.minute.ago).reindex!"
+end
+</code></p>
+
+<p>The result order is based on several criteria:</p>
+
+<ul>
+  <li>the number of typos,</li>
+  <li>the matching attributes: the name/handle is more important than the description,</li>
+  <li>the proximity between matched words,</li>
+  <li>and the followers count (I also use the “mentions count” if my crawler didn’t get the followers count yet).</li>
+</ul>
+
+<p>I could have improved the results by using the user’s list of
+followers/following but I was limited by your <a href="https://dev.twitter.com/docs/rate-limiting/1.1">Rate
+Limits</a>. <strong>Instead, I chose to
+emphasize your top-users </strong>(accounts having 10M+ followers).</p>
+
+<p>Here is the configuration I used</p>
+
+<p>```ruby
+class Handle &lt; ActiveRecord::Base</p>
+
+<p>include AlgoliaSearch
+  algoliasearch per_environment: true, auto_index: false, auto_remove: false do
+    # add an extra score attribute
+    add_attribute :score</p>
+
+<pre><code># add an extra full_name attribute: screen_name + name
+add_attribute :full_name
+
+# do not take `full_name`'s words order into account, `full_name` is more important than `description`
+attributesToIndex ['unordered(full_name)', :description]
+
+# list of attributes to highlight
+attributesToHighlight [:screen_name, :name, :description]
+
+# use followers_count OR mentions_count to sort results (last sort criteria)
+customRanking ['desc(score)']
+
+# @I_love_you
+separatorsToIndex '_'
+
+# tag top-users
+tags do
+  followers_count &gt; 10000000 ? ['top'] : []
+end   end
+</code></pre>
+
+<p>def full_name
+    # consider screen_name and name equal
+    # the name should not match exact so we concatenate it with the screen_name
+    [screen_name, “#{screen_name} #{name}”]
+  end</p>
+
+<p># the custom score
+  def score
+    return followers_count if followers_count &gt; 0
+    if mentions_count &lt; 10
+      mentions_count
+    elsif mentions_count &lt; 100
+      mentions_count * 10
+    elsif mentions_count &lt; 1000
+      mentions_count * 100
+    else
+      mentions_count * 1000
+    end
+  end</p>
+
+<p>end
+```</p>
+
+<p>The user query is composed by 2 backend queries:</p>
+
+<ul>
+  <li>the first one retrieves all matching top-users (could be replaced by a query targeting your followers/following only)</li>
+  <li>the second one the others.</li>
+</ul>
+
+<p><a href="http://twittersearch.algolia.io/"><strong>Try it for yourself</strong></a>, and enjoy
+relevant and highlighted results after the first keystroke: <a href="http://twittersearch.algolia.io/">Twitter Handles
+Search</a>.</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas/">
+            Welcome Texas!
+            <small>15 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid/">
+            When Solid State Drives are not that solid
+            <small>15 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next/">
+            We just raised our Series A. What's next?
+            <small>28 May 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>

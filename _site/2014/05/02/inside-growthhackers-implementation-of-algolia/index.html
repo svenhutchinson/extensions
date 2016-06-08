@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Inside GrowthHackers.com's Implementation of Algolia &middot; Hyde
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/poole.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/syntax.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/hyde.css">
+  <link rel="stylesheet" href="/algoliasearch-jekyll-hyde/public/css/algolia.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/algoliasearch-jekyll-hyde/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/algoliasearch-jekyll-hyde/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/algoliasearch-jekyll-hyde/">
+          Hyde
+        </a>
+      </h1>
+      <p class="lead">The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a></p>
+    </div>
+
+    <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+          <a class="sidebar-nav-item" href="/algoliasearch-jekyll-hyde/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="https://github.com/algolia/algoliasearch-jekyll-hyde">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span>
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="algolia__initial-content js-algolia__initial-content"><div class="post">
+  <h1 class="post-title">Inside GrowthHackers.com's Implementation of Algolia</h1>
+  <span class="post-date">02 May 2014</span>
+  <p>We interviewed <a href="https://twitter.com/dylanLaCom">Dylan La Com</a>, Growth Product
+Manager at <a href="https://qualaroo.com">Qualaroo</a> &amp;
+<a href="http://growthhackers.com">GrowthHackers.com</a>, about their Algolia
+implementation experience.</p>
+
+<p><a href="https://blog.algolia.com/wp-
+content/uploads/2014/05/growthacker.jpg"><img src="/algoliasearch-jekyll-hyde/assets/growthacker.jpg" alt="growthacker" /></a></p>
+
+<h3 id="what-role-did-search-play-at-growthhackers-before-the-algolia">What role did search play at GrowthHackers before the Algolia</h3>
+<p>implementation?</p>
+
+<p>When we launched our community site
+<a href="http://growthhackers.com/">GrowthHackers.com</a> in October 2013, search was
+admittedly an afterthought for us. GrowthHackers is a social-voting site where
+marketers, founders, and product-people can share and discuss growth-related
+content. At launch, it was unclear what role search would have on the site.
+GrowthHackers is built on Wordpress, and with that comes Wordpress’ standard
+search functionality. What WP search does is append an additional keyword or
+phrase parameter to its typical post query and load a new page with the
+results. WP search only indexed the outbound URLs of the articles our members
+submitted, and this made finding specific content difficult.</p>
+
+<h3 id="why-did-you-want-to-give-search-an-update-on-growthhackers">Why did you want to give search an update on GrowthHackers?</h3>
+
+<p>We started hearing about our lack of a solid search feature from some of our
+more active users. One of our members even put together a slide presentation
+to prove just how useless our search was [<a href="http://www.slideshare.net/andrewmatthewthompson/improving-search-on-growthhackers">check it out
+here</a>]. At the same time, GrowthHackers was becoming more than just a
+way to stay up-to-date on the best growth articles, it was becoming the place
+to get answers: an encyclopedia for growth-related information. Search volume
+at this time was peaking in the mid-hundreds per week. We needed a search
+feature that could support this evolving use-case.</p>
+
+<h3 id="why-did-you-choose-algolia">Why did you choose Algolia?</h3>
+
+<p>We looked at several search solutions before trying Algolia, including
+Swiftype, WP Search (plugin), and Srch2. All are great solutions, but
+ultimately, we went with Algolia because they had the right mix of features:
+Their integration was simple, the documentation was thorough, and there were
+plenty of starter templates. I knew it was a good sign when, while looking
+their GitHub repository, I found they had a demo site built with search that
+worked very similar to how we hoped ours would work, complete with real-time
+results, typo-tolerance, and filters. The Algolia team was incredibly helpful
+getting us set up and was there each step of the way through the integration
+process, providing resources and best practices for creating a truly top-notch
+search experience.</p>
+
+<h3 id="tell-me-a-little-about-how-the-new-search-works">Tell me a little about how the new search works.</h3>
+
+<p>Our primary use of Algolia is to store and index user submitted content, and
+provide real-time search in our growing database of growth-related articles,
+questions, videos and slides. The majority of what we index is article titles
+and URLs–strings which are generally small. Visitors to our site often come
+with specific growth-related questions and use our search to find answers
+quickly. For example, someone interested in learning best practices for
+running Twitter ads could type in “Twitter ad” and within milliseconds see
+dozens of articles and discussions related to maximizing ROI for Twitter ads.
+Using Algolia’s admin dashboard, we’re able to set ranking priorities based on
+the number of votes and comments of each article, and make sure the top
+results are the most relevant. So, the visitor who searches “Twitter ad” is
+shown articles with the highest mix of votes and comments. Algolia took the
+search ranking process and wrapped it in a clean and simple interface that
+allows anyone, regardless of their experience with search, to easily adjust
+and manipulate.</p>
+
+<p>One of the challenges we faced during the integration process was
+understanding how to keep our main database synced and up to date with our
+Algolia index. User submitted content on GrowthHackers changes often as users
+interact with the content. Each post once submitted may receive upvotes and
+comments from members in the community. Each post also has a wiki-style
+summary field that can be edited by community members. Lastly, posts can have
+several states, including published, pending and trashed. In order to ensure
+our content on Algolia mirrored the content in our database, we set up a job
+queue and a cron process to periodically push updates to our Algolia index.
+This has been working quite well for us.</p>
+
+<h3 id="how-has-the-new-search-impacted-engagement">How has the new search impacted engagement?</h3>
+
+<p>We released the new search mid-February, and since the release we’ve seen
+search volume increase 4-5X. Of course there are several factors at play here,
+including increased traffic volume and better search bar placement, but it is
+clear that Algolia’s search features have contributed to an impressive
+increase in search engagement. On average, visitors who utilize search view
+2-3X more pages per session and spend 5-6X longer on the site than those who
+don’t search. Algolia’s analytics dashboard provides us with an incredible
+glimpse of visitor intent on our site by showing us the queries visitors are
+searching for, and trend lines to show popularity over time. With this data,
+we’re able to better understand how our visitors want to use our site, and
+make better decisions about how to organize the content.</p>
+
+<p>Moving forward, we’re hoping to implement Algolia’s search filters to provide
+even better ways to access content on our site. We’re excited to have such a
+powerful tool in our stack and hope to experiment with new ways to provide
+search functionality throughout GrowthHackers.</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas/">
+            Welcome Texas!
+            <small>15 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid/">
+            When Solid State Drives are not that solid
+            <small>15 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next/">
+            We just raised our Series A. What's next?
+            <small>28 May 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+</div>
+
+      <div class="algolia__search-content js-algolia__search-content">
+        <h1 class="page-title">Search</h1>
+        <div class="posts algolia__results"></div>
+      </div>
+    </div>
+
+  <script>
+  window.ALGOLIA_CONFIG = {
+    'applicationId': 'latency',
+    'indexName': 'jekyll',
+    'apiKey': '6be0576ff61c053d5f9a3225e2a90f76',
+    'baseurl': '/algoliasearch-jekyll-hyde'
+  }
+</script>
+<script id="algolia__template" type="text/template">
+
+  <div class="algolia__result">
+    <a class="algolia__result-link" href="{{ full_url }}#algolia:{{ css_selector }}">{{{ _highlightResult.title.value }}}</a>
+    {{#posted_at}}
+    <div class="algolia__result-date">{{ posted_at_readable }}</div>
+    {{/posted_at}}
+    <div class="algolia__result-text">{{{ _highlightResult.text.value }}}</div>
+  </div>
+
+</script>
+<script id="algolia__template--no-results" type="text/template">
+  No results found.
+</script>
+<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3.6.0/algoliasearch.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch.helper/2.1.0/algoliasearch.helper.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/2.10.3/moment.min.js"></script>
+<script src="/algoliasearch-jekyll-hyde/public/js/algolia.js"></script>
+
+  </body>
+</html>
