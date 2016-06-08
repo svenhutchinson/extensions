@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Hyde</title>
- <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/atom.xml" rel="self"/>
- <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/"/>
- <updated>2016-06-09T02:59:56+07:00</updated>
- <id>https://github.com/algolia/algoliasearch-jekyll-hyde</id>
+ <link href="https://github.com/svenhutchinson/extensions/atom.xml" rel="self"/>
+ <link href="https://github.com/svenhutchinson/extensions/"/>
+ <updated>2016-06-09T03:21:12+07:00</updated>
+ <id>https://github.com/svenhutchinson/extensions</id>
  <author>
    <name>Algolia</name>
    <email></email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Welcome Texas!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2015/07/15/new-distributed-search-network-texas/"/>
    <updated>2015-07-15T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2015/07/15/new-distributed-search-network-texas</id>
+   <id>https://github.com/svenhutchinson/extensions/2015/07/15/new-distributed-search-network-texas</id>
    <content type="html">&lt;p&gt;You probably already know it: any millisecond that end-users have to wait to
 get their results drives us nuts. But what on Earth does this have to do with
 Texas? Actually a lot!&lt;/p&gt;
@@ -93,9 +93,9 @@ on the live chat.&lt;/p&gt;
  
  <entry>
    <title>When Solid State Drives are not that solid</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2015/06/15/when-solid-state-drives-are-not-that-solid/"/>
    <updated>2015-06-15T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2015/06/15/when-solid-state-drives-are-not-that-solid</id>
+   <id>https://github.com/svenhutchinson/extensions/2015/06/15/when-solid-state-drives-are-not-that-solid</id>
    <content type="html">&lt;p&gt;It looked just like another page in the middle of the night. One of the
 servers of our search API stopped processing the indexing jobs for an unknown
 reason. Since we build systems in Algolia for high availability and
@@ -348,9 +348,9 @@ recently blacklisted as 850 Pro and later in 8-series blacklist&lt;/li&gt;
  
  <entry>
    <title>We just raised our Series A. What's next?</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2015/05/28/we-just-raised-our-series-a-whats-next/"/>
    <updated>2015-05-28T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2015/05/28/we-just-raised-our-series-a-whats-next</id>
+   <id>https://github.com/svenhutchinson/extensions/2015/05/28/we-just-raised-our-series-a-whats-next</id>
    <content type="html">&lt;p&gt;You may have heard last week in the &lt;a href=&quot;https://www.algolia.com/press&quot;&gt;press&lt;/a&gt;,
 Algolia has just raised an $18.3M Series A round of financing led by Accel
 Partners! Philippe Botteri from Accel is joining our board and we can’t wait
@@ -394,9 +394,9 @@ everywhere. Join us, it’s going to be fun!&lt;/p&gt;
  
  <entry>
    <title>DNS fallback for better resilience</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2015/05/11/dns-fallback-for-better-resilience/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2015/05/11/dns-fallback-for-better-resilience/"/>
    <updated>2015-05-11T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2015/05/11/dns-fallback-for-better-resilience</id>
+   <id>https://github.com/svenhutchinson/extensions/2015/05/11/dns-fallback-for-better-resilience</id>
    <content type="html">&lt;p&gt;At Algolia, we are obsessed with finding a way to have a 99.9999% available
 architecture. On our way to achieve that, we have to make sure every piece of
 the architecture can safely fail without affecting the service.&lt;/p&gt;
@@ -483,9 +483,9 @@ our customers, their customers and us.&lt;/p&gt;
  
  <entry>
    <title>Modern JavaScript libraries: the isomorphic way</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2015/05/06/modern-javascript-libraries-the-isomorphic-way/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2015/05/06/modern-javascript-libraries-the-isomorphic-way/"/>
    <updated>2015-05-06T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2015/05/06/modern-javascript-libraries-the-isomorphic-way</id>
+   <id>https://github.com/svenhutchinson/extensions/2015/05/06/modern-javascript-libraries-the-isomorphic-way</id>
    <content type="html">&lt;p&gt;Algolia’s DNA is really about performance. We want our search engine to answer
 relevant results as fast as possible.&lt;/p&gt;
 
@@ -963,9 +963,9 @@ make our JS client your best friend :)&lt;/p&gt;
  
  <entry>
    <title>Quadrant.io solves the frustration of economic data search with Algolia</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2015/04/20/quadrant-io-solves-the-frustration-of-economic-data-search-with-algolia/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2015/04/20/quadrant-io-solves-the-frustration-of-economic-data-search-with-algolia/"/>
    <updated>2015-04-20T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2015/04/20/quadrant-io-solves-the-frustration-of-economic-data-search-with-algolia</id>
+   <id>https://github.com/svenhutchinson/extensions/2015/04/20/quadrant-io-solves-the-frustration-of-economic-data-search-with-algolia</id>
    <content type="html">&lt;p&gt;Browsing the cumbersome interfaces of government websites in the lookout for
 reliable data can be a very frustrating experience. It’s full of specific
 terminology and there’s not a government website that looks the same. It’s
@@ -1028,9 +1028,9 @@ developer !”&lt;/p&gt;
  
  <entry>
    <title>Don't let network latency ruin the search experience of your international users</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2015/02/18/distributed-search-network-latency-ruins-search-experience/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2015/02/18/distributed-search-network-latency-ruins-search-experience/"/>
    <updated>2015-02-18T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2015/02/18/distributed-search-network-latency-ruins-search-experience</id>
+   <id>https://github.com/svenhutchinson/extensions/2015/02/18/distributed-search-network-latency-ruins-search-experience</id>
    <content type="html">&lt;p&gt;At Algolia, we allow developers to provide a unique interactive search
 experience with as-you-type search, instant faceting, mobile geo-search and on
 the fly spell check.&lt;/p&gt;
@@ -1112,9 +1112,9 @@ users&lt;/strong&gt;.&lt;/p&gt;
  
  <entry>
    <title>New experimental version of Hacker News Search built with Algolia</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2015/01/12/try-new-experimental-version-hn-search/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2015/01/12/try-new-experimental-version-hn-search/"/>
    <updated>2015-01-12T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2015/01/12/try-new-experimental-version-hn-search</id>
+   <id>https://github.com/svenhutchinson/extensions/2015/01/12/try-new-experimental-version-hn-search</id>
    <content type="html">&lt;p&gt;Exactly a year ago, we began to power the Hacker News search engine (see our
 &lt;a href=&quot;http://blog.algolia.com/hacker-news-search-algolia/)&quot;&gt;blog post&lt;/a&gt;. Since then,
 our HN search project has grown a lot, expanding &lt;strong&gt;from 20M to 25M indexed
@@ -1270,9 +1270,9 @@ have in mind. We also love pull-requests :)&lt;/p&gt;
  
  <entry>
    <title>Github Awesome Autocomplete browser extension for Chrome and Firefox</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/12/23/christmas-gifthub-awesome-autocomplete/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/12/23/christmas-gifthub-awesome-autocomplete/"/>
    <updated>2014-12-23T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/12/23/christmas-gifthub-awesome-autocomplete</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/12/23/christmas-gifthub-awesome-autocomplete</id>
    <content type="html">&lt;p&gt;By working every day on building the best search engine, we’ve become obsessed
 with our own search experience on the websites and mobile applications we use.&lt;/p&gt;
 
@@ -1412,9 +1412,9 @@ by step tutorials at
  
  <entry>
    <title>Search inside websites and mobile apps is strategic to engage visitors - Part 1</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/12/01/search-strategic-engage-visitors/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/12/01/search-strategic-engage-visitors/"/>
    <updated>2014-12-01T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/12/01/search-strategic-engage-visitors</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/12/01/search-strategic-engage-visitors</id>
    <content type="html">&lt;p&gt;In an economic environment where the competition for end-users’ attention and
 interest is fierce, overlooking search inside your website and mobile
 application may damage your business.&lt;/p&gt;
@@ -1512,9 +1512,9 @@ Google did for the Web, you now need to it for yourself!&lt;/strong&gt;&lt;/p&gt
  
  <entry>
    <title>FanFootage: Solving the Search problem with Algolia</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/12/01/fanfootage-solving-search-problem-algolia/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/12/01/fanfootage-solving-search-problem-algolia/"/>
    <updated>2014-12-01T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/12/01/fanfootage-solving-search-problem-algolia</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/12/01/fanfootage-solving-search-problem-algolia</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;The following post is a guest post by Eoin O’Driscoll (web developer), and Vinny Glennon (co-founder) of FanFootage.com&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/algoliasearch-jekyll-hyde/assets/vinny.png&quot; alt=&quot;vinny&quot; /&gt;&lt;/p&gt;
@@ -1590,9 +1590,9 @@ It just works. And now we can focus on our own fanbase.&lt;/p&gt;
  
  <entry>
    <title>Black Thursday DNS issue</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/11/28/black-thursday-dns-issue/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/11/28/black-thursday-dns-issue/"/>
    <updated>2014-11-28T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/11/28/black-thursday-dns-issue</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/11/28/black-thursday-dns-issue</id>
    <content type="html">&lt;p&gt;Today we had a severe DNS issue that impacted some of our users during a total
 of 5 hours. Although most of our customers were not impacted, for some of them
 search simply went down. This event and its details deserved to be fully
@@ -1743,9 +1743,9 @@ own best practices, your comments are really welcome.&lt;/p&gt;
  
  <entry>
    <title>Jadopado delivers instasearch for mobile and web powered by Algolia</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/11/14/jadopado-delivers-instasearch-mobile-web-powered-algolia/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/11/14/jadopado-delivers-instasearch-mobile-web-powered-algolia/"/>
    <updated>2014-11-14T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/11/14/jadopado-delivers-instasearch-mobile-web-powered-algolia</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/11/14/jadopado-delivers-instasearch-mobile-web-powered-algolia</id>
    <content type="html">&lt;h2 id=&quot;algolia-increases-online-search-sessions-by-60-and-unique-mobile-searches&quot;&gt;Algolia Increases Online Search Sessions By 60% and Unique Mobile Searches&lt;/h2&gt;
 &lt;p&gt;by 270%&lt;/p&gt;
 
@@ -1830,9 +1830,9 @@ visits through search from 8.2% to 11.3%.&lt;/strong&gt;&lt;/p&gt;
  
  <entry>
    <title>AfterShip Leverages Algolia's Search as a Service to Track 10 Million Packages Around The World</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/10/10/aftership-leverages-algolias-search-service-track-10-million-packages-around-world/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/10/10/aftership-leverages-algolias-search-service-track-10-million-packages-around-world/"/>
    <updated>2014-10-10T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/10/10/aftership-leverages-algolias-search-service-track-10-million-packages-around-world</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/10/10/aftership-leverages-algolias-search-service-track-10-million-packages-around-world</id>
    <content type="html">&lt;p&gt;Algolia Speeds Up Search Result Delivery Times From 10 Seconds To 250
 Milliseconds.The following post is a guest post by &lt;a href=&quot;http://hk.linkedin.com/in/teddychan/&quot;&gt;Teddy
 Chan&lt;/a&gt;, Founder and CEO at
@@ -1913,9 +1913,9 @@ grow with us as quickly as our business does.&lt;/p&gt;
  
  <entry>
    <title>Algolia opened its 4th datacenter is in California!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/09/01/4th-datacenter-california/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/09/01/4th-datacenter-california/"/>
    <updated>2014-09-01T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/09/01/4th-datacenter-california</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/09/01/4th-datacenter-california</id>
    <content type="html">&lt;p&gt;Do you know the 3 most important things in search? Speed, speed, and speed!&lt;/p&gt;
 
 &lt;p&gt;At Algolia, we work at making access to content and information completely
@@ -1938,9 +1938,9 @@ also available for enterprise users).&lt;/p&gt;
  
  <entry>
    <title>Concertwith.me's Competitive Edge: A Revamped Search UX with Algolia</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/08/28/concertwith-mes-competitive-edge-revamped-search-ux-algolia/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/08/28/concertwith-mes-competitive-edge-revamped-search-ux-algolia/"/>
    <updated>2014-08-28T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/08/28/concertwith-mes-competitive-edge-revamped-search-ux-algolia</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/08/28/concertwith-mes-competitive-edge-revamped-search-ux-algolia</id>
    <content type="html">&lt;p&gt;There are a lot of music discovery apps on the market, yet sifting through
 concert listings is anything but seamless. That’s why Cyprus-based startup
 &lt;a href=&quot;http://concertwith.me/&quot;&gt;Concertwith.me&lt;/a&gt; aims to make finding local concerts
@@ -1999,9 +1999,9 @@ competitive edge I was looking for.”&lt;/p&gt;
  
  <entry>
    <title>How Abacus Leverages Algolia for Realtime Expense Reporting</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/08/21/algolia-for-realtime-expense-reporting/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/08/21/algolia-for-realtime-expense-reporting/"/>
    <updated>2014-08-21T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/08/21/algolia-for-realtime-expense-reporting</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/08/21/algolia-for-realtime-expense-reporting</id>
    <content type="html">&lt;p&gt;When one thinks of expense reporting, speed is far from the first descriptor
 that comes to mind. Companies spend a substantial amount of time tracking
 expenses, while employees linger in paperwork purgatory, wondering when they
@@ -2049,9 +2049,9 @@ website.&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
  
  <entry>
    <title>Deploying Algolia to Search on more than 2 Million Products</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/07/11/deploying-algolia-search-2-million-products/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/07/11/deploying-algolia-search-2-million-products/"/>
    <updated>2014-07-11T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/07/11/deploying-algolia-search-2-million-products</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/07/11/deploying-algolia-search-2-million-products</id>
    <content type="html">&lt;p&gt;The following post is an interview of &lt;a href=&quot;fr.linkedin.com/pub/vincent-paulin/71/1a3/86a&quot;&gt;Vincent Paulin&lt;/a&gt;, R&amp;amp;D Manager at &lt;a href=&quot;http://www.alittlemarket.com/&quot;&gt;A Little
 Market&lt;/a&gt; (recently acquired by Etsy).&lt;/p&gt;
 
@@ -2151,9 +2151,9 @@ replaced our main search engine for a better solution thanks to Algolia.”&lt;/
  
  <entry>
    <title>Keeping Data in your Search Engine Up-to-Date</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/07/09/keeping-data-in-your-search-engine-up-to-date/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/07/09/keeping-data-in-your-search-engine-up-to-date/"/>
    <updated>2014-07-09T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/07/09/keeping-data-in-your-search-engine-up-to-date</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/07/09/keeping-data-in-your-search-engine-up-to-date</id>
    <content type="html">&lt;p&gt;When we developed the first version of Algolia Search, we put a lot of effort
 into developing a data update API. It worked like this: You could send us a
 modified version of your data as soon as the change appeared, even if it
@@ -2240,9 +2240,9 @@ our best to remove your pain!&lt;/p&gt;
  
  <entry>
    <title>Common Misperceptions about Search as a Service</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/06/05/popular-misperceptions-search-service/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/06/05/popular-misperceptions-search-service/"/>
    <updated>2014-06-05T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/06/05/popular-misperceptions-search-service</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/06/05/popular-misperceptions-search-service</id>
    <content type="html">&lt;p&gt;Since the first SaaS IPO by &lt;a href=&quot;http://www.salesforce.com/&quot;&gt;salesforce.com&lt;/a&gt;, the
 SaaS (Software as a Service) model has boomed in the last decade to become a
 global market that is worth billions today. It has taken a long way and a lot
@@ -2385,9 +2385,9 @@ eventually way more cost-efficient for you..&lt;/p&gt;
  
  <entry>
    <title>A New Way to Handle Synonyms in a Search Engine</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/05/22/synonym-search-engine/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/05/22/synonym-search-engine/"/>
    <updated>2014-05-22T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/05/22/synonym-search-engine</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/05/22/synonym-search-engine</id>
    <content type="html">&lt;p&gt;We recently added the support for Synonyms in Algolia! It has been the most
 requested feature in Algolia since our launch in September. While it may seem
 simple, it actually took us some time to implement because we wanted to do it
@@ -2452,9 +2452,9 @@ feature! Feel free to contact us at &lt;strong&gt;hey(at)algolia.com&lt;/strong&
  
  <entry>
    <title>Why JSONP is still Mandatory</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/05/14/jsonp-still-mandatory/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/05/14/jsonp-still-mandatory/"/>
    <updated>2014-05-14T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/05/14/jsonp-still-mandatory</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/05/14/jsonp-still-mandatory</id>
    <content type="html">&lt;p&gt;At Algolia, we are convinced that search queries need to be sent directly from
 the browser (or mobile app) to the search-engine in order to have a realtime
 search experience. This is why we have developed a search backend that replies
@@ -2608,9 +2608,9 @@ scenarios. If you see any other way to do it, your feedback is very welcome.&lt;
  
  <entry>
    <title>Inside GrowthHackers.com's Implementation of Algolia</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/05/02/inside-growthhackers-implementation-of-algolia/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/05/02/inside-growthhackers-implementation-of-algolia/"/>
    <updated>2014-05-02T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/05/02/inside-growthhackers-implementation-of-algolia</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/05/02/inside-growthhackers-implementation-of-algolia</id>
    <content type="html">&lt;p&gt;We interviewed &lt;a href=&quot;https://twitter.com/dylanLaCom&quot;&gt;Dylan La Com&lt;/a&gt;, Growth Product
 Manager at &lt;a href=&quot;https://qualaroo.com&quot;&gt;Qualaroo&lt;/a&gt; &amp;amp;
 &lt;a href=&quot;http://growthhackers.com&quot;&gt;GrowthHackers.com&lt;/a&gt;, about their Algolia
@@ -2711,9 +2711,9 @@ search functionality throughout GrowthHackers.&lt;/p&gt;
  
  <entry>
    <title>Dealing with OpenSSL Heartbleed Vulnerability</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/04/09/dealing-openssl-security-issue/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/04/09/dealing-openssl-security-issue/"/>
    <updated>2014-04-09T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/04/09/dealing-openssl-security-issue</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/04/09/dealing-openssl-security-issue</id>
    <content type="html">&lt;p&gt;Yesterday, the OpenSSL project released an update to fix a serious security
 issue. This vulnerability was disclosed in &lt;a href=&quot;https://web.nvd.nis
 t.gov/view/vuln/detail?vulnId=CVE-2014-0160&quot;&gt;CVE-2014-0160&lt;/a&gt; and is more widely known as the
@@ -2760,9 +2760,9 @@ potential threats that may be discovered.&lt;/p&gt;
  
  <entry>
    <title>Introducing Search Analytics: Know Your Users Better</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/03/29/introducing-algolias-search-analytics/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/03/29/introducing-algolias-search-analytics/"/>
    <updated>2014-03-29T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/03/29/introducing-algolias-search-analytics</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/03/29/introducing-algolias-search-analytics</id>
    <content type="html">&lt;p&gt;This week we have released a much requested feature by our customers:
 analytics.&lt;/p&gt;
 
@@ -2840,9 +2840,9 @@ to read your feedback and feature requests!&lt;/p&gt;
  
  <entry>
    <title>On HipChat's blog: Algolia extends HipChat to customer support</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/03/25/hipchats-blog-algolia-extends-hipchat-customer-support/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/03/25/hipchats-blog-algolia-extends-hipchat-customer-support/"/>
    <updated>2014-03-25T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/03/25/hipchats-blog-algolia-extends-hipchat-customer-support</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/03/25/hipchats-blog-algolia-extends-hipchat-customer-support</id>
    <content type="html">&lt;p&gt;As you may probably know, we’re using HipChat to build our live-help chat. If
 you want to know more, go ahead and read our &lt;a href=&quot;http://blog.hipchat.com/2014/03/25/algolia-extends-hipchat-to-customer-support/&quot;&gt;guest post on HipChat’s
 blog&lt;/a&gt;.&lt;/p&gt;
@@ -2857,9 +2857,9 @@ provide live customer service over chat.&lt;/p&gt;
  
  <entry>
    <title>Realtime Search: Security and our Javascript Client</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/03/18/handle-security-realtime-search/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/03/18/handle-security-realtime-search/"/>
    <updated>2014-03-18T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/03/18/handle-security-realtime-search</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/03/18/handle-security-realtime-search</id>
    <content type="html">&lt;p&gt;&lt;em&gt;&lt;strong&gt;Edit: As suggested on &lt;a href=&quot;https://news.ycombinator.com/item?id=7419205&quot;&gt;Hacker
 News&lt;/a&gt;, SHA256 is not secure, as
 it allows a length extension attack. We have replaced it with HMAC-SHA256.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
@@ -2951,9 +2951,9 @@ love to hear your feedback!&lt;/p&gt;
  
  <entry>
    <title>What Caused Today's Search Performance Issues In Europe and Why It Will Not Happen Again</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/03/17/caused-todays-performance-issues-europe-will-happen/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/03/17/caused-todays-performance-issues-europe-will-happen/"/>
    <updated>2014-03-17T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/03/17/caused-todays-performance-issues-europe-will-happen</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/03/17/caused-todays-performance-issues-europe-will-happen</id>
    <content type="html">&lt;p&gt;During a few hours on March 17th you may have noticed longer response times
 for some of the queries sent by your users.&lt;/p&gt;
 
@@ -3009,9 +3009,9 @@ here for an example with our Ruby client: &lt;a href=&quot;https://github.com/al
  
  <entry>
    <title>Algolia Heroku add-on enters general availability</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/03/15/algolia-heroku-add-on-enters-ga/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/03/15/algolia-heroku-add-on-enters-ga/"/>
    <updated>2014-03-15T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/03/15/algolia-heroku-add-on-enters-ga</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/03/15/algolia-heroku-add-on-enters-ga</id>
    <content type="html">&lt;p&gt;We launched the first beta of our Heroku add-on in October 2013 and are now
 happy to announce its general availability!&lt;/p&gt;
 
@@ -3029,9 +3029,9 @@ know&lt;/a&gt; if you have any feedback!&lt;/p&gt;
  
  <entry>
    <title>Algolia Now Provides Realtime Search in Asia!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/03/14/added-asian-datacenter-offer/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/03/14/added-asian-datacenter-offer/"/>
    <updated>2014-03-14T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/03/14/added-asian-datacenter-offer</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/03/14/added-asian-datacenter-offer</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://blog.algolia.com/added-asian-
 datacenter-offer/screen-shot-2014-03-13-at-17-51-50/&quot;&gt;&lt;img src=&quot;/algoliasearch-jekyll-hyde/assets/Screen-Shot-2014-03-13-at-17.51.50-300x199.png&quot; alt=&quot;New datacenter allows realtime search in Asia&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -3091,9 +3091,9 @@ accounts.&lt;/em&gt;&lt;/p&gt;
  
  <entry>
    <title>Introducing Easier Onboarding and Activation with Connectors</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/02/10/mongodb-and-sql-connectors/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/02/10/mongodb-and-sql-connectors/"/>
    <updated>2014-02-10T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/02/10/mongodb-and-sql-connectors</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/02/10/mongodb-and-sql-connectors</id>
    <content type="html">&lt;p&gt;Most of our users are &lt;strong&gt;technical&lt;/strong&gt;. They love writing code, and we love
 providing API clients in the major programming languages to them (we are
 currently &lt;a href=&quot;http://www.algolia.com/doc/apiclients)&quot;&gt;supporting 10 platforms&lt;/a&gt;.&lt;/p&gt;
@@ -3283,9 +3283,9 @@ your feedback. Your feature requests are welcome!&lt;/p&gt;
  
  <entry>
    <title>Postmortem of today's 8min indexing downtime</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/01/29/postmortem-todays-8min-indexing-downtime/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/01/29/postmortem-todays-8min-indexing-downtime/"/>
    <updated>2014-01-29T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/01/29/postmortem-todays-8min-indexing-downtime</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/01/29/postmortem-todays-8min-indexing-downtime</id>
    <content type="html">&lt;p&gt;Today (Jan 29) at 9:30pm UTC, our service experienced an 8 minute partial
 outage during which we have rejected many write operations sent to the
 indexing API (exactly 2841 calls). We call it “partial” as all search queries
@@ -3357,9 +3357,9 @@ support!&lt;/p&gt;
  
  <entry>
    <title>Hacker News search: 6.5 million articles and comments at your fingertips</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/01/24/hacker-news-search-algolia/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/01/24/hacker-news-search-algolia/"/>
    <updated>2014-01-24T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/01/24/hacker-news-search-algolia</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/01/24/hacker-news-search-algolia</id>
    <content type="html">&lt;p&gt;We are &lt;a href=&quot;https://news.ycombinator.com&quot;&gt;Hacker News&lt;/a&gt; readers and probably just
 like you, there is not a day that goes by we don’t use it. It is a little like
 checking the weather app of the tech world. Long story short, Hacker News is
@@ -3532,9 +3532,9 @@ open-sourced it&lt;/a&gt;.&lt;/p&gt;
  
  <entry>
    <title>Search Grader by Algolia: How does your search engine perform?</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/01/18/search-grader-engine-performing/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/01/18/search-grader-engine-performing/"/>
    <updated>2014-01-18T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/01/18/search-grader-engine-performing</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/01/18/search-grader-engine-performing</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://grader.algolia.com&quot;&gt;&lt;img src=&quot;/algoliasearch-jekyll-hyde/assets/Capture-decran-2014-01-24-01.26.08-600x150.png&quot; alt=&quot;algolia-search-grader&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;search-is-important&quot;&gt;Search is important&lt;/h2&gt;
@@ -3646,9 +3646,9 @@ Grader&lt;/a&gt; by Algolia.&lt;/p&gt;
  
  <entry>
    <title>Improving Search for Twitter Handles</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2014/01/06/improving-ranking-twitter-handles-search/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2014/01/06/improving-ranking-twitter-handles-search/"/>
    <updated>2014-01-06T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2014/01/06/improving-ranking-twitter-handles-search</id>
+   <id>https://github.com/svenhutchinson/extensions/2014/01/06/improving-ranking-twitter-handles-search</id>
    <content type="html">&lt;p&gt;Hello Twitter,&lt;/p&gt;
 
 &lt;p&gt;I have been using your service for awhile, and I love it!&lt;/p&gt;
@@ -3858,9 +3858,9 @@ Search&lt;/a&gt;.&lt;/p&gt;
  
  <entry>
    <title>Our Search-as-a-Service offer has now 10 API Clients!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/07/18/our-search-as-a-service-offer-has-now-10-api-clients/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/07/18/our-search-as-a-service-offer-has-now-10-api-clients/"/>
    <updated>2013-07-18T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/07/18/our-search-as-a-service-offer-has-now-10-api-clients</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/07/18/our-search-as-a-service-offer-has-now-10-api-clients</id>
    <content type="html">&lt;p&gt;We recently reached a new milestone towards the release of our Search as a
 Service offer. We’re now proud to offer 10 API clients, covering all major
 languages.&lt;/p&gt;
@@ -3902,9 +3902,9 @@ testers:&lt;/p&gt;
  
  <entry>
    <title>Asian Language support in our Offline Search SDK 2.2</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/07/08/excellent-asian-languages-support-in-our-offline-search-sdk-2-2/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/07/08/excellent-asian-languages-support-in-our-offline-search-sdk-2-2/"/>
    <updated>2013-07-08T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/07/08/excellent-asian-languages-support-in-our-offline-search-sdk-2-2</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/07/08/excellent-asian-languages-support-in-our-offline-search-sdk-2-2</id>
    <content type="html">&lt;p&gt;Like most search engines, version 2.1 did not include any specific processing
 for Asian Languages. Version 2.2 significantly improves Asian language support
 (Chinese, Japanese, Korean) by including specific processing like the
@@ -3930,9 +3930,9 @@ version:&lt;/p&gt;
  
  <entry>
    <title>New iOS and OS X API clients for our Search-as-a-Service offer</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/06/24/check-out-the-new-iosos-x-clients-for-our-search-as-a-service-offer/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/06/24/check-out-the-new-iosos-x-clients-for-our-search-as-a-service-offer/"/>
    <updated>2013-06-24T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/06/24/check-out-the-new-iosos-x-clients-for-our-search-as-a-service-offer</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/06/24/check-out-the-new-iosos-x-clients-for-our-search-as-a-service-offer</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://blog.algolia.com/wp-
 content/uploads/2013/06/objC.png&quot;&gt;&lt;img src=&quot;/algoliasearch-jekyll-hyde/assets/objC.png&quot; alt=&quot;Build new things with our iOS and OS X API
 client.&quot; /&gt;&lt;/a&gt;One week after releasing our &lt;a href=&quot;http://blog.algolia.com/discover-our-new-java-android-search-as-a-service-api-clients-at-droidcon-paris/&quot;&gt;Java &amp;amp; Android
@@ -3974,9 +3974,9 @@ most welcome.&lt;/p&gt;
  
  <entry>
    <title>New Java & Android Search-as-a-Service API Clients at DroidCon Paris!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/06/17/discover-our-new-java-android-search-as-a-service-api-clients-at-droidcon-paris/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/06/17/discover-our-new-java-android-search-as-a-service-api-clients-at-droidcon-paris/"/>
    <updated>2013-06-17T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/06/17/discover-our-new-java-android-search-as-a-service-api-clients-at-droidcon-paris</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/06/17/discover-our-new-java-android-search-as-a-service-api-clients-at-droidcon-paris</id>
    <content type="html">&lt;p&gt;Our Search-as-a-Service offer is progressing toward its official release. We
 launched our &lt;a href=&quot;https://github.com/algolia/algoliasearch-client-java&quot;&gt;Java&lt;/a&gt; and
 &lt;a href=&quot;https://github.com/algolia/algoliasearch-client-android&quot;&gt;Android &lt;/a&gt;search API
@@ -4015,9 +4015,9 @@ most welcome.&lt;/p&gt;
  
  <entry>
    <title>Discover our 6 new Search-as-a-Service API Clients!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/05/28/discover-our-6-new-search-as-a-service-api-clients/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/05/28/discover-our-6-new-search-as-a-service-api-clients/"/>
    <updated>2013-05-28T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/05/28/discover-our-6-new-search-as-a-service-api-clients</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/05/28/discover-our-6-new-search-as-a-service-api-clients</id>
    <content type="html">&lt;p&gt;We &lt;a href=&quot;http://blog.algolia.com/our-saas-version-is-in-beta/&quot;&gt;launched the private beta&lt;/a&gt; of our Search-as-a-Service offer two months ago. In that time we
 received very positive feedback from our beta testers and we couldn’t thank
 them enough for the help they provided. To date, they have sent over 1M
@@ -4043,9 +4043,9 @@ most welcome.&lt;/p&gt;
  
  <entry>
    <title>Algolia Search Offline 2.1 is out!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/05/24/algolia-search-offline-2-1-is-out/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/05/24/algolia-search-offline-2-1-is-out/"/>
    <updated>2013-05-24T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/05/24/algolia-search-offline-2-1-is-out</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/05/24/algolia-search-offline-2-1-is-out</id>
    <content type="html">&lt;p&gt;We are pleased to introduce a new version of Algolia Search Offline for iOS,
 Android and OS X (Windows versions will come soon).&lt;/p&gt;
 
@@ -4076,9 +4076,9 @@ benefit from these improvements by default.&lt;/p&gt;
  
  <entry>
    <title>Instant Search through the iOS App Store</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/05/21/instant-search-on-ios-app-store/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/05/21/instant-search-on-ios-app-store/"/>
    <updated>2013-05-21T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/05/21/instant-search-on-ios-app-store</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/05/21/instant-search-on-ios-app-store</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.algolia.com/demo/appstore/&quot;&gt;&lt;img src=&quot;/algoliasearch-jekyll-hyde/assets/appstore.jpg&quot; alt=&quot;App Store&quot; /&gt;&lt;/a&gt;If
 you have an iOS device you probably search the App Store regularly for apps
 you have heard about. Following the recent AppGratis ousting from the
@@ -4142,9 +4142,9 @@ to keep the data in sync.&lt;/p&gt;
  
  <entry>
    <title>Algolia Search Offline SDK now supports Cocoapods</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/04/25/algolia-search-offline-sdk-now-supports-cocoapods/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/04/25/algolia-search-offline-sdk-now-supports-cocoapods/"/>
    <updated>2013-04-25T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/04/25/algolia-search-offline-sdk-now-supports-cocoapods</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/04/25/algolia-search-offline-sdk-now-supports-cocoapods</id>
    <content type="html">&lt;p&gt;We have great news for our iOS and OS X users: our Offline SDK is now
 available as a &lt;em&gt;&lt;a href=&quot;http://www.cocoapods.org/&quot;&gt;CocoaPods&lt;/a&gt; _dependency&lt;/em&gt;._&lt;/p&gt;
 
@@ -4172,9 +4172,9 @@ for iOS and OS X projects!&lt;/p&gt;
  
  <entry>
    <title>V2: Search by Geolocation in our Offline Search SDK</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/04/16/v2-our-new-offline-search-sdk-with-geo-search-and-other-features/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/04/16/v2-our-new-offline-search-sdk-with-geo-search-and-other-features/"/>
    <updated>2013-04-16T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/04/16/v2-our-new-offline-search-sdk-with-geo-search-and-other-features</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/04/16/v2-our-new-offline-search-sdk-with-geo-search-and-other-features</id>
    <content type="html">&lt;p&gt;While our latest news focused on the Algolia Search cloud offer (you can still
 join the &lt;a href=&quot;http://blog.algolia.com/our-saas-version-is-in-beta/)&quot;&gt;beta&lt;/a&gt;, we’re
 pleased to introduce a major new version of Algolia Search offline: V2! It is
@@ -4253,9 +4253,9 @@ the Algolia Search Offline SDK. &lt;a href=&quot;http://www.algolia.com/get-sta
  
  <entry>
    <title>Introducing a RubyMotion search gem by Algolia!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/04/16/algolia-search-is-now-available-for-rubymotion/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/04/16/algolia-search-is-now-available-for-rubymotion/"/>
    <updated>2013-04-16T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/04/16/algolia-search-is-now-available-for-rubymotion</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/04/16/algolia-search-is-now-available-for-rubymotion</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://blog.algolia.com/wp-
 content/uploads/2013/04/rubymotion1.png&quot;&gt;&lt;img src=&quot;/algoliasearch-jekyll-hyde/assets/rubymotion1-270x300.png&quot; alt=&quot;Rubymotion search gem by Algolia is now
 live!&quot; /&gt;&lt;/a&gt;If you are a Ruby developer and have
@@ -4289,9 +4289,9 @@ gem &#39;motion-algolia-search&#39;
  
  <entry>
    <title>We are NEXT Berlin Finalists!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/04/11/we-are-finalists-at-next-berlin/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/04/11/we-are-finalists-at-next-berlin/"/>
    <updated>2013-04-11T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/04/11/we-are-finalists-at-next-berlin</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/04/11/we-are-finalists-at-next-berlin</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://nextberlin.eu/2013/04/next13-start-up-pitch-these-are-
 the-12-finalists/&quot;&gt;&lt;img src=&quot;/algoliasearch-jekyll-hyde/assets/NextBerlin-300x155.png&quot; alt=&quot;NEXT Berlin Finalists&quot; /&gt;&lt;/a&gt;The &lt;a href=&quot;http://nextberlin.eu/&quot;&gt;NEXT Berlin Conference&lt;/a&gt; will
 take place on April 23rd &amp;amp; 24th in one of the most active entrepreneurial
@@ -4313,9 +4313,9 @@ to present Algolia to Berlin!&lt;/p&gt;
  
  <entry>
    <title>Instant Search on CrunchBase</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/03/26/instant-search-on-crunchbase/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/03/26/instant-search-on-crunchbase/"/>
    <updated>2013-03-26T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/03/26/instant-search-on-crunchbase</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/03/26/instant-search-on-crunchbase</id>
    <content type="html">&lt;p&gt;After launching the Beta Cloud version of Algolia, we wanted to demonstrate
 what it can do. We built a search engine using CrunchBase data, so
 entrepreneurs can easily search for their company or themselves. &lt;a href=&quot;http://www.algolia.com/demo/crunchbase/&quot;&gt;Check it
@@ -4418,9 +4418,9 @@ what you think and send your suggestions: contact at algolia dot com&lt;/p&gt;
  
  <entry>
    <title>Online Search in the Cloud: Version is in Beta!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/03/18/our-saas-version-is-in-beta/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/03/18/our-saas-version-is-in-beta/"/>
    <updated>2013-03-18T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/03/18/our-saas-version-is-in-beta</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/03/18/our-saas-version-is-in-beta</id>
    <content type="html">&lt;p&gt;Imagine all the power and simplicity of Algolia Search, but available online,
 from any connected device. Welcome to our Cloud!&lt;/p&gt;
 
@@ -4441,9 +4441,9 @@ performance whatever the connectivity!&lt;/p&gt;
  
  <entry>
    <title>FREE Search SDK: Algolia is Now Available for Free!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/03/12/algolia-search-is-now-available-for-free/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/03/12/algolia-search-is-now-available-for-free/"/>
    <updated>2013-03-12T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/03/12/algolia-search-is-now-available-for-free</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/03/12/algolia-search-is-now-available-for-free</id>
    <content type="html">&lt;p&gt;Yes, you read that right! We’re not talking about a free trial, but of a
 completely FREE version of our SDK. It is often difficult to implement a good
 search experience, so we want to democratize access to easy-to-integrate and
@@ -4464,9 +4464,9 @@ advantage of this offer!&lt;/p&gt;
  
  <entry>
    <title>Round table at Microsoft TechDays 2013</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/02/19/round-table-at-microsoft-techdays-2013/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/02/19/round-table-at-microsoft-techdays-2013/"/>
    <updated>2013-02-19T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/02/19/round-table-at-microsoft-techdays-2013</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/02/19/round-table-at-microsoft-techdays-2013</id>
    <content type="html">&lt;p&gt;I had the pleasure to be invited by &lt;a href=&quot;https://twitter.com/deltakosh&quot;&gt;David
 Catuhe&lt;/a&gt; to participate in a round table about
 Windows8 development during &lt;a href=&quot;http://www.microsoft.com/france/mstechdays/&quot;&gt;Microsoft TechDays
@@ -4493,9 +4493,9 @@ covered Algolia in the IT press.&lt;/p&gt;
  
  <entry>
    <title>Meet us at the Mobile World Congress! - The Algolia Blog</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/02/19/meet-us-at-the-mobile-world-congress/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/02/19/meet-us-at-the-mobile-world-congress/"/>
    <updated>2013-02-19T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/02/19/meet-us-at-the-mobile-world-congress</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/02/19/meet-us-at-the-mobile-world-congress</id>
    <content type="html">&lt;p&gt;We’ll be in Barcelona next week for the Mobile World Congress! Last year, more
 than 67,000 attendees participated in the event.&lt;/p&gt;
 
@@ -4510,9 +4510,9 @@ coffee :) (@dessaigne on twitter, or nicolas at algolia dot com).&lt;/p&gt;
  
  <entry>
    <title>We ranked Second at Start In Paris!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/01/29/we-ranked-second-at-start-in-paris/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/01/29/we-ranked-second-at-start-in-paris/"/>
    <updated>2013-01-29T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/01/29/we-ranked-second-at-start-in-paris</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/01/29/we-ranked-second-at-start-in-paris</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.startinparis.com/&quot;&gt;Start In Paris&lt;/a&gt; is a monthly event where 5
 startups have the opportunity to pitch their service to the Paris startup
 community. After a first selection and then a public vote, we were selected as
@@ -4541,9 +4541,9 @@ content/uploads/2013/01/StartInParis.jpg&quot;&gt;&lt;img src=&quot;/algoliasear
  
  <entry>
    <title>Sharypic benefits from Algolia Search!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/01/28/sharypic-benefits-from-algolia-search/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/01/28/sharypic-benefits-from-algolia-search/"/>
    <updated>2013-01-28T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/01/28/sharypic-benefits-from-algolia-search</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/01/28/sharypic-benefits-from-algolia-search</id>
    <content type="html">&lt;p&gt;Demonstrating how Algolia Search functions in the wild, in this post we will
 discuss a recent integration with &lt;a href=&quot;http://sharypic.com&quot;&gt;sharypic&lt;/a&gt;, another
 Paris-based startup focussed on photo sharing at events.&lt;/p&gt;
@@ -4591,9 +4591,9 @@ event!&lt;/em&gt;&lt;/p&gt;
  
  <entry>
    <title>Why Android APK Format is a Mistake</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/01/24/why-android-apk-format-is-a-terrible-mistake/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/01/24/why-android-apk-format-is-a-terrible-mistake/"/>
    <updated>2013-01-24T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/01/24/why-android-apk-format-is-a-terrible-mistake</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/01/24/why-android-apk-format-is-a-terrible-mistake</id>
    <content type="html">&lt;p&gt;When I started to develop for Android it appeared to me that an APK file was
 just an archive, a simple approach that you can find in many systems today.
 Files are extracted from the archive at installation and you can access them
@@ -4667,9 +4667,9 @@ from you!&lt;/p&gt;
  
  <entry>
    <title>Seedcamp: Tips and Advice From a Finalist - The Algolia Blog</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/01/15/seedcamp-tips-and-advice-from-a-finalist/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/01/15/seedcamp-tips-and-advice-from-a-finalist/"/>
    <updated>2013-01-15T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/01/15/seedcamp-tips-and-advice-from-a-finalist</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/01/15/seedcamp-tips-and-advice-from-a-finalist</id>
    <content type="html">&lt;p&gt;About one month ago, we were given the opportunity to participate in
 &lt;a href=&quot;http://www.seedcamp.com/&quot;&gt;Seedcamp&lt;/a&gt; Paris 2012. In this post I’ll try to
 think back to that time and provide feedback, along with some advice if you’re
@@ -4887,9 +4887,9 @@ startups to give it a go!&lt;/p&gt;
  
  <entry>
    <title>Android NDK: How to Reduce Binaries Size - The Algolia Blog</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2013/01/10/android-ndk-how-to-reduce-libs-size/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2013/01/10/android-ndk-how-to-reduce-libs-size/"/>
    <updated>2013-01-10T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2013/01/10/android-ndk-how-to-reduce-libs-size</id>
+   <id>https://github.com/svenhutchinson/extensions/2013/01/10/android-ndk-how-to-reduce-libs-size</id>
    <content type="html">&lt;p&gt;When we started Algolia Development for Android, binary size optimization was
 not one of our main concerns. In fact we even started to develop in JAVA
 before switching to C/C++ for &lt;a href=&quot;http://blog.algolia.com/need-performance-on-mobile-use-c-cpp/&quot;&gt;reasons of performance&lt;/a&gt;.&lt;/p&gt;
@@ -5118,9 +5118,9 @@ you know other methods to reduce binary size, please share in the comments!&lt;/
  
  <entry>
    <title>Simplicity is the most Complex Feature!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/12/28/simplicity-is-the-most-complex-feature/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/12/28/simplicity-is-the-most-complex-feature/"/>
    <updated>2012-12-28T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/12/28/simplicity-is-the-most-complex-feature</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/12/28/simplicity-is-the-most-complex-feature</id>
    <content type="html">&lt;p&gt;I’ve been convinced for a long time that simplicity is the most important
 property of a product. Long-gone are the 90s when a product was admired for
 its complexity. But I am also convinced that this is the most complex property
@@ -5162,9 +5162,9 @@ war&lt;/a&gt;.&lt;/p&gt;
  
  <entry>
    <title>Never, Ever, Hinder the Use of your Products!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/12/21/never-ever-hinder-the-use-of-your-products/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/12/21/never-ever-hinder-the-use-of-your-products/"/>
    <updated>2012-12-21T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/12/21/never-ever-hinder-the-use-of-your-products</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/12/21/never-ever-hinder-the-use-of-your-products</id>
    <content type="html">&lt;p&gt;One of the worst user experiences I have ever had with software was with the
 Sony PS3. I kind of liked this product; I found the user interface very nice
 and well organized… but they were much too aggressive about upgrades! They
@@ -5196,9 +5196,9 @@ force them to do something they do not want to, like Sony did with the PS3.&lt;/
  
  <entry>
    <title>Algolia Search is now in Beta for Microsoft Windows 8 Desktops and Tablets - The Algolia Blog</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/12/20/windows-8-beta-is-out-algolia-search-now-available-for-microsoft-desktops-and-tablets/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/12/20/windows-8-beta-is-out-algolia-search-now-available-for-microsoft-desktops-and-tablets/"/>
    <updated>2012-12-20T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/12/20/windows-8-beta-is-out-algolia-search-now-available-for-microsoft-desktops-and-tablets</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/12/20/windows-8-beta-is-out-algolia-search-now-available-for-microsoft-desktops-and-tablets</id>
    <content type="html">&lt;p&gt;You may have been expecting Windows Phone 8 as our next platform of choice,
 but we preferred to go Windows 8 first! With more than 40M sold in a month,
 let’s say it’s a slightly more interesting market for now.&lt;/p&gt;
@@ -5265,9 +5265,9 @@ Search now!&lt;/p&gt;
  
  <entry>
    <title>Smart Contacts Demo Hits the App Store!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/12/13/our-smart-contacts-demo-hits-the-app-store/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/12/13/our-smart-contacts-demo-hits-the-app-store/"/>
    <updated>2012-12-13T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/12/13/our-smart-contacts-demo-hits-the-app-store</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/12/13/our-smart-contacts-demo-hits-the-app-store</id>
    <content type="html">&lt;p&gt;After going back and forth a few times with Apple, we are really happy to
 announce the availibility of our &lt;a href=&quot;https://itunes.apple.com/gb/app/algolia-smart-contact/id583433043&quot;&gt;Smart
 Contacts&lt;/a&gt;
@@ -5312,9 +5312,9 @@ develop!&lt;/p&gt;
  
  <entry>
    <title>We are SeedCamp Finalists!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/11/30/we-are-seedcamp-finalists/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/11/30/we-are-seedcamp-finalists/"/>
    <updated>2012-11-30T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/11/30/we-are-seedcamp-finalists</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/11/30/we-are-seedcamp-finalists</id>
    <content type="html">&lt;p&gt;Hey, we are thrilled to announce our nomination among the &lt;a href=&quot;http://www.rudebaguette.com/2012/11/30/here-are-the-20-startups-selected-for-seedcamp-paris/&quot;&gt;Seedcamp Paris
 finalists&lt;/a&gt;! The event will take place next week on Monday,
 just before &lt;a href=&quot;http://paris.leweb.co/&quot;&gt;LeWeb 2012&lt;/a&gt; (by the way we’ll be there,
@@ -5335,9 +5335,9 @@ advice&lt;/a&gt;
  
  <entry>
    <title>Why Autocomplete in Twitter Mobile App Sucks</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/11/29/why-autocomplete-in-twitter-on-mobile-sucks/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/11/29/why-autocomplete-in-twitter-on-mobile-sucks/"/>
    <updated>2012-11-29T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/11/29/why-autocomplete-in-twitter-on-mobile-sucks</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/11/29/why-autocomplete-in-twitter-on-mobile-sucks</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://blog.algolia.com/wp-
 content/uploads/2012/11/ScreenshotTwitter.png&quot;&gt;&lt;img src=&quot;/algoliasearch-jekyll-hyde/assets/ScreenshotTwitter.png&quot; alt=&quot;A better Twitter mobile app experience with Algolia
 Search.&quot; /&gt;&lt;/a&gt;Autocomplete is so
@@ -5381,9 +5381,9 @@ Search&lt;/a&gt;!&lt;/p&gt;
  
  <entry>
    <title>Algolia Search is Out!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/11/21/algolia-search-is-out/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/11/21/algolia-search-is-out/"/>
    <updated>2012-11-21T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/11/21/algolia-search-is-out</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/11/21/algolia-search-is-out</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://blog.algolia.com/wp-
 content/uploads/2012/11/hand.jpg&quot;&gt;&lt;img src=&quot;/algoliasearch-jekyll-hyde/assets/hand-203x300.jpg&quot; alt=&quot;Now introducing Algolia Search&quot; /&gt;&lt;/a&gt;After 4 betas and much priceless feedback, we
 are really excited to announce the release of Algolia Search! We launched it
@@ -5415,9 +5415,9 @@ course, to order the product! Check it out and let us know what you think!&lt;/p
  
  <entry>
    <title>The Ordeal of Obtaining an Apple Developer Professional Account</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/11/12/the-ordeal-of-obtaining-an-apple-developer-professional-account/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/11/12/the-ordeal-of-obtaining-an-apple-developer-professional-account/"/>
    <updated>2012-11-12T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/11/12/the-ordeal-of-obtaining-an-apple-developer-professional-account</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/11/12/the-ordeal-of-obtaining-an-apple-developer-professional-account</id>
    <content type="html">&lt;p&gt;I recently had a pretty bad user experience when I upgraded my personal Apple
 developer account into a professional one.&lt;/p&gt;
 
@@ -5466,9 +5466,9 @@ this lesson to ourselves. Feel free to tell us if something’s going wrong!&lt;
  
  <entry>
    <title>Painless integration, crystal clear documentation, please welcome Algolia Search beta 4!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/10/19/painless-integration-crystal-clear-documentation-please-welcome-algolia-search-beta-4/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/10/19/painless-integration-crystal-clear-documentation-please-welcome-algolia-search-beta-4/"/>
    <updated>2012-10-19T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/10/19/painless-integration-crystal-clear-documentation-please-welcome-algolia-search-beta-4</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/10/19/painless-integration-crystal-clear-documentation-please-welcome-algolia-search-beta-4</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://blog.algolia.com
 /wp-content/uploads/2012/10/CitiesSuggestIPhone5Slide3.png&quot;&gt;&lt;img src=&quot;/algoliasearch-jekyll-hyde/assets/CitiesSuggestIPhone5Slide3-300x194.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -5518,9 +5518,9 @@ and a few apps in the app store! Who said a contact app?&lt;/p&gt;
  
  <entry>
    <title>A few thoughts after Apps World</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/10/07/a-few-thoughts-after-apps-world/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/10/07/a-few-thoughts-after-apps-world/"/>
    <updated>2012-10-07T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/10/07/a-few-thoughts-after-apps-world</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/10/07/a-few-thoughts-after-apps-world</id>
    <content type="html">&lt;p&gt;Last week provided me with an occasion to feel the tempo of the mobile
 ecosystem at Apps World in London. Here are a few thoughts about what I saw.&lt;/p&gt;
 
@@ -5572,9 +5572,9 @@ months!&lt;/p&gt;
  
  <entry>
    <title>Upcoming Mobile App Conferences: Apps World, Mobility for Business, Appdays</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/09/28/upcoming-events-appsworld-mobility-for-business-appdays/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/09/28/upcoming-events-appsworld-mobility-for-business-appdays/"/>
    <updated>2012-09-28T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/09/28/upcoming-events-appsworld-mobility-for-business-appdays</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/09/28/upcoming-events-appsworld-mobility-for-business-appdays</id>
    <content type="html">&lt;p&gt;With the summer behind us, the period is pretty active. It’s really difficult
 to attend all the great events, big and small, organized out there. After
 &lt;a href=&quot;http://www.mobilemondayfrance.org/&quot;&gt;Mobile Monday&lt;/a&gt;,
@@ -5596,9 +5596,9 @@ discussion around mobile apps development!&lt;/p&gt;
  
  <entry>
    <title>Algolia Search Beta 3 is out!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/09/24/algolia-search-beta-3-is-out/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/09/24/algolia-search-beta-3-is-out/"/>
    <updated>2012-09-24T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/09/24/algolia-search-beta-3-is-out</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/09/24/algolia-search-beta-3-is-out</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://blog.algolia.com/wp-
 content/uploads/2012/09/CitiesSuggestIOSPortraitSmall.png&quot;&gt;&lt;img src=&quot;/algoliasearch-jekyll-hyde/assets/CitiesSuggestIOSPortraitSmall-155x300.png&quot; alt=&quot;Algolia Search Beta 3&quot; /&gt;&lt;/a&gt;We are pleased to
 announce Algolia Search Beta 3, our third release with a strong focus on
@@ -5654,9 +5654,9 @@ always obtain “&lt;strong&gt;Ang&lt;/strong&gt;eles” which is easier to&lt;/
  
  <entry>
    <title>Algolia Search Beta 2 is out!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/09/03/algolia-search-beta-2-is-out/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/09/03/algolia-search-beta-2-is-out/"/>
    <updated>2012-09-03T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/09/03/algolia-search-beta-2-is-out</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/09/03/algolia-search-beta-2-is-out</id>
    <content type="html">&lt;p&gt;We are pleased to announce the launch of Algolia Search Beta 2, our second
 release!&lt;/p&gt;
 
@@ -5694,9 +5694,9 @@ guys! Please continue your feedbacks!&lt;/p&gt;
  
  <entry>
    <title>Results of the Evernote DevCup</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/08/22/results-of-the-evernote-devcup/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/08/22/results-of-the-evernote-devcup/"/>
    <updated>2012-08-22T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/08/22/results-of-the-evernote-devcup</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/08/22/results-of-the-evernote-devcup</id>
    <content type="html">&lt;p&gt;Time flies! I just realized we didn’t offer any feedback about our
 participation in the Evernote DevCup back in July.&lt;/p&gt;
 
@@ -5731,9 +5731,9 @@ we’ll aim higher!&lt;/p&gt;
  
  <entry>
    <title>Algolia Search beta is out!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/08/16/algolia-search-beta-is-out/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/08/16/algolia-search-beta-is-out/"/>
    <updated>2012-08-16T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/08/16/algolia-search-beta-is-out</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/08/16/algolia-search-beta-is-out</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://blog.algolia.com/wp-
 content/uploads/2012/08/searchForEvernoteSmall.png&quot;&gt;&lt;img src=&quot;/algoliasearch-jekyll-hyde/assets/searchForEvernoteSmall.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;After a few months in the
 making, our first mobile library is finally ready to hit the shelves! Well,
@@ -5758,9 +5758,9 @@ to report bugs, request features, or anything beta related: beta@algolia.com&lt;
  
  <entry>
    <title>Free marketing @ WWDC 2012!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/08/01/free-marketing-wwdc2012/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/08/01/free-marketing-wwdc2012/"/>
    <updated>2012-08-01T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/08/01/free-marketing-wwdc2012</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/08/01/free-marketing-wwdc2012</id>
    <content type="html">&lt;p&gt;Let’s rewind time a bit. Back in June was the famous Apple Developer
 Conference, aka WWDC 2012. Algolia didn’t even have a website at that time,
 but what we did have is a friend who would attend:
@@ -5807,9 +5807,9 @@ content/uploads/2012/07/wwdc2.jpg&quot;&gt;&lt;img src=&quot;/algoliasearch-jeky
  
  <entry>
    <title>C/C++ is still the only way to have high performance on Mobile</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/07/24/need-performance-on-mobile-use-c-cpp/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/07/24/need-performance-on-mobile-use-c-cpp/"/>
    <updated>2012-07-24T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/07/24/need-performance-on-mobile-use-c-cpp</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/07/24/need-performance-on-mobile-use-c-cpp</id>
    <content type="html">&lt;p&gt;When it comes to programming languages and performance, you can read all and
 its opposite on the web. It’s definitely a very controversial topic!&lt;/p&gt;
 
@@ -5903,9 +5903,9 @@ Java/Objective-C optimizations as I did.&lt;/p&gt;
  
  <entry>
    <title>iOS: When Automatic Reference Counting is a Bad Idea</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/07/12/ios-when-arc-is-a-bad-idea/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/07/12/ios-when-arc-is-a-bad-idea/"/>
    <updated>2012-07-12T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/07/12/ios-when-arc-is-a-bad-idea</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/07/12/ios-when-arc-is-a-bad-idea</id>
    <content type="html">&lt;p&gt;I started developing for iOS in 2009 by learning about the Objective-C
 language. At that time ARC (Automatic Reference Counting) was not yet
 available and developers were responsible for alloc/release/autorelease. I
@@ -6096,9 +6096,9 @@ products:&lt;/p&gt;
  
  <entry>
    <title>Search for Evernote: We're in the Evernote DevCup!</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/07/08/were-participating-to-the-evernote-devcup/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/07/08/were-participating-to-the-evernote-devcup/"/>
    <updated>2012-07-08T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/07/08/were-participating-to-the-evernote-devcup</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/07/08/were-participating-to-the-evernote-devcup</id>
    <content type="html">&lt;p&gt;You mint already be familiar with Evernote. It’s a great company that delivers
 an impressive product that I use often, both professionally and personally.
 When we heard about them organizing their second developer competition, we
@@ -6130,9 +6130,9 @@ You can also download the app directly from
  
  <entry>
    <title>Why develop our own Unicode Library? - The Algolia Blog</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/07/05/why-develop-our-own-unicode-library/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/07/05/why-develop-our-own-unicode-library/"/>
    <updated>2012-07-05T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/07/05/why-develop-our-own-unicode-library</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/07/05/why-develop-our-own-unicode-library</id>
    <content type="html">&lt;p&gt;At one time or another, most developers come across bugs or problems with
 Unicode (about 3,720,000 results on google for the request &lt;a href=&quot;http://www.google.com/search?q=unicode+bug+developer&quot;&gt;unicode bug
 developer&lt;/a&gt; at the time
@@ -6267,9 +6267,9 @@ contribute comments or ask for precisions.&lt;/p&gt;
  
  <entry>
    <title>Great discussions at LeWeb'12 London</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/07/03/great-discussions-at-leweb12-london/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/07/03/great-discussions-at-leweb12-london/"/>
    <updated>2012-07-03T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/07/03/great-discussions-at-leweb12-london</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/07/03/great-discussions-at-leweb12-london</id>
    <content type="html">&lt;p&gt;On June 19 &amp;amp; 20th, I had the chance to participate to &lt;a href=&quot;http://london.leweb.co/&quot;&gt;LeWeb 2012
 London&lt;/a&gt; edition. This year theme was “Faster than
 Real Time” and we had an impressive list of speakers! But the true value of
@@ -6323,9 +6323,9 @@ outweighs the longer integration code. We’ll now work on simplifying it!&lt;/p
  
  <entry>
    <title>Let's start the adventure</title>
-   <link href="https://github.com/algolia/algoliasearch-jekyll-hyde/2012/07/02/lets-start-the-adventure/"/>
+   <link href="https://github.com/svenhutchinson/extensions/2012/07/02/lets-start-the-adventure/"/>
    <updated>2012-07-02T00:00:00+07:00</updated>
-   <id>https://github.com/algolia/algoliasearch-jekyll-hyde/2012/07/02/lets-start-the-adventure</id>
+   <id>https://github.com/svenhutchinson/extensions/2012/07/02/lets-start-the-adventure</id>
    <content type="html">&lt;p&gt;Welcome to The Algolia Blog! It’s always difficult to write the first post of
 a blog! What should I talk about? The company, the founders, the business, the
 culture? And all that knowing that virtually nobody will read except diggers
