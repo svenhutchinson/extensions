@@ -4,7 +4,7 @@
  <title>Hyde</title>
  <link href="https://github.com/svenhutchinson/extensions/atom.xml" rel="self"/>
  <link href="https://github.com/svenhutchinson/extensions/"/>
- <updated>2016-06-09T03:51:58+07:00</updated>
+ <updated>2016-06-09T04:11:23+07:00</updated>
  <id>https://github.com/svenhutchinson/extensions</id>
  <author>
    <name>Algolia</name>
@@ -6318,6 +6318,28 @@ outweighs the longer integration code. We’ll now work on simplifying it!&lt;/p
 
 &lt;p&gt;We’ll soon do a post about this demo. In the meantime, stay tuned!&lt;/p&gt;
 
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Svenson has done it!</title>
+   <link href="https://github.com/svenhutchinson/extensions/2012/07/02/paul-has-done-it/"/>
+   <updated>2012-07-02T00:00:00+07:00</updated>
+   <id>https://github.com/svenhutchinson/extensions/2012/07/02/paul-has-done-it</id>
+   <content type="html">&lt;p&gt;Welcome to The Algolia Blog! It’s always difficult to write the first post of
+a blog! What should I talk about? The company, the founders, the business, the
+culture? And all that knowing that virtually nobody will read except diggers
+in a few years (hopefully)!&lt;/p&gt;
+
+&lt;p&gt;Let’s concentrate instead on what we’ll be blogging about. Company news
+obviously, but not only. I expect we’ll write quite a few posts about
+technology, algorithms, entrepreneurship, marketing, and whatever else we’ll
+want to share with you :)&lt;/p&gt;
+
+&lt;p&gt;And most important, feel free to participate in comments or by contacting us
+directly. We appreciate your feedback!&lt;/p&gt;
+
+&lt;p&gt;Welcome to the Algolia blog!&lt;/p&gt;
 </content>
  </entry>
  
