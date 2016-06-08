@@ -1,5 +1,4 @@
 # Dependencies
-
 highlighter:      pygments
 
 # Permalinks
@@ -36,10 +35,9 @@ gems:
   - algoliasearch-jekyll
 
 algolia:
-  application_id: 'MFYV1TCXOX'
+  application_id: 'latency'
   index_name: 'jekyll'
   read_only_api_key: '6be0576ff61c053d5f9a3225e2a90f76'
-   ALGOLIA_API_KEY: 41eda6770df3a7ea9cc69dcee3d83898
   excluded_files:
     - 404.html
     - index.html

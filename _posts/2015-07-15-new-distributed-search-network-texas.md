@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Welcome Texass!
+title: Welcome Texas!
 author:
   login: gaetan
   email: gaetan@algolia.com
