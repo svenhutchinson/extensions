@@ -37,7 +37,7 @@ gems:
 algolia:
   application_id: 'MFYV1TCXOX'
   index_name: 'jekyll_NAME'
-  read_only_api_key: '888511e2a53baf5e4f3fc9656e0da233'
+  ALGOLIA_API_KEY: '41eda6770df3a7ea9cc69dcee3d83898'
   excluded_files:
     - 404.html
     - index.html
