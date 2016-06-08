@@ -4,7 +4,7 @@
  <title>Hyde</title>
  <link href="https://github.com/svenhutchinson/extensions/atom.xml" rel="self"/>
  <link href="https://github.com/svenhutchinson/extensions/"/>
- <updated>2016-06-09T04:11:23+07:00</updated>
+ <updated>2016-06-09T04:19:26+07:00</updated>
  <id>https://github.com/svenhutchinson/extensions</id>
  <author>
    <name>Algolia</name>
@@ -6322,7 +6322,7 @@ outweighs the longer integration code. We’ll now work on simplifying it!&lt;/p
  </entry>
  
  <entry>
-   <title>Svenson has done it!</title>
+   <title>Svenson has done it</title>
    <link href="https://github.com/svenhutchinson/extensions/2012/07/02/paul-has-done-it/"/>
    <updated>2012-07-02T00:00:00+07:00</updated>
    <id>https://github.com/svenhutchinson/extensions/2012/07/02/paul-has-done-it</id>

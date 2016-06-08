@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Svenson has done it!
+title: Svenson has done it
 author:
   login: nicolas
   email: nicolas@algolia.com
