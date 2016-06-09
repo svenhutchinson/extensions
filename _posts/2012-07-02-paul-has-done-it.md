@@ -1,12 +1,14 @@
 ---
 layout: post
 title: Svenson has done it
+date: 2016-02-20
 author:
   login: nicolas
   email: nicolas@algolia.com
   display_name: nicolas
   first_name: Nicolas
   last_name: Dessaigne
+
 ---
 
 Welcome to The Algolia Blog! It's always difficult to write the first post of
